@@ -1,8 +1,22 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import Hero from "./sections/Hero.astro"
+import Hero from "../ui/Hero.astro"
+import StandardGallery from "../ui/StandardGallery.astro"
+
+const hero = {
+  images: {
+    bg1: "/images/pages/home/hero-bg-2.jpeg",
+    bg2: "/images/pages/home/hero-bg-1.jpeg",
+    bg3: "/images/pages/home/hero-bg-3.jpeg",
+  },
+  texts: {
+    title: "Amatista",
+    subtitle: "LIBERTAD EXPRESIÓN CREATIVIDAD, ARTÍSTICO",
+  },
+}
 ---
 
-<Layout title="Amatista - Indumentaria">
-  <Hero />
+<Layout title="Amatista - Indumentaria - Second hand shop">
+  <Hero {...hero} />
+  <StandardGallery />
 </Layout>

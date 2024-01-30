@@ -1,0 +1,34 @@
+---
+import formatCurency from "@/utils/currency"
+interface Props {
+  title: string
+  price: number
+  imageUrl: string
+  isSoldout: boolean
+  href: string
+}
+const { title, price, imageUrl, isSoldout, href } = Astro.props
+const priceFormatted = formatCurency(price)
+---
+
+<a
+  href={href}
+  class="inline-block group"
+>
+  <div class="relative mb-4 overflow-hidden rounded">
+    <img
+      src={imageUrl}
+      alt={title}
+      class="duration-1000 group-hover:scale-110"
+    />
+    {
+      isSoldout && (
+        <span class="absolute px-3 py-1 text-sm rounded-full bottom-3 left-3 text-raw_white bg-midnight_green-900">
+          Agotado
+        </span>
+      )
+    }
+  </div>
+  <h3 class="mb-2 font-semibold">{title}</h3>
+  <p>{priceFormatted}</p>
+</a>

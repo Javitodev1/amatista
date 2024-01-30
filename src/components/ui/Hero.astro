@@ -1,0 +1,138 @@
+---
+interface HeroImages {
+  bg1: string
+  bg2: string
+  bg3: string
+}
+
+interface HeroTexts {
+  title: string
+  subtitle: string
+}
+
+interface Props {
+  images: HeroImages
+  texts: HeroTexts
+}
+const { images, texts } = Astro.props
+---
+
+<section class="relative w-full h-screen overflow-hidden bg-black">
+  <div
+    style=`background-image: url(${images.bg1});`
+    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-1"
+  >
+  </div>
+  <div
+    style=`background-image: url(${images.bg2});`
+    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-2"
+  >
+  </div>
+  <div
+    style=`background-image: url(${images.bg3});`
+    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-3"
+  >
+  </div>
+  <span class="absolute w-full h-full bg-midnight_green-900 opacity-60"></span>
+
+  <span
+    class="absolute text-center -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
+  >
+    <h1 class="capitalize text-7xl text-amatist-300">{texts.title}</h1>
+    <p class="text-3xl uppercase text-raw_white">{texts.subtitle}</p>
+  </span>
+</section>
+
+<style>
+  .fade-in-out-1 {
+    animation: fade-1-3 30s ease-in-out infinite;
+  }
+
+  .fade-in-out-2 {
+    animation: fade-2-3 30s ease-in-out infinite;
+  }
+
+  .fade-in-out-3 {
+    animation: fade-3-3 30s ease-in-out infinite;
+  }
+
+  @keyframes fade-1-3 {
+    from {
+      scale: 1;
+      opacity: 100%;
+    }
+
+    7% {
+      opacity: 100%;
+    }
+
+    33% {
+      opacity: 100%;
+    }
+
+    40% {
+      opacity: 0%;
+      scale: 1.2;
+    }
+
+    93% {
+      opacity: 0%;
+    }
+
+    to {
+      opacity: 100%;
+    }
+  }
+
+  @keyframes fade-2-3 {
+    from {
+      opacity: 0%;
+    }
+
+    33% {
+      opacity: 0%;
+      scale: 1;
+    }
+
+    40% {
+      opacity: 100%;
+    }
+
+    66% {
+      opacity: 100%;
+    }
+
+    70% {
+      opacity: 0%;
+      scale: 1.2;
+    }
+
+    to {
+      opacity: 0%;
+    }
+  }
+
+  @keyframes fade-3-3 {
+    from {
+      opacity: 0%;
+    }
+
+    66% {
+      opacity: 0%;
+      scale: 1;
+    }
+
+    73% {
+      opacity: 100%;
+    }
+
+    93% {
+      opacity: 100%;
+    }
+
+    to {
+      opacity: 0%;
+      scale: 1.2;
+    }
+  }
+</style>

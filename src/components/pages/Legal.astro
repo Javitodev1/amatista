@@ -1,0 +1,31 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Privacy from "@/components/legal/Privacy.astro"
+import Refund from "@/components/legal/Refund.astro"
+import TermsAndConditions from "@/components/legal/TermsAndConditions.astro"
+import TextContainer from "../ui/TextContainer.astro"
+---
+
+<Layout
+  title="Amatista - Politicas de Privacidad | Reembolso | Terminos & Condiciones"
+>
+  <main class="bg-raw_white text-midnight_green-600">
+    <section id="politicas-de-privacidad">
+      <TextContainer>
+        <Privacy />
+      </TextContainer>
+    </section>
+
+    <section id="politicas-de-reembolso">
+      <TextContainer>
+        <Refund />
+      </TextContainer>
+    </section>
+
+    <section id="terminos-y-condiciones">
+      <TextContainer>
+        <TermsAndConditions />
+      </TextContainer>
+    </section>
+  </main>
+</Layout>

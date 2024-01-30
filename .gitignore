@@ -30,3 +30,6 @@ bun-error.log*
 
 # notes
 notes.md
+
+# Temporal OneDrive files
+onedrive/
