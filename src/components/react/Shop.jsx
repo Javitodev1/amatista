@@ -9,7 +9,7 @@ const fetchUsers = (filter, data) => {
 export default function Shop({ data, initFilter }) {
   let [filter, setFilter] = useState(initFilter)
   return (
-    <div>
+    <div className="min-h-screen">
       <ul className="flex gap-10 justify-center">
         <li>
           <FilterButton
