@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string
+  content: string
+  image: string
+  class?: string
+}
+
+const { title, content, image, class: className } = Astro.props
+---
+
+<div
+  class:list={[className]}
+  class="flex flex-col justify-center p-8"
+>
+  <img
+    src={image}
+    alt={title}
+  />
+  <div class="h-full">
+    <h2 class="py-4 text-lg font-semibold">{title}</h2>
+    <p class="">{content}</p>
+  </div>
+</div>
