@@ -1,0 +1,55 @@
+---
+import testImage from '@public/images/products/1_1.webp'
+import VerticalHero from '../ui/VerticalHero.astro'
+import BuyButton from '../ui/BuyButton.astro'
+
+const images = {
+  banner1: testImage.src,
+  banner2: testImage.src,
+  banner3: testImage.src,
+}
+
+const texts = {
+  titleBanner1: 'ALWAYS TALK TO A REAL PERSON',
+  contentBanner1:
+    'No robots here. Mason, Hallie, or one of our team members is always the one to reply. Please email or DM us on Instagram for the quickest response.',
+  titleBanner2: 'OUR SHIPPING',
+  contentBanner2:
+    'We try our hardest to ship our packages same or next day. The holidays may put a small delay on this.',
+  titleBanner3: 'TAG US ON THE SOCIALS',
+  contentBanner3:
+    'We love to see how you all style your pieces from us. Tag us in your post to be featured on our socials.',
+  cta: 'Contactanos',
+}
+---
+
+<section class="w-full h-full pb-12">
+  <div class="mx-auto max-w-6xl">
+    <div class="grid grid-cols-3 row-auto gap-x-2 mb-12">
+      <VerticalHero
+        title={texts.titleBanner1}
+        content={texts.contentBanner1}
+        image={images.banner1}
+        class="bg-raw_white"
+      />
+
+      <VerticalHero
+        title={texts.titleBanner2}
+        content={texts.contentBanner2}
+        image={images.banner2}
+        class="bg-raw_white"
+      />
+
+      <VerticalHero
+        title={texts.titleBanner3}
+        content={texts.contentBanner3}
+        image={images.banner3}
+        class="bg-raw_white"
+      />
+    </div>
+
+    <div class="flex justify-center">
+      <BuyButton href="/contacto">{texts.cta}</BuyButton>
+    </div>
+  </div>
+</section>
