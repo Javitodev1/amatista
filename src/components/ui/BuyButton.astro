@@ -1,0 +1,20 @@
+---
+interface Props {
+  href?: string
+  dark?: boolean
+  class?: string
+}
+
+const { href = '/tienda', dark = true, class: className } = Astro.props
+---
+
+<a
+  class="px-12 py-2 text-xl font-semibold duration-200 hover:opacity-80"
+  class:list={[
+    { 'text-black bg-raw_white': !dark },
+    { 'text-raw_white bg-black': dark },
+    className,
+  ]}
+  href={href}
+  ><slot /></a
+>

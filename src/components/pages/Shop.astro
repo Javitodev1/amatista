@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import ShopRC from '../react/Shop'
+import products from '@/data/products.json'
+interface Props {
+  initFilter?: string
+}
+
+const { initFilter = 'Todo' } = Astro.props
+---
+
+<Layout title="Tienda Amatista - Second hand shop | Indumentaría">
+  <section class="max-w-5xl mx-auto py-12">
+    <ShopRC
+      data={products}
+      initFilter={initFilter}
+      client:load
+    />
+  </section>
+</Layout>

@@ -1,0 +1,62 @@
+---
+import BuyButton from '../ui/BuyButton.astro'
+import testImage from '../../../public/images/products/1_1.webp'
+const images = {
+  center: testImage,
+  leftTop: testImage,
+  leftBottom: testImage,
+  rightTop: testImage,
+  rightBottom: testImage,
+}
+const texts = {
+  title: 'Construyendo Juntas',
+  subtitle: 'Comunidad',
+  content:
+    'Nos unimos para crear una comunidad donde creamos juntas un mundo, tanto en su forma tangible como energética.',
+  cta: 'Conocé más',
+}
+---
+
+<section class="w-full h-full py-20">
+  <div class="flex items-center max-w-5xl mx-auto">
+    <div class="w-full">
+      <h3 class="text-xl tracking-wider uppercase">
+        {texts.subtitle}
+      </h3>
+      <h2 class="max-w-xs text-4xl font-semibold">{texts.title}</h2>
+      <p class="max-w-lg mt-4 mb-12 text-xl tracking-wide">
+        {texts.content}
+      </p>
+      <BuyButton>{texts.cta}</BuyButton>
+    </div>
+    <div
+      class="relative flex items-center justify-center w-[750px] min-h-[350px]"
+    >
+      <img
+        src={images.center.src}
+        alt="ropa"
+        class="w-[200px] z-10"
+      />
+      <img
+        src={images.leftTop.src}
+        alt="ropa"
+        class="absolute top-0 left-0 w-[150px]"
+      />
+      <img
+        src={images.leftBottom.src}
+        alt="ropa"
+        class="absolute bottom-0 left-5 w-[125px]"
+      />
+      <img
+        src={images.rightTop.src}
+        alt="ropa"
+        class="absolute top-12 right-10 w-[100px]"
+      />
+      <img
+        src={images.rightBottom.src}
+        alt="ropa"
+        class="absolute bottom-0 right-10 w-[110px]"
+      />
+    </div>
+  </div>
+</section>

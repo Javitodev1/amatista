@@ -1,5 +1,6 @@
 ---
-import Product from "./Product.astro"
+import Product from './Product.astro'
+import BuyButton from './BuyButton.astro'
 interface ProductProps {
   title: string
   price: number
@@ -21,21 +22,19 @@ interface Props {
 const { images, texts, products, href } = Astro.props
 ---
 
-<section
-  class="flex flex-col items-center justify-center w-full p-4 md:p-12 bg-raw_white"
->
-  <h2 class="self-start py-16 text-3xl md:text-5xl font-semibold uppercase">
-    {texts.title}
-  </h2>
+<section class="w-full bg-raw_white">
   <div
-    class="container grid row-auto grid-cols-2 md:grid-cols-4 gap-y-6 md:gap-y-12 gap-x-2 md:gap-x-12"
+    class="flex flex-col items-center justify-center w-full max-w-6xl py-4 mx-auto md:py-12"
   >
-    {products.map((product) => <Product {...product} />)}
-  </div>
+    <h2 class="self-start py-16 text-3xl font-semibold uppercase md:text-4xl">
+      {texts.title}
+    </h2>
+    <div
+      class="container grid grid-cols-2 row-auto mb-6 md:grid-cols-4 gap-y-6 md:gap-y-12 gap-x-2"
+    >
+      {products.map((product) => <Product {...product} />)}
+    </div>
 
-  <a
-    class="inline-block px-16 py-3 md:px-12 mt-8 text-3xl md:text-2xl font-semibold duration-300 rounded-md bg-midnight_green-900 text-raw_white hover:bg-amatist-300 hover:text-midnight_green-900"
-    href={href}
-    >{texts.callToAction}</a
-  >
+    <BuyButton>{texts.callToAction}</BuyButton>
+  </div>
 </section>

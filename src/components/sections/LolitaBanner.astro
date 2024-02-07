@@ -1,0 +1,51 @@
+---
+import testImage from '@public/images/products/1_1.webp'
+const images = {
+  left: testImage.src,
+  center: testImage.src,
+  right: testImage.src,
+}
+
+const texts = {
+  title1: 'vestidos',
+  title2: 'blusas y camisas',
+  title3: 'tejidos',
+}
+---
+
+<section class="flex items-center w-full h-screen">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-3 gap-10 font-semibold">
+      <a href="#">
+        <img
+          src={images.left}
+          alt="ropa"
+          class="mb-2"
+        />
+        <h3 class="text-2xl text-center uppercase">
+          {texts.title1}
+        </h3>
+      </a>
+      <a href="#">
+        <img
+          src={images.center}
+          alt="ropa"
+          class="mb-2"
+        />
+        <h3 class="text-2xl text-center uppercase">
+          {texts.title2}
+        </h3>
+      </a>
+      <a href="#">
+        <img
+          src={images.right}
+          alt="ropa"
+          class="mb-2"
+        />
+        <h3 class="text-2xl text-center uppercase">
+          {texts.title3}
+        </h3>
+      </a>
+    </div>
+  </div>
+</section>

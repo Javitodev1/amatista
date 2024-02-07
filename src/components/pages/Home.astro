@@ -1,22 +1,21 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import Hero from "../ui/Hero.astro"
-import StandardGallery from "../ui/StandardGallery.astro"
-
-const hero = {
-  images: {
-    bg1: "/images/pages/home/hero-bg-2.jpeg",
-    bg2: "/images/pages/home/hero-bg-1.jpeg",
-    bg3: "/images/pages/home/hero-bg-3.jpeg",
-  },
-  texts: {
-    title: "Amatista",
-    subtitle: "LIBERTAD EXPRESIÓN CREATIVIDAD, ARTÍSTICO",
-  },
-}
+import Layout from '@/layouts/Layout.astro'
+import Hero from '../sections/Hero.astro'
+import StandardGallery from '../sections/StandardGallery.astro'
+import Whatsapp from '@/icons/Whatsapp.astro'
+import ColimaBanner from '../sections/ColimaBanner.astro'
+import LolitaBanner from '../sections/LolitaBanner.astro'
+import AgedBanner from '../sections/AgedBanner.astro'
 ---
 
 <Layout title="Amatista - Indumentaria - Second hand shop">
-  <Hero {...hero} />
+  <Hero />
   <StandardGallery />
+  <ColimaBanner />
+  <LolitaBanner />
+  <AgedBanner />
+  <Whatsapp
+    class="w-20 h-20"
+    href="https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0"
+  />
 </Layout>

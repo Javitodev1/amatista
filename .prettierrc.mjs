@@ -1,6 +1,7 @@
 /** @type {import("prettier").Config} */
 export default {
   semi: false,
+  singleQuote: true,
   singleAttributePerLine: true,
   plugins: ["prettier-plugin-astro"],
   overrides: [

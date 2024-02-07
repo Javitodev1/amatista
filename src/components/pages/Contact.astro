@@ -1,0 +1,54 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import TextContainer from '../ui/TextContainer.astro'
+---
+
+<Layout title="Amatista - Contacto | second hand shop">
+  <main
+    class="flex flex-col items-center justify-center w-full pt-6 pb-20 bg-raw_white"
+  >
+    <TextContainer class="col-span-2">
+      <h2 class="text-midnight_green-600">Contacto</h2>
+    </TextContainer>
+    <form
+      action="#"
+      method="post"
+      class="grid w-full max-w-lg grid-cols-2 row-auto gap-x-4"
+    >
+      <input
+        type="text"
+        name="name"
+        id="form-name"
+        placeholder="Nombre"
+        class="w-full p-2 my-2 rounded-md outline-none bg-amatist-200 text-midnight_green-600 placeholder:text-amatist-600"
+      />
+      <input
+        type="text"
+        name="email"
+        id="form-email"
+        placeholder="Email"
+        class="w-full p-2 my-2 rounded-md outline-none bg-amatist-200 text-midnight_green-600 placeholder:text-amatist-600"
+      />
+      <input
+        type="text"
+        name="phone"
+        id="form-phone"
+        placeholder="Numero"
+        class="w-full col-span-2 p-2 my-2 rounded-md outline-none bg-amatist-200 text-midnight_green-600 placeholder:text-amatist-600"
+      />
+      <textarea
+        name="message"
+        id="form-message"
+        cols="30"
+        rows="10"
+        placeholder="Mensaje"
+        class="w-full col-span-2 p-2 my-2 rounded-md outline-none bg-amatist-200 text-midnight_green-600 placeholder:text-amatist-600"
+      ></textarea>
+      <input
+        type="submit"
+        value="Enviar"
+        class="self-center inline-block col-span-2 px-16 py-2 mt-2 text-lg font-semibold duration-200 rounded-lg shadow cursor-pointer active:translate-y-2 shadow-black bg-midnight_green-600 text-raw_white hover:bg-midnight_green-400"
+      />
+    </form>
+  </main>
+</Layout>

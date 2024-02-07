@@ -1,0 +1,15 @@
+---
+import Samples from '@/components/ui/Samples.astro'
+import products from '@/data/products.json'
+const standardGallery = {
+  images: {},
+  texts: {
+    title: 'recién llegados',
+    callToAction: 'Ver Todo',
+  },
+  products,
+  href: '/tienda',
+}
+---
+
+<Samples {...standardGallery} />

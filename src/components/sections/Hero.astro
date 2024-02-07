@@ -1,45 +1,43 @@
 ---
-interface HeroImages {
-  bg1: string
-  bg2: string
-  bg3: string
+import BuyButton from '../ui/BuyButton.astro'
+const images = {
+  bg1: '/images/pages/home/hero-bg-2.jpeg',
+  bg2: '/images/pages/home/hero-bg-1.jpeg',
+  bg3: '/images/pages/home/hero-bg-3.jpeg',
 }
-
-interface HeroTexts {
-  title: string
-  subtitle: string
+const texts = {
+  title: 'Vestimos cuerpos sagrados con prendas únicas.',
+  callToAction: 'Comprá Ahora',
 }
-
-interface Props {
-  images: HeroImages
-  texts: HeroTexts
-}
-const { images, texts } = Astro.props
 ---
 
-<section class="relative w-full h-screen overflow-hidden bg-black">
+<section
+  class="relative flex items-center justify-center w-full h-screen overflow-hidden bg-black bg-opacity-80"
+>
   <div
     style=`background-image: url(${images.bg1});`
-    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-1"
+    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-1 -z-10"
   >
   </div>
   <div
     style=`background-image: url(${images.bg2});`
-    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-2"
+    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-2 -z-10"
   >
   </div>
   <div
     style=`background-image: url(${images.bg3});`
-    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-3"
+    class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-3 -z-10"
   >
   </div>
-  <span class="absolute w-full h-full bg-midnight_green-900 opacity-60"></span>
 
-  <span
-    class="absolute text-center -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
-  >
-    <h1 class="capitalize text-7xl text-amatist-300">{texts.title}</h1>
-    <p class="text-3xl uppercase text-raw_white">{texts.subtitle}</p>
+  <span class="flex flex-col items-center">
+    <p class="text-5xl tracking-wide capitalize text-raw_white">
+      Vestimos cuerpos sagrados
+    </p>
+    <p class="mb-12 text-5xl tracking-wide capitalize text-raw_white">
+      con <span class="text-amatista">prendas únicas.</span>
+    </p>
+    <BuyButton dark={false}>{texts.callToAction}</BuyButton>
   </span>
 </section>
 

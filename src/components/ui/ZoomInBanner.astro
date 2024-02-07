@@ -1,0 +1,26 @@
+---
+interface Props {
+  imageUrl: string
+  alt: string
+  href: string
+  class?: string
+}
+const { imageUrl, alt, href, class: className } = Astro.props
+---
+
+<a
+  href={href}
+  class="group"
+  class:list={className}
+>
+  <div class="mb-1 overflow-hidden w-full h-full">
+    <div
+      style=`background-image: url(${imageUrl});`
+      class="w-full h-full bg-cover bg-center bg-no-repeat duration-1000 group-hover:scale-110"
+    >
+    </div>
+  </div>
+  <div class="w-full">
+    <slot />
+  </div>
+</a>

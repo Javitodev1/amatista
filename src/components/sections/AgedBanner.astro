@@ -1,0 +1,52 @@
+---
+import ZoomInBanner from '../ui/ZoomInBanner.astro'
+import testImage from '@public/images/products/1_1.webp'
+const images = {
+  topLeft: testImage.src,
+  bottomLeft: testImage.src,
+  right: testImage.src,
+}
+
+const texts = {
+  title: 'Titulo',
+  ctaTopLeft: 'Comprá Todo 1',
+  ctaBottomLeft: 'Comprá Todo 2',
+  ctaRight: 'Comprá Todo 3',
+}
+---
+
+<section class="bg-raw_white">
+  <div class="max-w-6xl pt-12 pb-24 mx-auto">
+    <h2 class="mb-6 text-4xl font-semibold uppercase">{texts.title}</h2>
+    <div class="grid grid-cols-3 row-auto gap-x-4 gap-y-12 h-[1000px]">
+      <ZoomInBanner
+        imageUrl={images.topLeft}
+        alt="banner"
+        href="#"
+        ><h3 class="group-hover:underline">
+          {texts.ctaTopLeft}
+        </h3></ZoomInBanner
+      >
+
+      <ZoomInBanner
+        imageUrl={images.right}
+        alt="banner"
+        href="#"
+        class="col-span-2 row-span-2"
+      >
+        <h3 class="group-hover:underline">
+          {texts.ctaRight}
+        </h3>
+      </ZoomInBanner>
+
+      <ZoomInBanner
+        imageUrl={images.bottomLeft}
+        alt="banner"
+        href="#"
+        ><h3 class="group-hover:underline">
+          {texts.ctaBottomLeft}
+        </h3></ZoomInBanner
+      >
+    </div>
+  </div>
+</section>
