@@ -1,0 +1,36 @@
+---
+import BuyButton from '../ui/BuyButton.astro'
+import testImage from '@public/images/products/1_1.webp'
+const images = {
+  right: testImage.src,
+}
+const texts = {
+  title: 'THURSDAY DROPS',
+  content:
+    'New hand picked vintage pieces are dropped on the site almost every Thursday at 12PM CT. Be sure to check back to see what items are dropping week to week.',
+  cta: 'just-in pieces',
+}
+---
+
+<section class="bg-raw_white py-10">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex h-[500px]">
+      <div class="w-2/3 bg-black text-raw_white px-28 pt-24">
+        <h2 class="text-4xl font-semibold mb-6 uppercase">{texts.title}</h2>
+        <p class="text-lg mb-16">{texts.content}</p>
+        <BuyButton
+          dark={false}
+          class="uppercase py-4"
+          >{texts.cta}
+        </BuyButton>
+      </div>
+      <div class="w-1/3">
+        <div
+          style=`background-image: url(${images.right});`
+          class="w-full h-full bg-center bg-cover bg-no-repeat"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
