@@ -1,14 +1,16 @@
 ---
 interface Props {
   class?: string
-  href: string
 }
-const { class: className, href } = Astro.props
+
+const { class: className } = Astro.props
+const href =
+  'https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0'
 const wspBg = 'bg-green-500'
 ---
 
 <div
-  class="fixed z-10 bottom-10 right-10"
+  class="fixed z-10 bottom-10 right-10 w-20 h-20"
   class:list={className}
 >
   <a

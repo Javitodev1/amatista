@@ -1,0 +1,105 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import TextContainer from '../ui/TextContainer.astro'
+import HorizontalHero from '../ui/HorizontalHero.astro'
+
+import testImage from '@public/images/products/1_1.webp'
+import packagingImage1 from '@public/images/packaging-1.jpeg'
+import packagingImage2 from '@public/images/packaging-2.png'
+import packagingImage3 from '@public/images/packaging-3.png'
+const images = {
+  comunidad: testImage.src,
+  empaque: packagingImage1.src,
+  cinta: packagingImage2.src,
+  detalles: packagingImage3.src,
+}
+---
+
+<Layout title="Comunidad Amatista - Indumentaría | second hand shop">
+  <section class="min-h-screen py-12 bg-raw_white">
+    <div class="max-w-6xl mx-auto">
+      <HorizontalHero
+        image={images.comunidad}
+        left={false}
+      >
+        <TextContainer>
+          <h2>Comunidad amatista</h2>
+          <p>
+            Nos unimos para formar una comunidad donde creamos juntas un mundo
+            tanto tangible como energético.
+          </p>
+          <p>
+            Aquí, la unión de mujeres trasciende las limitaciones, ofreciendo un
+            espacio accesible para todos y todas. Nuestro enfoque se centra en
+            un estilo de vida sostenible, minimalista, auténtico y unica,
+            diseñada para personas de todos los estilos.
+          </p>
+          <p>
+            ¡Bienvenidos a un lugar donde la belleza se encuentra en la
+            diversidad y la autenticidad!
+          </p>
+        </TextContainer>
+      </HorizontalHero>
+
+      <HorizontalHero image={images.empaque}>
+        <TextContainer>
+          <h2>ASÍ EMPAQUETAMOS NUESTROS PEDIDOS SIN PLÁSTICO</h2>
+          <p>
+            A la hora de eligir los materiales se nos presentaron muchos
+            desafíos.
+          </p>
+          <p>
+            ¿Con que podíamos cerrar las cajas? ¿Qué material utilizar como
+            relleno en los envíos más delicados?
+          </p>
+          <p>
+            Por suerte cada día hay más personas preocupadas por reducir la
+            cantidad de plástico del Planeta y encontrar soluciones a estos
+            problemas fue más sencillo de lo que en un principio pensamos.
+          </p>
+        </TextContainer>
+      </HorizontalHero>
+
+      <HorizontalHero
+        image={images.cinta}
+        left={false}
+      >
+        <TextContainer>
+          <h2>Nuestra cinta adhesiva es de origen vegetal</h2>
+          <p>
+            <strong>
+              Nuestras cajas de cartón son 100% reciclables y 100%
+              biodegradables al estar hechas de cartón reciclado y una cobertura
+              de kraft proveniente de bosques sostenibles.
+            </strong>
+          </p>
+          <p>
+            Todos los materiales que Amatista utiliza en sus envíos son
+            reciclables, biodegradables y sin plástico. Un packaging ecológico
+            muy sencillo.
+          </p>
+          <p>
+            Su sencillez lo hace especial, abrir una caja Amatista es toda una
+            experiencia. Una vez más demostramos que lo sostenible también puede
+            ser bonito
+          </p>
+        </TextContainer>
+      </HorizontalHero>
+
+      <HorizontalHero image={images.detalles}>
+        <TextContainer>
+          <h2>Tenemos en cuenta todos los detalles</h2>
+          <p>
+            El adhesivo que utiliza nuestra cinta adhesiva es de origen vegetal,
+            por eso se puede reciclar y también es biodegradable. Es masa
+            adhesiva de caucho natural.
+          </p>
+          <p>
+            Si has sido o vas a ser cliente de Amatista te animamos aque
+            reutilices, compostes o recicles nuestro packaging.
+          </p>
+        </TextContainer>
+      </HorizontalHero>
+    </div>
+  </section>
+</Layout>

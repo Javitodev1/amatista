@@ -2,26 +2,25 @@
 import Layout from '@/layouts/Layout.astro'
 import Hero from '../sections/Hero.astro'
 import StandardGallery from '../sections/StandardGallery.astro'
-import Whatsapp from '@/icons/Whatsapp.astro'
+import Whatsapp from '@/components/ui/Whatsapp.astro'
 import ColimaBanner from '../sections/ComunidadBanner.astro'
 import LolitaBanner from '../sections/LolitaBanner.astro'
 import AgedBanner from '../sections/AgedBanner.astro'
 import EventBanner from '../sections/EventBanner.astro'
 import SubscribeBanner from '../sections/SubscribeBanner.astro'
 import ContactBanner from '../sections/ContactBanner.astro'
+import HowToBuyBanner from '../sections/HowToBuyBanner.astro'
 ---
 
 <Layout title="Amatista - Indumentaria - Second hand shop">
   <Hero />
   <StandardGallery />
+  <HowToBuyBanner />
   <ColimaBanner />
   <LolitaBanner />
   <AgedBanner />
   <EventBanner />
   <SubscribeBanner />
   <ContactBanner />
-  <Whatsapp
-    class="w-20 h-20"
-    href="https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0"
-  />
+  <Whatsapp />
 </Layout>

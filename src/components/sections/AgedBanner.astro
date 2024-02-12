@@ -1,4 +1,6 @@
 ---
+import SectionContainer from '../ui/SectionContainer.astro'
+import TextContainer from '../ui/TextContainer.astro'
 import ZoomInBanner from '../ui/ZoomInBanner.astro'
 import testImage from '@public/images/products/1_1.webp'
 const images = {
@@ -15,38 +17,45 @@ const texts = {
 }
 ---
 
-<section class="bg-raw_white">
-  <div class="max-w-6xl pt-12 pb-24 mx-auto">
-    <h2 class="mb-6 text-4xl font-semibold uppercase">{texts.title}</h2>
-    <div class="grid grid-cols-3 row-auto gap-x-4 gap-y-12 h-[1000px]">
-      <ZoomInBanner
-        imageUrl={images.topLeft}
-        alt="banner"
-        href="#"
-        ><h3 class="group-hover:underline">
-          {texts.ctaTopLeft}
-        </h3></ZoomInBanner
+<SectionContainer variant="darker">
+  <TextContainer>
+    <h2>{texts.title}</h2>
+  </TextContainer>
+  <div class="grid grid-cols-3 row-auto gap-x-4 gap-y-12 h-[1000px]">
+    <ZoomInBanner
+      imageUrl={images.topLeft}
+      alt="banner"
+      href="/tienda"
+    >
+      <h3
+        class="group-hover:underline group-hover:text-amatista dark:text-white"
       >
+        {texts.ctaTopLeft}
+      </h3>
+    </ZoomInBanner>
 
-      <ZoomInBanner
-        imageUrl={images.right}
-        alt="banner"
-        href="#"
-        class="col-span-2 row-span-2"
+    <ZoomInBanner
+      imageUrl={images.right}
+      alt="banner"
+      href="/tienda"
+      class="col-span-2 row-span-2"
+    >
+      <h3
+        class="group-hover:underline group-hover:text-amatista dark:text-white"
       >
-        <h3 class="group-hover:underline">
-          {texts.ctaRight}
-        </h3>
-      </ZoomInBanner>
+        {texts.ctaRight}
+      </h3>
+    </ZoomInBanner>
 
-      <ZoomInBanner
-        imageUrl={images.bottomLeft}
-        alt="banner"
-        href="#"
-        ><h3 class="group-hover:underline">
-          {texts.ctaBottomLeft}
-        </h3></ZoomInBanner
+    <ZoomInBanner
+      imageUrl={images.bottomLeft}
+      alt="banner"
+      href="/tienda"
+      ><h3
+        class="group-hover:underline group-hover:text-amatista dark:text-white"
       >
-    </div>
+        {texts.ctaBottomLeft}
+      </h3>
+    </ZoomInBanner>
   </div>
-</section>
+</SectionContainer>

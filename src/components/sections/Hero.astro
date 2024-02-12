@@ -12,7 +12,7 @@ const texts = {
 ---
 
 <section
-  class="relative flex items-center justify-center w-full h-[1000px] overflow-hidden bg-black bg-opacity-80"
+  class="relative flex items-center justify-center w-full h-[1000px] overflow-hidden bg-black z-0"
 >
   <div
     style=`background-image: url(${images.bg1});`
@@ -29,16 +29,19 @@ const texts = {
     class="absolute top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover fade-in-out-3 -z-10"
   >
   </div>
-
-  <span class="flex flex-col items-center">
-    <p class="text-5xl tracking-wide capitalize text-raw_white">
-      Vestimos cuerpos sagrados
+  <span class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"
+  ></span>
+  <div class="relative z-0 max-w-2xl">
+    <p
+      class="mb-12 text-5xl font-semibold leading-snug tracking-wide text-center capitalize text-raw_white"
+    >
+      Vestimos cuerpos sagrados con
+      <span class="text-amatista">prendas únicas</span>
     </p>
-    <p class="mb-20 text-5xl tracking-wide capitalize text-raw_white">
-      con <span class="text-amatista">prendas únicas.</span>
-    </p>
-    <BuyButton dark={false}>{texts.callToAction}</BuyButton>
-  </span>
+    <div class="flex justify-center">
+      <BuyButton dark={false}>{texts.callToAction}</BuyButton>
+    </div>
+  </div>
 </section>
 
 <style>

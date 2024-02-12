@@ -3,6 +3,7 @@ import formatCurency from '@/utils/currency'
 export default function ProductCard({ title, price, imageUrl, stock, href }) {
   const priceFormatted = formatCurency(price)
   const isSoldout = stock < 1 || !stock
+  href = '/tienda/producto'
   return (
     <a
       href={href}

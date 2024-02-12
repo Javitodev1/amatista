@@ -1,51 +1,49 @@
 ---
+import SectionContainer from '../ui/SectionContainer.astro'
+import TextContainer from '../ui/TextContainer.astro'
 import testImage from '@public/images/products/1_1.webp'
-const images = {
-  left: testImage.src,
-  center: testImage.src,
-  right: testImage.src,
-}
-
-const texts = {
-  title1: 'vestidos',
-  title2: 'blusas y camisas',
-  title3: 'tejidos',
-}
+const banners = [
+  {
+    img: testImage.src,
+    text: 'vestidos',
+    href: '/tienda/Vestidos',
+  },
+  {
+    img: testImage.src,
+    text: 'blusas y camisas',
+    href: '/tienda/Blusas',
+  },
+  {
+    img: testImage.src,
+    text: 'tejidos',
+    href: '/tienda',
+  },
+]
 ---
 
-<section class="flex items-center w-full h-screen">
-  <div class="max-w-6xl mx-auto">
-    <div class="grid grid-cols-3 gap-10 font-semibold">
-      <a href="#">
-        <img
-          src={images.left}
-          alt="ropa"
-          class="mb-2"
-        />
-        <h3 class="text-2xl text-center uppercase">
-          {texts.title1}
-        </h3>
-      </a>
-      <a href="#">
-        <img
-          src={images.center}
-          alt="ropa"
-          class="mb-2"
-        />
-        <h3 class="text-2xl text-center uppercase">
-          {texts.title2}
-        </h3>
-      </a>
-      <a href="#">
-        <img
-          src={images.right}
-          alt="ropa"
-          class="mb-2"
-        />
-        <h3 class="text-2xl text-center uppercase">
-          {texts.title3}
-        </h3>
-      </a>
-    </div>
+<SectionContainer>
+  <div class="grid grid-cols-3 gap-10">
+    {
+      banners.map(({ img, text, href }) => {
+        return (
+          <a
+            href={href}
+            class="group"
+          >
+            <img
+              src={img}
+              alt="ropa"
+              class="mb-2"
+            />
+            <TextContainer
+              class="text-center "
+              hover={true}
+            >
+              <h3>{text}</h3>
+            </TextContainer>
+          </a>
+        )
+      })
+    }
   </div>
-</section>
+</SectionContainer>

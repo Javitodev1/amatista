@@ -11,8 +11,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        montez: 'Montez',
         lora: '"Lora Variable"',
+        roboto: 'Roboto',
       },
       animation: {
         'fade-in': 'fade-in 0.1s ease-in',
@@ -31,6 +31,7 @@ export default {
         raw_white: '#eff2ed',
         amatista: '#9E5C99',
         golden: '#e5ae5e',
+        green_forest: '#20B2AA',
         midnight_green: {
           DEFAULT: '#003a42',
           900: '#000c0d',
@@ -38,8 +39,8 @@ export default {
           700: '#002328',
           600: '#002f35',
           500: '#003a42',
-          400: '#00899b',
-          300: '#00d7f4',
+          400: '#064138',
+          300: '#0B7666',
           200: '#4eeaff',
           100: '#a6f5ff',
         },

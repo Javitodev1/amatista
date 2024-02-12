@@ -1,31 +1,41 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import Privacy from "@/components/legal/Privacy.astro"
-import Refund from "@/components/legal/Refund.astro"
-import TermsAndConditions from "@/components/legal/TermsAndConditions.astro"
-import TextContainer from "../ui/TextContainer.astro"
+import Layout from '@/layouts/Layout.astro'
+import Privacy from '@/components/legal/Privacy.astro'
+import Refund from '@/components/legal/Refund.astro'
+import TermsAndConditions from '@/components/legal/TermsAndConditions.astro'
+import TextContainer from '../ui/TextContainer.astro'
 ---
 
 <Layout
   title="Amatista - Politicas de Privacidad | Reembolso | Terminos & Condiciones"
 >
-  <main class="container px-40 bg-raw_white text-midnight_green-600">
-    <section id="politicas-de-privacidad">
+  <section
+    id="politicas-de-privacidad"
+    class="py-12"
+  >
+    <div class="max-w-4xl mx-auto">
       <TextContainer>
         <Privacy />
       </TextContainer>
-    </section>
+    </div>
+  </section>
 
-    <section id="politicas-de-reembolso">
+  <section id="politicas-de-reembolso">
+    <div class="max-w-4xl mx-auto">
       <TextContainer>
         <Refund />
       </TextContainer>
-    </section>
+    </div>
+  </section>
 
-    <section id="terminos-y-condiciones">
+  <section
+    id="terminos-y-condiciones"
+    class="py-12"
+  >
+    <div class="max-w-4xl mx-auto">
       <TextContainer>
         <TermsAndConditions />
       </TextContainer>
-    </section>
-  </main>
+    </div>
+  </section>
 </Layout>

@@ -11,8 +11,8 @@ const { href = '/tienda', dark = true, class: className } = Astro.props
 <a
   class="px-12 py-2 text-xl font-semibold duration-200 hover:opacity-80"
   class:list={[
-    { 'text-black bg-raw_white': !dark },
-    { 'text-raw_white bg-black': dark },
+    { 'text-black bg-raw_white dark:text-white dark:bg-black': !dark },
+    { 'text-raw_white bg-black dark:text-black dark:bg-raw_white': dark },
     className,
   ]}
   href={href}

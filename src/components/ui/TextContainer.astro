@@ -1,13 +1,48 @@
 ---
 interface Props {
   class?: string
+  variant?: 'normal' | 'white' | 'black'
+  hover?: boolean
 }
-const { class: className } = Astro.props
+const { class: className, variant = 'normal', hover = false } = Astro.props
 ---
 
 <article
-  class="[&>h2]:py-6 [&>h2]:capitalize [&>h2]:text-3xl [&>h2]:font-semibold [&>h3]:text-xl [&>h3]:py-2 [&>h3]:font-semibold [&>p]:py-3 [&>p]:text-lg [&>ul]:list-disc [&>ul]:pl-8"
-  class:list={[className]}
+  class:list={[
+    className,
+    '[&_h2]:font-lora [&_h2]:mb-6 [&_h2]:text-4xl [&_h2]:uppercase [&_h2]:font-bold',
+    { '[&_h2]:text-amatista': variant === 'normal' },
+    { '[&_h2]:text-white [&_h2]:dark:text-black': variant === 'white' },
+    { '[&_h2]:text-black [&_h2]:dark:text-white': variant === 'black' },
+    '[&_h3]:font-lora [&_h3]:mb-4 [&_h3]:text-xl [&_h3]:uppercase [&_h3]:font-semibold [&_h3]:opacity-65',
+    { '[&_h3]:text-black [&_h3]:dark:text-white': variant === 'normal' },
+    { '[&_h3]:text-white [&_h3]:dark:text-black': variant === 'white' },
+    { '[&_h3]:text-black [&_h3]:dark:text-white': variant === 'black' },
+    {
+      '[&_h3]:hover:text-amatista [&_h3]:group-hover:text-amatista [&_h3]:peer-hover:text-amatista':
+        hover,
+    },
+    {
+      '[&_h3]:hover:opacity-100 [&_h3]:group-hover:opacity-100 [&_h3]:peer-hover:opacity-100':
+        hover,
+    },
+    '[&_p]:font-roboto [&_p]:mb-4 [&_p]:text-lg',
+    { '[&_p]:text-black [&_p]:dark:text-white': variant === 'normal' },
+    { '[&_p]:text-white [&_p]:dark:text-black': variant === 'white' },
+    { '[&_p]:text-black [&_p]:dark:text-white': variant === 'black' },
+    {
+      '[&_p]:hover:text-amatista [&_p]:group-hover:text-amatista [&_p]:peer-hover:text-amatista':
+        hover,
+    },
+    {
+      '[&_p]:hover:opacity-100 [&_p]:group-hover:opacity-100 [&_p]:peer-hover:opacity-100':
+        hover,
+    },
+    '[&_ul]:font-roboto [&_ul]:mb-2 [&_ul]:text-lg [&_ul]:list-disc [&_ul]:pl-8',
+    { '[&_ul]:text-black [&_ul]:dark:text-white': variant === 'normal' },
+    { '[&_ul]:text-white [&_ul]:dark:text-black': variant === 'white' },
+    { '[&_ul]:text-black [&_ul]:dark:text-white': variant === 'black' },
+  ]}
 >
   <slot />
 </article>

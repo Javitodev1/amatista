@@ -1,0 +1,29 @@
+---
+interface Props {
+  image: string
+  left?: boolean
+  class?: string
+}
+const { image, left = true, class: className } = Astro.props
+---
+
+<article>
+  <div
+    class="flex"
+    class:list={[className]}
+  >
+    <div class="w-1/2 p-12">
+      <slot />
+    </div>
+    <div
+      class="w-1/2 p-12"
+      class:list={[{ 'order-last': left }, { 'order-first': !left }]}
+    >
+      <div
+        style=`background-image: url(${image});`
+        class="bg-cover bg-center bg-no-repeat w-full h-full min-h-[500px]"
+      >
+      </div>
+    </div>
+  </div>
+</article>

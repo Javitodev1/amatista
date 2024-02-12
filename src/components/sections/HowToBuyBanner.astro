@@ -1,0 +1,34 @@
+---
+import TextContainer from '../ui/TextContainer.astro'
+import SectionContainer from '../ui/SectionContainer.astro'
+import InstagramIcon from '@/icons/Instagram.astro'
+import WhatappsIcon from '@/icons/Whatapps.astro'
+---
+
+<SectionContainer variant="darker">
+  <TextContainer class="text-center">
+    <h2>La Forma Más Simple de Comprar</h2>
+    <h3>Hemos simplificado el proceso de compra.</h3>
+    <p class="max-w-xl mx-auto">
+      Solo necesitas comunicarte con nosotros a través de WhatsApp o un mensaje
+      en Instagram para obtener tus prendas favoritas.
+    </p>
+  </TextContainer>
+  <div class="flex justify-center mb-4 gap-x-12">
+    <a
+      href="https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0"
+      target="_blank"
+    >
+      <WhatappsIcon class="hover:text-amatista" />
+    </a>
+    <a
+      href="https://www.instagram.com/amatista.comunidad/"
+      target="_blank"
+    >
+      <InstagramIcon class="hover:text-amatista" />
+    </a>
+  </div>
+  <TextContainer class="max-w-xl mx-auto text-center">
+    <h3>¡Sin complicaciones ni intermediarios! ¡Haz tu pedido hoy mismo!</h3>
+  </TextContainer>
+</SectionContainer>

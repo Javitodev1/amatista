@@ -8,7 +8,7 @@ export default function FilterButton({ name, changeFilter }) {
   return (
     <button
       onClick={handleClick}
-      className="hover:underline"
+      className="hover:underline hover:text-amatista"
     >
       {name}
     </button>

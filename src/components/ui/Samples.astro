@@ -1,4 +1,5 @@
 ---
+import TextContainer from './TextContainer.astro'
 import Product from './Product.astro'
 import BuyButton from './BuyButton.astro'
 interface ProductProps {
@@ -8,33 +9,30 @@ interface ProductProps {
   isSoldout: boolean
   href: string
 }
-interface SectionGalleryImages {}
 interface SectionGalleryTexts {
   title: string
   callToAction: string
 }
 interface Props {
-  images: SectionGalleryImages
   texts: SectionGalleryTexts
   products: ProductProps[]
-  href: string
 }
-const { images, texts, products, href } = Astro.props
+const { texts, products } = Astro.props
 ---
 
-<section class="w-full bg-raw_white">
-  <div
-    class="flex flex-col items-center justify-center w-full max-w-6xl py-4 mx-auto md:py-12"
-  >
-    <h2 class="self-start py-16 text-3xl font-semibold uppercase md:text-4xl">
+<div>
+  <TextContainer>
+    <h2>
       {texts.title}
     </h2>
-    <div
-      class="container grid grid-cols-2 row-auto mb-6 md:grid-cols-4 gap-y-6 md:gap-y-12 gap-x-2"
-    >
-      {products.map((product) => <Product {...product} />)}
-    </div>
+  </TextContainer>
+  <div
+    class="container grid grid-cols-2 row-auto mb-6 md:grid-cols-4 gap-y-6 md:gap-y-12 gap-x-2"
+  >
+    {products.map((product) => <Product {...product} />)}
+  </div>
 
+  <div class="flex justify-center">
     <BuyButton>{texts.callToAction}</BuyButton>
   </div>
-</section>
+</div>

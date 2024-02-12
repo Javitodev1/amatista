@@ -1,12 +1,23 @@
+---
+import TextContainer from '../ui/TextContainer.astro'
+---
+
 <section class="py-20">
   <div class="mx-auto max-w-6xl">
     <div class="flex flex-col items-center justify-center">
-      <h2 class="uppercase text-4xl font-semibold mb-4">
-        suscribité a nuestras ofertas
-      </h2>
+      <TextContainer>
+        <h2 class="text-center">novedades</h2>
+        <p class="max-w-xl text-center">
+          ¡Unité a la Comunidad <strong class="text-amatista">AMATISTA</strong>!
+          Entérate de las últimas novedades. Recibirás un <strong
+            >10% DE DESCUENTO</strong
+          > para tu primera compra.
+        </p>
+      </TextContainer>
+
       <form
         action="emailto:#"
-        class="relative"
+        class="relative mb-6"
       >
         <label for="email-form">
           <input
@@ -27,6 +38,9 @@
           >
         </label>
       </form>
+      <TextContainer>
+        <h3 class="uppercase text-2xl font-semibold">suscríbete</h3>
+      </TextContainer>
     </div>
   </div>
 </section>

@@ -1,5 +1,59 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import Whatsapp from '../ui/Whatsapp.astro'
+import formatCurreny from '@/utils/currency'
+import BuyButton from '../ui/BuyButton.astro'
+import TextContainer from '../ui/TextContainer.astro'
+import SoldOutBadge from '../ui/SoldOutBadge.astro'
+
+const product = {
+  id: 1,
+  title: 'SACO NIEVE',
+  description: 'SACO DE HILO, COLOR BLANCO CON PEQUEÑOS BRILLOS ',
+  price: 290,
+  frontImage: '/images/products/1_1.webp',
+  backImage: '/images/products/1_2.webp',
+  largeFrontImage: '/images/products/1_1.webp',
+  largeBackImage: '/images/products/1_1.webp',
+  stock: 1,
+  tag: 'BUZOS & SACOS',
+  size: 'M',
+}
+
+const isSoldOut = product.stock < 1
 ---
 
-<Layout title="" />
+<Layout title="">
+  <section class="min-h-screen bg-raw_white py-12">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-3">
+        <div>
+          <img
+            src={product.frontImage}
+            alt={product.title}
+          />
+        </div>
+        <div>
+          <img
+            src={product.backImage}
+            alt={product.title}
+          />
+        </div>
+        <div class="p-12">
+          <TextContainer class="mb-12">
+            <h2>{product.title}</h2>
+            <h3>
+              {product.tag}
+            </h3>
+            <p>{product.description}</p>
+            <p>Talla: {product.size}</p>
+            <p>Precio: {formatCurreny(product.price)}</p>
+            <SoldOutBadge isSoldOut={isSoldOut} />
+          </TextContainer>
+          <BuyButton href="/contacto">Contactanos</BuyButton>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Whatsapp />
+</Layout>

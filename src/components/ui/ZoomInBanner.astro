@@ -13,10 +13,10 @@ const { imageUrl, alt, href, class: className } = Astro.props
   class="group"
   class:list={className}
 >
-  <div class="mb-1 overflow-hidden w-full h-full">
+  <div class="w-full h-full mb-1 overflow-hidden">
     <div
       style=`background-image: url(${imageUrl});`
-      class="w-full h-full bg-cover bg-center bg-no-repeat duration-1000 group-hover:scale-110"
+      class="w-full h-full duration-1000 bg-center bg-no-repeat bg-cover group-hover:scale-110"
     >
     </div>
   </div>

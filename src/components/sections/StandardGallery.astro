@@ -1,6 +1,7 @@
 ---
 import Samples from '@/components/ui/Samples.astro'
 import products from '@/data/products.json'
+import SectionContainer from '../ui/SectionContainer.astro'
 const standardGallery = {
   images: {},
   texts: {
@@ -12,4 +13,6 @@ const standardGallery = {
 }
 ---
 
-<Samples {...standardGallery} />
+<SectionContainer variant="darker">
+  <Samples {...standardGallery} />
+</SectionContainer>

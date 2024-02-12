@@ -1,14 +1,15 @@
 ---
 import formatCurency from '@/utils/currency'
+import SoldOutBadge from './SoldOutBadge.astro'
 interface Props {
   title: string
   price: number
   imageUrl: string
   isSoldout: boolean
-  href: string
 }
-const { title, price, imageUrl, isSoldout, href } = Astro.props
+const { title, price, imageUrl, isSoldout } = Astro.props
 const priceFormatted = formatCurency(price)
+const href = '/tienda/producto'
 ---
 
 <a
@@ -21,13 +22,7 @@ const priceFormatted = formatCurency(price)
       alt={title}
       class="duration-1000 group-hover:scale-110"
     />
-    {
-      isSoldout && (
-        <span class="absolute px-3 py-1 text-sm rounded-full bottom-3 left-3 text-raw_white bg-midnight_green-900">
-          Agotado
-        </span>
-      )
-    }
+    {isSoldout && <SoldOutBadge class="absolute bottom-3 left-3" />}
   </div>
   <h3 class="mb-2 font-semibold">{title}</h3>
   <p class="">{priceFormatted}</p>
