@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import Shop from '@/components/pages/Shop.astro'
+import Shop from '@/modules/shop/Shop.astro'
 export const getStaticPaths = (() => {
   return [
     { params: { filter: 'Todo' } },
