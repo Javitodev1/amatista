@@ -2,16 +2,28 @@
 import SectionContainer from '@/components/SectionContainer.astro'
 import TextContainer from '@/components/TextContainer.astro'
 import testImage from '@public/images/products/1_1.webp'
+interface Texts {
+  banner_1: string
+  banner_2: string
+  banner_3: string
+}
+
+// interface Props {
+//   texts: Texts
+// }
+
+// const { texts } = Astro.props
+
 const banners = [
   {
     img: testImage.src,
     text: 'vestidos',
-    href: '/tienda/Vestidos',
+    href: '/tienda/vestidos',
   },
   {
     img: testImage.src,
     text: 'blusas y camisas',
-    href: '/tienda/Blusas',
+    href: '/tienda/blusas',
   },
   {
     img: testImage.src,
@@ -22,7 +34,7 @@ const banners = [
 ---
 
 <SectionContainer>
-  <div class="grid grid-cols-3 gap-10">
+  <div class="grid grid-cols-3 gap-2 md:gap-10">
     {
       banners.map(({ img, text, href }) => {
         return (

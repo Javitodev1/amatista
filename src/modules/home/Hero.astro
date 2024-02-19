@@ -9,10 +9,21 @@ const texts = {
   title: 'Vestimos cuerpos sagrados con prendas únicas.',
   callToAction: 'Comprá Ahora',
 }
+
+interface Texts {
+  title: string
+  cta: string
+}
+
+// interface Props {
+//   texts: Texts
+// }
+
+// const { texts } = Astro.props
 ---
 
 <section
-  class="relative flex items-center justify-center w-full h-[1000px] overflow-hidden bg-black z-0"
+  class="relative flex items-center justify-center w-full h-[800px] md:h-[1000px] overflow-hidden bg-black z-0"
 >
   <div
     style=`background-image: url(${images.bg1});`

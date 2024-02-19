@@ -1,4 +1,5 @@
 ---
+import SectionContainer from '@/components/SectionContainer.astro'
 import testImage from '@public/images/products/1_1.webp'
 import VerticalHero from '@/components/VerticalHero.astro'
 import BuyButton from '@/components/BuyButton.astro'
@@ -13,7 +14,7 @@ const texts = {
   titleBanner1: 'ENVIOS SIN PLASTICOS',
   contentBanner1:
     'Estamos comprometemos con el planeta. Por eso, realizamos nuestros envíos sin plásticos. ¡Únete a nosotros en la lucha por un futuro más sostenible!',
-  titleBanner2: 'NUESTROS ENVIOS',
+  titleBanner2: 'NUESTRAS ENTREGAS',
   contentBanner2:
     'Hacemos todo lo posible para enviar nuestros paquetes el mismo día o al día siguiente. Además, ¡si realizas tu pedido en Maldonado, el envío es gratis!',
   titleBanner3: '!CO-CREAMOS COMUNIDAD!',
@@ -21,37 +22,51 @@ const texts = {
     'Colaboramos con otras emprendedoras para construir un espacio donde todas podamos crecer juntas. Desde compartir ideas hasta organizar eventos.',
   cta: 'Contactanos',
 }
+
+interface Texts {
+  title_1: string
+  description_1: string
+  title_2: string
+  description_2: string
+  title_3: string
+  description_3: string
+  cta: string
+}
+
+// interface Props {
+//   texts: Texts
+// }
+
+// const { texts } = Astro.props
 ---
 
-<section class="w-full h-full pb-12">
-  <div class="mx-auto max-w-6xl">
-    <a href="/comunidad">
-      <div class="grid grid-cols-3 row-auto gap-x-2 mb-12">
-        <VerticalHero
-          title={texts.titleBanner1}
-          content={texts.contentBanner1}
-          image={images.banner1}
-          class="bg-raw_white"
-        />
+<SectionContainer>
+  <a href="/comunidad">
+    <div class="grid grid-cols-1 mb-12 md:grid-cols-3 gap-x-2">
+      <VerticalHero
+        title={texts.titleBanner1}
+        content={texts.contentBanner1}
+        image={images.banner1}
+        class="bg-raw_white dark:bg-black"
+      />
 
-        <VerticalHero
-          title={texts.titleBanner2}
-          content={texts.contentBanner2}
-          image={images.banner2}
-          class="bg-raw_white"
-        />
+      <VerticalHero
+        title={texts.titleBanner2}
+        content={texts.contentBanner2}
+        image={images.banner2}
+        class="bg-raw_white dark:bg-black"
+      />
 
-        <VerticalHero
-          title={texts.titleBanner3}
-          content={texts.contentBanner3}
-          image={images.banner3}
-          class="bg-raw_white"
-        />
-      </div>
-    </a>
-
-    <div class="flex justify-center">
-      <BuyButton href="/contacto">{texts.cta}</BuyButton>
+      <VerticalHero
+        title={texts.titleBanner3}
+        content={texts.contentBanner3}
+        image={images.banner3}
+        class="bg-raw_white dark:bg-black"
+      />
     </div>
+  </a>
+
+  <div class="flex justify-center">
+    <BuyButton href="/contacto">{texts.cta}</BuyButton>
   </div>
-</section>
+</SectionContainer>

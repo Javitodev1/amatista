@@ -21,8 +21,8 @@ export default function ProductCard({ title, price, imageUrl, stock, href }) {
           </span>
         )}
       </div>
-      <h3 className="mb-2 font-semibold">{title}</h3>
-      <p>{priceFormatted}</p>
+      <h3 className="mb-2 font-semibold dark:text-white">{title}</h3>
+      <p className="dark:text-white">{priceFormatted}</p>
     </a>
   )
 }

@@ -6,11 +6,13 @@ export default function FilterButton({ name, changeFilter }) {
   }
 
   return (
-    <button
-      onClick={handleClick}
-      className="hover:underline hover:text-amatista"
-    >
-      {name}
-    </button>
+    <li>
+      <button
+        onClick={handleClick}
+        className="capitalize hover:underline hover:text-amatista dark:text-white"
+      >
+        {name}
+      </button>
+    </li>
   )
 }

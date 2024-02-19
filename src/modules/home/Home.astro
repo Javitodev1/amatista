@@ -2,25 +2,43 @@
 import Layout from '@/layouts/Layout.astro'
 import Whatsapp from '@/components/Whatsapp.astro'
 import Hero from './Hero.astro'
-import StandardGallery from './StandardGallery.astro'
+import NewArrival from './NewArrival.astro'
 import ComunidadBanner from './ComunidadBanner.astro'
-import LolitaBanner from './LolitaBanner.astro'
+import CollectionBanner from './CollectionBanner.astro'
 import AgedBanner from './AgedBanner.astro'
-import EventBanner from './EventBanner.astro'
+import HealingKit from './HealingKit.astro'
 import SubscribeBanner from './SubscribeBanner.astro'
 import ContactBanner from './ContactBanner.astro'
 import HowToBuyBanner from './HowToBuyBanner.astro'
+import Separator from '@/components/Separator.astro'
 ---
 
 <Layout title="Amatista - Indumentaria - Second hand shop">
   <Hero />
-  <StandardGallery />
+  <NewArrival />
   <HowToBuyBanner />
+
+  <Separator />
+
   <ComunidadBanner />
-  <LolitaBanner />
+  <CollectionBanner />
+
+  <Separator
+    reverseColors={true}
+    direction="right"
+    variant="H3"
+  />
+
   <AgedBanner />
-  <EventBanner />
+  <HealingKit />
+
+  <Separator
+    direction="left"
+    variant="H2"
+  />
+
   <SubscribeBanner />
   <ContactBanner />
+
   <Whatsapp />
 </Layout>

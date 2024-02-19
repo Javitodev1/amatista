@@ -15,17 +15,33 @@ const texts = {
   ctaBottomLeft: 'Comprá Todo 2',
   ctaRight: 'Comprá Todo 3',
 }
+
+interface Texts {
+  title: string
+  ctaTopLeft: string
+  ctaBottomLeft: string
+  ctaRight: string
+}
+
+// interface Props {
+//   texts: Texts
+// }
+
+// const { texts } = Astro.props
 ---
 
 <SectionContainer variant="darker">
   <TextContainer>
     <h2>{texts.title}</h2>
   </TextContainer>
-  <div class="grid grid-cols-3 row-auto gap-x-4 gap-y-12 h-[1000px]">
+  <div
+    class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 h-[800px] md:h-[1000px]"
+  >
     <ZoomInBanner
       imageUrl={images.topLeft}
       alt="banner"
       href="/tienda"
+      class="order-1"
     >
       <h3
         class="group-hover:underline group-hover:text-amatista dark:text-white"
@@ -38,7 +54,7 @@ const texts = {
       imageUrl={images.right}
       alt="banner"
       href="/tienda"
-      class="col-span-2 row-span-2"
+      class="order-last col-span-2 row-span-2 md:order-2"
     >
       <h3
         class="group-hover:underline group-hover:text-amatista dark:text-white"
@@ -51,6 +67,7 @@ const texts = {
       imageUrl={images.bottomLeft}
       alt="banner"
       href="/tienda"
+      class="order-3"
       ><h3
         class="group-hover:underline group-hover:text-amatista dark:text-white"
       >

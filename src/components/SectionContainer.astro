@@ -1,14 +1,15 @@
 ---
 interface Props {
   class?: string
+  id?: string
   variant?: 'light' | 'darker'
 }
 
-const { class: className, variant = 'light', ...rest } = Astro.props
+const { class: className, variant = 'light', id } = Astro.props
 ---
 
 <section
-  {...rest}
+  id={id}
   class="py-12"
   class:list={[
     className,
@@ -16,7 +17,7 @@ const { class: className, variant = 'light', ...rest } = Astro.props
     { 'bg-raw_white dark:bg-black': variant === 'darker' },
   ]}
 >
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-sm mx-auto md:max-w-6xl">
     <slot />
   </div>
 </section>

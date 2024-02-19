@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
 import TextContainer from '@/components/TextContainer.astro'
 import HorizontalHero from '@/components/HorizontalHero.astro'
 
@@ -16,8 +17,8 @@ const images = {
 ---
 
 <Layout title="Comunidad Amatista - Indumentaría | second hand shop">
-  <section class="min-h-screen py-12 bg-raw_white">
-    <div class="max-w-6xl mx-auto">
+  <SectionContainer>
+    <div class="flex flex-col gap-12">
       <HorizontalHero
         image={images.comunidad}
         left={false}
@@ -101,5 +102,5 @@ const images = {
         </TextContainer>
       </HorizontalHero>
     </div>
-  </section>
+  </SectionContainer>
 </Layout>

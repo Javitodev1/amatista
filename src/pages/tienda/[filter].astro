@@ -1,17 +1,10 @@
 ---
 import type { GetStaticPaths } from 'astro'
 import Shop from '@/modules/shop/Shop.astro'
+import filters from '@/data/filters.json'
+
 export const getStaticPaths = (() => {
-  return [
-    { params: { filter: 'Todo' } },
-    { params: { filter: 'Blusas' } },
-    { params: { filter: 'Pantalones' } },
-    { params: { filter: 'Camisas' } },
-    { params: { filter: 'Accesorios' } },
-    { params: { filter: 'Vestidos' } },
-    { params: { filter: 'Poleras' } },
-    { params: { filter: 'Abrigos' } },
-  ]
+  return filters.map((filterName) => ({ params: { filter: filterName } }))
 }) satisfies GetStaticPaths
 
 const { filter } = Astro.params

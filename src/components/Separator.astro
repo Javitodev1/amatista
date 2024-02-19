@@ -1,0 +1,61 @@
+---
+import * as Highlights from '@/icons/highlight'
+interface Props {
+  direction?: 'left' | 'right'
+  backgroundColor?: string
+  forwardColor?: string
+  reverseColors?: boolean
+  variant?: 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6' | 'H7'
+}
+const {
+  direction = 'left',
+  backgroundColor = 'bg-raw_white dark:bg-black',
+  forwardColor = 'bg-white dark:bg-black dark:bg-opacity-95',
+  reverseColors = false,
+  variant = 'H1',
+} = Astro.props
+
+const isLeft = direction === 'left'
+const isRight = direction === 'right'
+const IconComponent = Highlights[variant]
+---
+
+<div
+  class="relative z-0 w-full h-32"
+  class:list={[
+    {
+      [backgroundColor]: !reverseColors,
+      [forwardColor]: reverseColors,
+    },
+  ]}
+>
+  <div
+    class="absolute top-0 left-0 w-screen h-full"
+    class:list={[
+      {
+        [forwardColor]: !reverseColors,
+        [backgroundColor]: reverseColors,
+        'cut-polygon-1': isLeft,
+        'cut-polygon-2': isRight,
+      },
+    ]}
+  >
+  </div>
+  <div class="absolute top-0 left-0 w-full h-full">
+    <div class="flex items-center justify-center w-full h-full">
+      <!-- <span class="w-2/5 h-1 mr-4 rounded-full bg-amatista"></span> -->
+      <IconComponent class="h-full aspect-square text-amatista" />
+      <!-- <span class="w-2/5 h-1 ml-4 rounded-full bg-amatista"></span> -->
+    </div>
+  </div>
+</div>
+
+<style>
+  .cut-polygon-1 {
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  }
+
+  .cut-polygon-2 {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  }
+</style>

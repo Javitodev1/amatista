@@ -5,7 +5,7 @@
     "imageUrl": "/images/products/1_1.webp",
     "isSoldout": true,
     "href": "#",
-    "tag": "Blusas"
+    "tag": "blusas"
   },
   {
     "title": "Vintage Chadron Hoodie - XL",
@@ -13,7 +13,7 @@
     "imageUrl": "/images/products/1_1.webp",
     "isSoldout": true,
     "href": "#",
-    "tag": "Pantalones"
+    "tag": "pantalones"
   },
   {
     "title": "Vintage Chadron Hoodie - XL",
@@ -21,7 +21,7 @@
     "imageUrl": "/images/products/1_1.webp",
     "isSoldout": true,
     "href": "#",
-    "tag": "Camisas"
+    "tag": "camisas"
   },
   {
     "title": "Vintage Chadron Hoodie - XL",
@@ -29,7 +29,7 @@
     "imageUrl": "/images/products/1_1.webp",
     "isSoldout": true,
     "href": "#",
-    "tag": "Vestidos"
+    "tag": "vestidos"
   },
   {
     "title": "Vintage Chadron Hoodie - XL",
@@ -37,7 +37,7 @@
     "imageUrl": "/images/products/1_1.webp",
     "isSoldout": true,
     "href": "#",
-    "tag": "Vestidos"
+    "tag": "vestidos"
   },
   {
     "title": "Vintage Chadron Hoodie - XL",
@@ -45,7 +45,7 @@
     "imageUrl": "/images/products/1_1.webp",
     "isSoldout": true,
     "href": "#",
-    "tag": "Poleras"
+    "tag": "poleras"
   },
   {
     "title": "Vintage Chadron Hoodie - XL",
@@ -53,7 +53,7 @@
     "imageUrl": "/images/products/1_1.webp",
     "isSoldout": true,
     "href": "#",
-    "tag": "Abrigos"
+    "tag": "abrigos"
   },
   {
     "title": "Vintage Chadron Hoodie - XL",
@@ -61,6 +61,6 @@
     "imageUrl": "/images/products/1_1.webp",
     "isSoldout": true,
     "href": "#",
-    "tag": "Blusas"
+    "tag": "blusas"
   }
 ]

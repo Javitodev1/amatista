@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
 import TextContainer from '@/components/TextContainer.astro'
 import Privacy from './Privacy.astro'
 import Refund from './Refund.astro'
@@ -9,33 +10,21 @@ import TermsAndConditions from './TermsAndConditions.astro'
 <Layout
   title="Amatista - Politicas de Privacidad | Reembolso | Terminos & Condiciones"
 >
-  <section
-    id="politicas-de-privacidad"
-    class="py-12"
-  >
-    <div class="max-w-4xl mx-auto">
-      <TextContainer>
-        <Privacy />
-      </TextContainer>
-    </div>
-  </section>
+  <SectionContainer id="politicas-de-privacidad">
+    <TextContainer class="max-w-3xl mx-auto">
+      <Privacy />
+    </TextContainer>
+  </SectionContainer>
 
-  <section id="politicas-de-reembolso">
-    <div class="max-w-4xl mx-auto">
-      <TextContainer>
-        <Refund />
-      </TextContainer>
-    </div>
-  </section>
+  <SectionContainer id="politicas-de-reembolso">
+    <TextContainer class="max-w-3xl mx-auto">
+      <Refund />
+    </TextContainer>
+  </SectionContainer>
 
-  <section
-    id="terminos-y-condiciones"
-    class="py-12"
-  >
-    <div class="max-w-4xl mx-auto">
-      <TextContainer>
-        <TermsAndConditions />
-      </TextContainer>
-    </div>
-  </section>
+  <SectionContainer id="terminos-y-condiciones">
+    <TextContainer class="max-w-3xl mx-auto">
+      <TermsAndConditions />
+    </TextContainer>
+  </SectionContainer>
 </Layout>

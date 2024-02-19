@@ -9,19 +9,19 @@ const { image, left = true, class: className } = Astro.props
 
 <article>
   <div
-    class="flex"
+    class="flex flex-col md:flex-row"
     class:list={[className]}
   >
-    <div class="w-1/2 p-12">
+    <div class="w-full md:w-1/2 md:p-12 order-2 md:order-none">
       <slot />
     </div>
     <div
-      class="w-1/2 p-12"
-      class:list={[{ 'order-last': left }, { 'order-first': !left }]}
+      class="w-full md:w-1/2 md:p-12 order-1 mb-4 md:mb-0"
+      class:list={[{ 'md:order-last': left }, { 'md:order-first': !left }]}
     >
       <div
         style=`background-image: url(${image});`
-        class="bg-cover bg-center bg-no-repeat w-full h-full min-h-[500px]"
+        class="bg-cover bg-center bg-no-repeat w-full h-full min-h-[400px] md:min-h-[500px]"
       >
       </div>
     </div>

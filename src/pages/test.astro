@@ -1,3 +1,22 @@
 ---
-// import Test from '@/components/pages/Test.astro'
+import Separator from '@/components/Separator.astro'
 ---
+
+<section class="w-screen h-screen bg-slate-950">
+  <div class="flex flex-col gap-12">
+    <Separator />
+    <Separator
+      direction="right"
+      variant="H2"
+    />
+    <Separator
+      reverseColors={true}
+      variant="H3"
+    />
+    <Separator
+      direction="right"
+      reverseColors={true}
+      variant="H4"
+    />
+  </div>
+</section>

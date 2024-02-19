@@ -1,51 +1,18 @@
+---
+import filters from '@/data/filters.json'
+---
+
 <ul class="text-gray-600 dark:text-gray-400 [&>li]:mb-4">
-  <li>
-    <a
-      href="/tienda/Blusas"
-      class="hover:underline"
-      >Blusas</a
-    >
-  </li>
-  <li>
-    <a
-      href="/tienda/Pantalones"
-      class="hover:underline"
-      >Pantalones</a
-    >
-  </li>
-  <li>
-    <a
-      href="/tienda/Camisas"
-      class="hover:underline"
-      >Camisas</a
-    >
-  </li>
-  <li>
-    <a
-      href="/tienda/Accesorios"
-      class="hover:underline"
-      >Accesorios</a
-    >
-  </li>
-  <li>
-    <a
-      href="/tienda/Vestidos"
-      class="hover:underline"
-      >Vestidos</a
-    >
-  </li>
-  <li>
-    <a
-      href="/tienda/Poleras"
-      class="hover:underline"
-      >Poleras</a
-    >
-  </li>
-  <li>
-    <a
-      href="/tienda/Abrigos"
-      class="hover:underline"
-      >Abrigos</a
-    >
-  </li>
+  {
+    filters.map((filter) => (
+      <li>
+        <a
+          href={`/tienda/${filter}`}
+          class="capitalize hover:underline"
+        >
+          {filter}
+        </a>
+      </li>
+    ))
+  }
 </ul>

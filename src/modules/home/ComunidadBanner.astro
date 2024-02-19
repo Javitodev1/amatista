@@ -11,6 +11,7 @@ const images = {
   rightTop: testImage.src,
   rightBottom: testImage.src,
 }
+
 const texts = {
   title: 'Construyendo Juntas',
   subtitle: 'Comunidad',
@@ -18,10 +19,25 @@ const texts = {
     'Nos unimos para crear una comunidad donde creamos juntas un mundo, tanto en su forma tangible como energética.',
   cta: 'Conocé más',
 }
+
+interface Texts {
+  title: string
+  subtitle: string
+  content: string
+  cta: string
+}
+
+// interface Props {
+//   texts: Texts
+// }
+
+// const { texts } = Astro.props
 ---
 
 <SectionContainer>
-  <div class="flex items-center">
+  <div
+    class="flex flex-col items-center justify-center md:items-center md:flex-row"
+  >
     <div>
       <TextContainer class="mb-12">
         <h3 class="tracking-wider uppercase">
@@ -34,7 +50,7 @@ const texts = {
       </TextContainer>
       <BuyButton href="/comunidad">{texts.cta}</BuyButton>
     </div>
-    <div>
+    <div class="order-first hidden md:order-last md:block">
       <SpreadImages images={images} />
     </div>
   </div>
