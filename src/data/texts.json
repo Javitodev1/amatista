@@ -93,140 +93,140 @@
   {
     "id": 14,
     "page": "home",
-    "section": "collection_banner",
+    "section": "banner_coleccion",
     "key": "banner_1",
     "value": "vestidos"
   },
   {
     "id": 15,
     "page": "home",
-    "section": "collection_banner",
+    "section": "banner_coleccion",
     "key": "banner_2",
     "value": "blusas y camisas"
   },
   {
     "id": 16,
     "page": "home",
-    "section": "collection_banner",
+    "section": "banner_coleccion",
     "key": "banner_3",
     "value": "tejidos"
   },
   {
     "id": 17,
     "page": "home",
-    "section": "aged_banner",
+    "section": "banner_aged",
     "key": "title",
     "value": "Titulo"
   },
   {
     "id": 18,
     "page": "home",
-    "section": "aged_banner",
+    "section": "banner_aged",
     "key": "ctaTopLeft",
     "value": "Comprá Todo 1"
   },
   {
     "id": 19,
     "page": "home",
-    "section": "aged_banner",
+    "section": "banner_aged",
     "key": "ctaBottomLeft",
     "value": "Comprá Todo 2"
   },
   {
     "id": 20,
     "page": "home",
-    "section": "aged_banner",
+    "section": "banner_aged",
     "key": "ctaRight",
     "value": "Comprá Todo 3"
   },
   {
     "id": 21,
     "page": "home",
-    "section": "healing_kit",
+    "section": "kit_sanacion",
     "key": "title",
     "value": "Kit de sanación"
   },
   {
     "id": 22,
     "page": "home",
-    "section": "healing_kit",
+    "section": "kit_sanacion",
     "key": "subtitle",
     "value": "Podrás disfrutar de prendas que no solo lucen bien, sino que también te hacen sentir bien."
   },
   {
     "id": 23,
     "page": "home",
-    "section": "healing_kit",
+    "section": "kit_sanacion",
     "key": "content",
     "value": "<p>En Amatista estamos encantados de presentarte nuestro exclusivo Kit de Sanación Energética.</p><p>Cada prenda pre amada tiene su propia historia y energía acumulada a lo largo del tiempo. Nuestro pequeño kit está diseñado para limpiar y revitalizar estas prendas, dejándolas listas para que te envuelvan con una nueva sensación de frescura y vitalidad.</p>"
   },
   {
     "id": 24,
     "page": "home",
-    "section": "subscribe_banner",
+    "section": "banner_suscribite",
     "key": "title",
     "value": "novedades"
   },
   {
     "id": 25,
     "page": "home",
-    "section": "subscribe_banner",
+    "section": "banner_suscribite",
     "key": "subtitle",
     "value": "suscríbete"
   },
   {
     "id": 26,
     "page": "home",
-    "section": "subscribe_banner",
+    "section": "banner_suscribite",
     "key": "content",
     "value": "¡Unité a la Comunidad <strong>AMATISTA</strong>! Entérate de las últimas novedades. Recibirás un <strong>10% DE DESCUENTO</strong> para tu primera compra."
   },
   {
     "id": 27,
     "page": "home",
-    "section": "contact_banner",
+    "section": "banner_contacto",
     "key": "title_1",
     "value": "ENVIOS SIN PLASTICOS"
   },
   {
     "id": 28,
     "page": "home",
-    "section": "contact_banner",
+    "section": "banner_contacto",
     "key": "description_1",
     "value": "Estamos comprometemos con el planeta. Por eso, realizamos nuestros envíos sin plásticos. ¡Únete a nosotros en la lucha por un futuro más sostenible!"
   },
   {
     "id": 29,
     "page": "home",
-    "section": "contact_banner",
+    "section": "banner_contacto",
     "key": "title_2",
     "value": "NUESTRAS ENTREGAS"
   },
   {
     "id": 30,
     "page": "home",
-    "section": "contact_banner",
+    "section": "banner_contacto",
     "key": "description_2",
     "value": "Hacemos todo lo posible para enviar nuestros paquetes el mismo día o al día siguiente. Además, ¡si realizas tu pedido en Maldonado, el envío es gratis!"
   },
   {
     "id": 31,
     "page": "home",
-    "section": "contact_banner",
+    "section": "banner_contacto",
     "key": "title_3",
     "value": "!CO-CREAMOS COMUNIDAD!"
   },
   {
     "id": 32,
     "page": "home",
-    "section": "contact_banner",
+    "section": "banner_contacto",
     "key": "description_3",
     "value": "Colaboramos con otras emprendedoras para construir un espacio donde todas podamos crecer juntas. Desde compartir ideas hasta organizar eventos."
   },
   {
     "id": 33,
     "page": "home",
-    "section": "contact_banner",
+    "section": "banner_contacto",
     "key": "cta",
     "value": "Contactanos"
   }
