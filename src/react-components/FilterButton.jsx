@@ -1,7 +1,5 @@
 export default function FilterButton({ name, changeFilter }) {
-  let isActive = false
   const handleClick = () => {
-    isActive = true
     changeFilter(name)
   }
 
