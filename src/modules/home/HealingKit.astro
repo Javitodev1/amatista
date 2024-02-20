@@ -5,12 +5,6 @@ import kitReikiImg from '@public/images/kit-reiki.png'
 const images = {
   right: kitReikiImg.src,
 }
-const texts = {
-  title: 'Kit de sanación',
-  content:
-    'New hand picked vintage pieces are dropped on the site almost every Thursday at 12PM CT. Be sure to check back to see what items are dropping week to week.',
-  cta: 'just-in pieces',
-}
 
 interface Texts {
   title: string
@@ -18,11 +12,11 @@ interface Texts {
   content: string
 }
 
-// interface Props {
-//   texts: Texts
-// }
+interface Props {
+  texts: Texts
+}
 
-// const { texts } = Astro.props
+const { texts } = Astro.props
 ---
 
 <SectionContainer variant="darker">

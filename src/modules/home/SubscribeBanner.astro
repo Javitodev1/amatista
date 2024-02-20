@@ -8,22 +8,21 @@ interface Texts {
   content: string
 }
 
-// interface Props {
-//   texts: Texts
-// }
+interface Props {
+  texts: Texts
+}
 
-// const {texts} = Astro.props
+const { texts } = Astro.props
 ---
 
 <SectionContainer>
   <div class="flex flex-col items-center justify-center">
     <TextContainer>
-      <h2 class="text-center">novedades</h2>
-      <p class="max-w-xl text-center">
-        ¡Unité a la Comunidad <strong>AMATISTA</strong>! Entérate de las últimas
-        novedades. Recibirás un <strong>10% DE DESCUENTO</strong> para tu primera
-        compra.
-      </p>
+      <h2 class="text-center">{texts.title}</h2>
+      <p
+        class="max-w-xl text-center"
+        set:html={texts.content}
+      />
     </TextContainer>
 
     <form
@@ -50,7 +49,7 @@ interface Texts {
       </label>
     </form>
     <TextContainer>
-      <h3 class="uppercase text-2xl font-semibold">suscríbete</h3>
+      <h3 class="uppercase text-2xl font-semibold">{texts.subtitle}</h3>
     </TextContainer>
   </div>
 </SectionContainer>

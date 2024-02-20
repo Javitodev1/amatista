@@ -12,30 +12,33 @@ import ContactBanner from './ContactBanner.astro'
 import HowToBuyBanner from './HowToBuyBanner.astro'
 import Separator from '@/components/Separator.astro'
 
-import textsFetched from '@/data/texts.json'
+import { fetchSections } from '@/libs/section.tsx'
 
-const sections = [
-  'hero',
-  'recien_llegados',
-  'como_comprar',
-  'banner_comunidad',
-  'banner_coleccion',
-  'aged_banner',
-  'kit_sanacion',
-  'banner_suscribite',
-  'banner_contacto',
-]
+interface HomeSections {
+  hero: { [key: string]: string }
+  recien_llegados: { [key: string]: string }
+  como_comprar: { [key: string]: string }
+  banner_comunidad: { [key: string]: string }
+  banner_coleccion: { [key: string]: string }
+  banner_aged: { [key: string]: string }
+  kit_sanacion: { [key: string]: string }
+  banner_suscribite: { [key: string]: string }
+  banner_contacto: { [key: string]: string }
+}
+
+const PAGE = 'home'
+const sections = fetchSections(PAGE) satisfies HomeSections
 ---
 
 <Layout title="Amatista - Indumentaria - Second hand shop">
-  <Hero />
-  <NewArrival />
-  <HowToBuyBanner />
+  <Hero texts={sections.hero} />
+  <NewArrival texts={sections.recien_llegados} />
+  <HowToBuyBanner texts={sections.como_comprar} />
 
   <Separator />
 
-  <ComunidadBanner />
-  <CollectionBanner />
+  <ComunidadBanner texts={sections.banner_comunidad} />
+  <CollectionBanner texts={sections.banner_coleccion} />
 
   <Separator
     reverseColors={true}
@@ -43,16 +46,16 @@ const sections = [
     variant="H3"
   />
 
-  <AgedBanner />
-  <HealingKit />
+  <AgedBanner texts={sections.banner_aged} />
+  <HealingKit texts={sections.kit_sanacion} />
 
   <Separator
     direction="left"
     variant="H2"
   />
 
-  <SubscribeBanner />
-  <ContactBanner />
+  <SubscribeBanner texts={sections.banner_suscribite} />
+  <ContactBanner texts={sections.banner_contacto} />
 
   <Whatsapp />
 </Layout>

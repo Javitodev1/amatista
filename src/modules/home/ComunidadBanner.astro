@@ -12,26 +12,18 @@ const images = {
   rightBottom: testImage.src,
 }
 
-const texts = {
-  title: 'Construyendo Juntas',
-  subtitle: 'Comunidad',
-  content:
-    'Nos unimos para crear una comunidad donde creamos juntas un mundo, tanto en su forma tangible como energética.',
-  cta: 'Conocé más',
-}
-
 interface Texts {
   title: string
   subtitle: string
-  content: string
+  description: string
   cta: string
 }
 
-// interface Props {
-//   texts: Texts
-// }
+interface Props {
+  texts: Texts
+}
 
-// const { texts } = Astro.props
+const { texts } = Astro.props
 ---
 
 <SectionContainer>
@@ -45,7 +37,7 @@ interface Texts {
         </h3>
         <h2 class="max-w-xs">{texts.title}</h2>
         <p class="max-w-lg mt-4 tracking-wide">
-          {texts.content}
+          {texts.description}
         </p>
       </TextContainer>
       <BuyButton href="/comunidad">{texts.cta}</BuyButton>

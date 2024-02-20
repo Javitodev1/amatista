@@ -10,19 +10,6 @@ const images = {
   banner3: testImage.src,
 }
 
-const texts = {
-  titleBanner1: 'ENVIOS SIN PLASTICOS',
-  contentBanner1:
-    'Estamos comprometemos con el planeta. Por eso, realizamos nuestros envíos sin plásticos. ¡Únete a nosotros en la lucha por un futuro más sostenible!',
-  titleBanner2: 'NUESTRAS ENTREGAS',
-  contentBanner2:
-    'Hacemos todo lo posible para enviar nuestros paquetes el mismo día o al día siguiente. Además, ¡si realizas tu pedido en Maldonado, el envío es gratis!',
-  titleBanner3: '!CO-CREAMOS COMUNIDAD!',
-  contentBanner3:
-    'Colaboramos con otras emprendedoras para construir un espacio donde todas podamos crecer juntas. Desde compartir ideas hasta organizar eventos.',
-  cta: 'Contactanos',
-}
-
 interface Texts {
   title_1: string
   description_1: string
@@ -33,33 +20,33 @@ interface Texts {
   cta: string
 }
 
-// interface Props {
-//   texts: Texts
-// }
+interface Props {
+  texts: Texts
+}
 
-// const { texts } = Astro.props
+const { texts } = Astro.props
 ---
 
 <SectionContainer>
   <a href="/comunidad">
     <div class="grid grid-cols-1 mb-12 md:grid-cols-3 gap-x-2">
       <VerticalHero
-        title={texts.titleBanner1}
-        content={texts.contentBanner1}
+        title={texts.title_1}
+        content={texts.description_1}
         image={images.banner1}
         class="bg-raw_white dark:bg-black"
       />
 
       <VerticalHero
-        title={texts.titleBanner2}
-        content={texts.contentBanner2}
+        title={texts.title_2}
+        content={texts.description_2}
         image={images.banner2}
         class="bg-raw_white dark:bg-black"
       />
 
       <VerticalHero
-        title={texts.titleBanner3}
-        content={texts.contentBanner3}
+        title={texts.title_3}
+        content={texts.description_3}
         image={images.banner3}
         class="bg-raw_white dark:bg-black"
       />

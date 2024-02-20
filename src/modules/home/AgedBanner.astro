@@ -9,13 +9,6 @@ const images = {
   right: testImage.src,
 }
 
-const texts = {
-  title: 'Titulo',
-  ctaTopLeft: 'Comprá Todo 1',
-  ctaBottomLeft: 'Comprá Todo 2',
-  ctaRight: 'Comprá Todo 3',
-}
-
 interface Texts {
   title: string
   ctaTopLeft: string
@@ -23,11 +16,11 @@ interface Texts {
   ctaRight: string
 }
 
-// interface Props {
-//   texts: Texts
-// }
+interface Props {
+  texts: Texts
+}
 
-// const { texts } = Astro.props
+const { texts } = Astro.props
 ---
 
 <SectionContainer variant="darker">

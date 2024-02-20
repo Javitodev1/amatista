@@ -3,8 +3,8 @@
     "id": 1,
     "page": "home",
     "section": "hero",
-    "key": "title",
-    "value": "Vestimos cuerpos sagrados con prendas únicas."
+    "key": "content",
+    "value": "Vestimos cuerpos sagrados con <strong>prendas únicas</strong>"
   },
   {
     "id": 2,
@@ -80,7 +80,7 @@
     "id": 12,
     "page": "home",
     "section": "banner_comunidad",
-    "key": "content",
+    "key": "description",
     "value": "Nos unimos para crear una comunidad donde creamos juntas un mundo, tanto en su forma tangible como energética."
   },
   {
@@ -94,21 +94,21 @@
     "id": 14,
     "page": "home",
     "section": "banner_coleccion",
-    "key": "banner_1",
+    "key": "title_1",
     "value": "vestidos"
   },
   {
     "id": 15,
     "page": "home",
     "section": "banner_coleccion",
-    "key": "banner_2",
+    "key": "title_2",
     "value": "blusas y camisas"
   },
   {
     "id": 16,
     "page": "home",
     "section": "banner_coleccion",
-    "key": "banner_3",
+    "key": "title_3",
     "value": "tejidos"
   },
   {

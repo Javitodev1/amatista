@@ -5,21 +5,17 @@ const images = {
   bg2: '/images/pages/home/hero-bg-1.jpeg',
   bg3: '/images/pages/home/hero-bg-3.jpeg',
 }
-const texts = {
-  title: 'Vestimos cuerpos sagrados con prendas únicas.',
-  callToAction: 'Comprá Ahora',
-}
 
 interface Texts {
-  title: string
+  content: string
   cta: string
 }
 
-// interface Props {
-//   texts: Texts
-// }
+interface Props {
+  texts: Texts
+}
 
-// const { texts } = Astro.props
+const { texts } = Astro.props
 ---
 
 <section
@@ -44,13 +40,11 @@ interface Texts {
   ></span>
   <div class="relative z-0 max-w-2xl">
     <p
-      class="mb-12 text-5xl font-semibold leading-snug tracking-wide text-center capitalize text-raw_white"
-    >
-      Vestimos cuerpos sagrados con
-      <span class="text-amatista">prendas únicas</span>
-    </p>
+      class="mb-12 text-5xl font-semibold leading-snug tracking-wide text-center capitalize text-raw_white [&_strong]:text-amatista"
+      set:html={texts.content}
+    />
     <div class="flex justify-center">
-      <BuyButton dark={false}>{texts.callToAction}</BuyButton>
+      <BuyButton dark={false}>{texts.cta}</BuyButton>
     </div>
   </div>
 </section>

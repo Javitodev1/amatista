@@ -3,31 +3,31 @@ import SectionContainer from '@/components/SectionContainer.astro'
 import TextContainer from '@/components/TextContainer.astro'
 import testImage from '@public/images/products/1_1.webp'
 interface Texts {
-  banner_1: string
-  banner_2: string
-  banner_3: string
+  title_1: string
+  title_2: string
+  title_3: string
 }
 
-// interface Props {
-//   texts: Texts
-// }
+interface Props {
+  texts: Texts
+}
 
-// const { texts } = Astro.props
+const { texts } = Astro.props
 
 const banners = [
   {
     img: testImage.src,
-    text: 'vestidos',
+    text: texts.title_1,
     href: '/tienda/vestidos',
   },
   {
     img: testImage.src,
-    text: 'blusas y camisas',
+    text: texts.title_2,
     href: '/tienda/blusas',
   },
   {
     img: testImage.src,
-    text: 'tejidos',
+    text: texts.title_3,
     href: '/tienda',
   },
 ]

@@ -11,21 +11,18 @@ interface Texts {
   slogan: string
 }
 
-// interface Props {
-//   texts: Texts
-// }
+interface Props {
+  texts: Texts
+}
 
-// const { texts } = Astro.props
+const { texts } = Astro.props
 ---
 
 <SectionContainer variant="darker">
   <TextContainer class="text-center">
-    <h2>La Forma Más Simple de Comprar</h2>
-    <h3>Hemos simplificado el proceso de compra.</h3>
-    <p class="max-w-xl mx-auto">
-      Solo necesitas comunicarte con nosotros a través de WhatsApp o un mensaje
-      en Instagram para obtener tus prendas favoritas.
-    </p>
+    <h2>{texts.title}</h2>
+    <h3>{texts.subtitle}</h3>
+    <p class="max-w-xl mx-auto">{texts.description}</p>
   </TextContainer>
   <div class="flex justify-center mb-4 gap-x-12">
     <a
@@ -42,6 +39,6 @@ interface Texts {
     </a>
   </div>
   <TextContainer class="max-w-xl mx-auto text-center">
-    <h3>¡Sin complicaciones ni intermediarios! ¡Haz tu pedido hoy mismo!</h3>
+    <h3>{texts.slogan}</h3>
   </TextContainer>
 </SectionContainer>
