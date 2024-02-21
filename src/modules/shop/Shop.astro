@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import SectionContainer from '@/components/SectionContainer.astro'
-import ShopRC from '@/react-components/Shop'
+import ShopRC from '@/react/Shop'
 import products from '@/data/products.json'
 interface Props {
   initFilter?: string
@@ -19,3 +19,4 @@ const { initFilter = 'todo' } = Astro.props
     />
   </SectionContainer>
 </Layout>
+@/react/Shop

@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import Shop from '@/modules/shop/Shop.astro'
+import { ShopPage } from '@/modules'
 import filters from '@/data/filters.json'
 
 export const getStaticPaths = (() => {
@@ -11,4 +11,4 @@ const { filter } = Astro.params
 console.log(filter)
 ---
 
-<Shop initFilter={filter} />
+<ShopPage initFilter={filter} />

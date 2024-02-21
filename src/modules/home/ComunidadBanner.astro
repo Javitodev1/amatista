@@ -28,7 +28,7 @@ const { texts } = Astro.props
 
 <SectionContainer>
   <div
-    class="flex flex-col items-center justify-center md:items-center md:flex-row"
+    class="flex flex-col items-center justify-center md:items-center lg:flex-row"
   >
     <div>
       <TextContainer class="mb-12">
@@ -42,7 +42,7 @@ const { texts } = Astro.props
       </TextContainer>
       <BuyButton href="/comunidad">{texts.cta}</BuyButton>
     </div>
-    <div class="order-first hidden md:order-last md:block">
+    <div class="order-first hidden lg:order-last lg:block">
       <SpreadImages images={images} />
     </div>
   </div>

@@ -16,32 +16,32 @@ const { images, class: className } = Astro.props
 ---
 
 <div
-  class="flex items-center justify-center md:min-h-screen md:min-w-[600px]"
+  class="flex items-center justify-center lg:min-h-screen lg:min-w-[600px]"
   class:list={[className]}
 >
-  <div class="relative z-0 md:img-animation">
+  <div class="relative z-0 img-animation">
     <div
-      class="w-[250px] md:w-[300px] h-[500px] bg-center bg-cover bg-no-repeat opacity-100"
+      class="w-[250px] lg:w-[300px] h-[500px] bg-center bg-cover bg-no-repeat"
       style=`background-image: url(${images.center});`
     >
     </div>
     <div
-      class="absolute bg-center bg-cover bg-no-repeat -z-20 top-0 left-0 w-[150px] md:w-[200px] h-[300px]"
+      class="absolute bg-center bg-cover bg-no-repeat -z-20 top-0 left-0 w-[150px] lg:w-[200px] h-[300px]"
       style=`background-image: url(${images.leftTop});`
     >
     </div>
     <div
-      class="absolute bg-center bg-cover bg-no-repeat -z-10 bottom-0 left-0 w-[150px] md:w-[200px] h-[350px]"
+      class="absolute bg-center bg-cover bg-no-repeat -z-10 bottom-0 left-0 w-[150px] lg:w-[200px] h-[350px]"
       style=`background-image: url(${images.leftBottom});`
     >
     </div>
     <div
-      class="absolute bg-center bg-cover bg-no-repeat -z-10 top-0 right-0 w-[100px] md:w-[150px] h-[200px]"
+      class="absolute bg-center bg-cover bg-no-repeat -z-10 top-0 right-0 w-[100px] lg:w-[150px] h-[200px]"
       style=`background-image: url(${images.rightTop});`
     >
     </div>
     <div
-      class="absolute bg-center bg-cover bg-no-repeat -z-10 bottom-0 right-0 w-[125px] md:w-[175px] h-[275px]"
+      class="absolute bg-center bg-cover bg-no-repeat -z-10 bottom-0 right-0 w-[125px] lg:w-[175px] h-[275px]"
       style=`background-image: url(${images.rightBottom});`
     >
     </div>
