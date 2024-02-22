@@ -30,7 +30,10 @@ const PAGE = 'home'
 const sections = fetchSections(PAGE) satisfies HomeSections
 ---
 
-<Layout title="Amatista - Indumentaria - Second hand shop">
+<Layout 
+  title="Amatista - Tienda online de ropa de segunda mano envíos a todo Uruguay" 
+  description='Nuestros productos second hand nos ayudan a lograr el propósito de vestir cuerpos sagrados con prendas únicas, logrando re circular la moda y fomentando un consumo mas amigable y sostenible con el planeta, Alargamos el ciclo de prendas únicas y sustentables  como blusas, camisas, pantalones, vestidos, abrigos, poleras y accesorios, a precios increíbles. enviamos a Maldonado, Montevideo, canelones, rocha y todo uruguay. '
+  >
   <Hero texts={sections.hero} />
   <NewArrival texts={sections.recien_llegados} />
   <HowToBuyBanner texts={sections.como_comprar} />
