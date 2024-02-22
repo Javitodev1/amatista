@@ -39,24 +39,17 @@
     "page": "home",
     "section": "como_comprar",
     "key": "subtitle",
-    "value": "Hemos simplificado el proceso de compra."
+    "value": "Hemos simplificado el proceso de compra"
   },
   {
     "id": 7,
     "page": "home",
     "section": "como_comprar",
     "key": "description",
-    "value": "Solo necesitas comunicarte con nosotros a través de WhatsApp o un mensaje en Instagram para obtener tus prendas favoritas."
+    "value": "Solo necesitas comunicarte con nosotros a través de WhatsApp o un mensaje en Instagram para obtener tus prendas favoritas"
   },
   {
     "id": 8,
-    "page": "home",
-    "section": "como_comprar",
-    "key": "slogan",
-    "value": "¡Sin complicaciones ni intermediarios! ¡Haz tu pedido hoy mismo!"
-  },
-  {
-    "id": 9,
     "page": "home",
     "section": "como_comprar",
     "key": "slogan",
