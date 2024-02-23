@@ -1,4 +1,5 @@
-import websiteTexts from '@/data/texts.json'
+// import websiteTexts from '@/data/texts.json'
+import apiQuery from '@/utils/apiQuery'
 
 interface PageText {
   id: number
@@ -8,13 +9,23 @@ interface PageText {
   value: string
 }
 
-function fetchTexts(): PageText[] {
-  return websiteTexts
+function fetchTexts() {
+  return apiQuery(`{
+    textos(first:32) {
+      key
+      page
+      value
+      section
+      id
+    }
+  }
+  `)
 }
 
-export function fetchSections(targetPage: string) {
-  const pageContent = fetchTexts().filter(({ page }) => page === targetPage)
-  return pageContent.reduce((acc: any, el: PageText) => {
+export function reduceSections(targetPage:string, data:PageText[]) {
+  return data
+  .filter(({ page }) => page === targetPage)
+  .reduce((acc: any, el: PageText) => {
     const { section, key, value } = el
     if (!acc[section]) {
       acc[section] = {}
@@ -22,4 +33,8 @@ export function fetchSections(targetPage: string) {
     acc[section][key] = value
     return acc
   }, {})
+}
+
+export function fetchSections() {
+  return fetchTexts()
 }

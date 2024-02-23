@@ -12,7 +12,8 @@ import ContactBanner from './ContactBanner.astro'
 import HowToBuyBanner from './HowToBuyBanner.astro'
 import Separator from '@/components/Separator.astro'
 
-import { fetchSections } from '@/libs/section.tsx'
+import { fetchSections, reduceSections } from '@/libs/section.tsx'
+import textsJSON from "@/data/texts.json"
 
 interface HomeSections {
   hero: { [key: string]: string }
@@ -27,12 +28,20 @@ interface HomeSections {
 }
 
 const PAGE = 'home'
-const sections = fetchSections(PAGE) satisfies HomeSections
+let json = null
+try {
+  const response = await fetchSections()
+  json = await response.json()
+} catch {
+  console.log('Unexpected error on fetched textos from hygraph')
+}
+const data = !json ? textsJSON : json.data.textos
+const sections = reduceSections(PAGE, data) satisfies HomeSections
 ---
 
 <Layout 
-  title="Amatista - Tienda online de ropa de segunda mano envíos a todo Uruguay" 
-  description='Nuestros productos second hand nos ayudan a lograr el propósito de vestir cuerpos sagrados con prendas únicas, logrando re circular la moda y fomentando un consumo mas amigable y sostenible con el planeta, Alargamos el ciclo de prendas únicas y sustentables  como blusas, camisas, pantalones, vestidos, abrigos, poleras y accesorios, a precios increíbles. enviamos a Maldonado, Montevideo, canelones, rocha y todo uruguay. '
+  title="Amatista Comunidad - Tienda online de ropa de segunda mano envíos a todo Uruguay" 
+  description='En amatista comunidad nuestros productos second hand nos ayudan a lograr el propósito de vestir cuerpos sagrados con prendas únicas, logrando re circular la moda y fomentando un consumo mas amigable y sostenible con el planeta, Alargamos el ciclo de prendas únicas y sustentables  como blusas, camisas, pantalones, vestidos, abrigos, poleras y accesorios, a precios increíbles. enviamos a Maldonado, Montevideo, canelones, rocha y todo uruguay. '
   >
   <Hero texts={sections.hero} />
   <NewArrival texts={sections.recien_llegados} />
