@@ -1,59 +1,52 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Whatsapp from '@/components/Whatsapp.astro'
-import BuyButton from '@/components/BuyButton.astro'
-import TextContainer from '@/components/TextContainer.astro'
-import SoldOutBadge from '@/components/SoldOutBadge.astro'
-import formatCurreny from '@/utils/currency'
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Whatsapp from "@/components/Whatsapp.astro";
+import BuyButton from "@/components/BuyButton.astro";
+import TextContainer from "@/components/TextContainer.astro";
+import SoldOutBadge from "@/components/SoldOutBadge.astro";
+import formatCurreny from "@/utils/currency";
 
 const product = {
   id: 1,
-  title: 'SACO NIEVE',
-  description: 'SACO DE HILO, COLOR BLANCO CON PEQUEÑOS BRILLOS ',
+  title: "SACO NIEVE",
+  description: "SACO DE HILO, COLOR BLANCO CON PEQUEÑOS BRILLOS ",
   price: 290,
-  frontImage: '/images/products/1_1.webp',
-  backImage: '/images/products/1_2.webp',
-  largeFrontImage: '/images/products/1_1.webp',
-  largeBackImage: '/images/products/1_1.webp',
-  stock: 1,
-  tag: 'BUZOS & SACOS',
-  size: 'M',
-}
+  frontImage: "/images/products/1_1.webp",
+  backImage: "/images/products/1_2.webp",
+  largeFrontImage: "/images/products/1_1.webp",
+  largeBackImage: "/images/products/1_1.webp",
+  stock: 0,
+  tag: "BUZOS & SACOS",
+  size: "M",
+};
 
-const isSoldOut = product.stock < 1
+const isSoldOut = product.stock < 1;
 ---
 
-<Layout title="">
-  <section class="min-h-screen bg-raw_white py-12">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-3">
-        <div>
-          <img
-            src={product.frontImage}
-            alt={product.title}
-          />
-        </div>
-        <div>
-          <img
-            src={product.backImage}
-            alt={product.title}
-          />
-        </div>
-        <div class="p-12">
-          <TextContainer class="mb-12">
-            <h2>{product.title}</h2>
-            <h3>
-              {product.tag}
-            </h3>
-            <p>{product.description}</p>
-            <p>Talla: {product.size}</p>
-            <p>Precio: {formatCurreny(product.price)}</p>
-            <SoldOutBadge isSoldOut={isSoldOut} />
-          </TextContainer>
-          <BuyButton href="/contacto">Contactanos</BuyButton>
-        </div>
+<Layout>
+  <SectionContainer>
+    <div class="grid md:grid-cols-3 grid-cols-1">
+      <div class="md:order-1 order-2">
+        <img src={product.frontImage} alt={product.title} />
+      </div>
+      <div class="md:order-2 order-3">
+        <img src={product.backImage} alt={product.title} />
+      </div>
+      <div class="md:p-12 px-6 mb-12 md:mb-0 md:order-3 order-1">
+        <TextContainer class="mb-12">
+          <h2>{product.title}</h2>
+          <h3>
+            {product.tag}
+          </h3>
+          <p>{product.description}</p>
+          <p>Talla: {product.size}</p>
+          <p>Precio: {formatCurreny(product.price)}</p>
+          <SoldOutBadge isSoldOut={isSoldOut} />
+        </TextContainer>
+        <BuyButton href="/contacto">Contactanos</BuyButton>
       </div>
     </div>
-  </section>
+  </SectionContainer>
   <Whatsapp />
 </Layout>

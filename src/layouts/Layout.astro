@@ -1,48 +1,35 @@
 ---
-import '@fontsource-variable/lora'
-import '@fontsource/roboto'
-import { ViewTransitions } from 'astro:transitions'
-import Header from './partials/Header.astro'
-import Footer from './partials/Footer.astro'
+import "@fontsource-variable/lora";
+import "@fontsource/roboto";
+import { ViewTransitions } from "astro:transitions";
+import Header from "./partials/Header.astro";
+import Footer from "./partials/Footer.astro";
 interface Props {
-  title: string
-  description?: string
+  title?: string;
+  description?: string;
 }
 
-const { title, description='amatista' } = Astro.props
+const {
+  title = "Amatista Comunidad - Tienda online de ropa de segunda mano envíos a todo Uruguay",
+  description = "En amatista comunidad nuestros productos second hand nos ayudan a lograr el propósito de vestir cuerpos sagrados con prendas únicas, logrando re circular la moda y fomentando un consumo mas amigable y sostenible con el planeta, Alargamos el ciclo de prendas únicas y sustentables  como blusas, camisas, pantalones, vestidos, abrigos, poleras y accesorios, a precios increíbles. enviamos a Maldonado, Montevideo, canelones, rocha y todo uruguay.",
+} = Astro.props;
 ---
 
-<!doctype html>
-<html
-  lang="en"
-  class="font-lora"
->
+<!DOCTYPE html>
+<html lang="en" class="font-lora">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content={description}
-    />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
-    />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body>
     <Header />
     <main>
-      <slot />
+      <slot></slot>
     </main>
     <Footer />
   </body>
