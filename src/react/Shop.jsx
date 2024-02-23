@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import FilterButton from './FilterButton'
 import ProductCard from './ProductCard'
 import filters from '@/data/filters.json'
@@ -23,7 +22,7 @@ export default function Shop({ data, initFilter }) {
         </div>
       </div>
       <hr className="h-1 my-4 bg-gray-500 rounded-full opacity-20" />
-      <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
         {fetchUsers(initFilter, data).map((product, i) => (
           <ProductCard
             {...product}
