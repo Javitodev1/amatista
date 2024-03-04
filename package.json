@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.2",
+    "@astrojs/netlify": "^5.1.3",
     "astro-boilerplate-components": "^1.0.16",
     "date-fns": "^2.30.0",
     "flowbite": "^2.3.0",

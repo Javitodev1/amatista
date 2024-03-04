@@ -1,19 +1,39 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import Whatsapp from '@/components/Whatsapp.astro'
-import Hero from './Hero.astro'
-import NewArrival from './NewArrival.astro'
-import ComunidadBanner from './ComunidadBanner.astro'
-import CollectionBanner from './CollectionBanner.astro'
-import AgedBanner from './AgedBanner.astro'
-import HealingKit from './HealingKit.astro'
-import SubscribeBanner from './SubscribeBanner.astro'
-import ContactBanner from './ContactBanner.astro'
-import HowToBuyBanner from './HowToBuyBanner.astro'
-import Separator from '@/components/Separator.astro'
+import Layout from "@/layouts/Layout.astro"
+import Whatsapp from "@/components/Whatsapp.astro"
+import Hero from "./Hero.astro"
+import NewArrival from "./NewArrival.astro"
+import ComunidadBanner from "./ComunidadBanner.astro"
+import CollectionBanner from "./CollectionBanner.astro"
+import AgedBanner from "./AgedBanner.astro"
+import HealingKit from "./HealingKit.astro"
+import SubscribeBanner from "./SubscribeBanner.astro"
+import ContactBanner from "./ContactBanner.astro"
+import HowToBuyBanner from "./HowToBuyBanner.astro"
+import Separator from "@/components/Separator.astro"
 
-import { reduceSections } from '@/libs/section.tsx'
 import textsJSON from "@/data/texts.json"
+
+interface PageText {
+  id: number
+  page: string
+  section: string
+  key: string
+  value: string
+}
+
+function reduceSections(targetPage: string, data: PageText[]) {
+  return data
+    .filter(({ page }) => page === targetPage)
+    .reduce((acc: any, el: PageText) => {
+      const { section, key, value } = el
+      if (!acc[section]) {
+        acc[section] = {}
+      }
+      acc[section][key] = value
+      return acc
+    }, {})
+}
 
 interface HomeSections {
   hero: { [key: string]: string }
@@ -27,7 +47,7 @@ interface HomeSections {
   banner_contacto: { [key: string]: string }
 }
 
-const PAGE = 'home'
+const PAGE = "home"
 const sections = reduceSections(PAGE, textsJSON) satisfies HomeSections
 ---
 
@@ -41,19 +61,12 @@ const sections = reduceSections(PAGE, textsJSON) satisfies HomeSections
   <ComunidadBanner texts={sections.banner_comunidad} />
   <CollectionBanner texts={sections.banner_coleccion} />
 
-  <Separator
-    reverseColors={true}
-    direction="right"
-    variant="H3"
-  />
+  <Separator reverseColors={true} direction="right" variant="H3" />
 
   <AgedBanner texts={sections.banner_aged} />
   <HealingKit texts={sections.kit_sanacion} />
 
-  <Separator
-    direction="left"
-    variant="H2"
-  />
+  <Separator direction="left" variant="H2" />
 
   <SubscribeBanner texts={sections.banner_suscribite} />
   <ContactBanner texts={sections.banner_contacto} />
