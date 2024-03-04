@@ -1,21 +1,11 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import SectionContainer from '@/components/SectionContainer.astro'
-import ShopRC from '@/react/Shop'
-import products from '@/data/products.json'
-interface Props {
-  initFilter?: string
-}
-
-const { initFilter = 'todo' } = Astro.props
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import ShopRC from "@/react/Shop.tsx"
 ---
 
 <Layout>
   <SectionContainer>
-    <ShopRC
-      data={products}
-      initFilter={initFilter}
-      client:load
-    />
+    <ShopRC client:load />
   </SectionContainer>
 </Layout>

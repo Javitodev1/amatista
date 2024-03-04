@@ -12,7 +12,7 @@ import ContactBanner from './ContactBanner.astro'
 import HowToBuyBanner from './HowToBuyBanner.astro'
 import Separator from '@/components/Separator.astro'
 
-import { fetchSections, reduceSections } from '@/libs/section.tsx'
+import { reduceSections } from '@/libs/section.tsx'
 import textsJSON from "@/data/texts.json"
 
 interface HomeSections {
@@ -28,15 +28,7 @@ interface HomeSections {
 }
 
 const PAGE = 'home'
-let json = null
-try {
-  const response = await fetchSections()
-  json = await response.json()
-} catch {
-  console.log('Unexpected error on fetched textos from hygraph')
-}
-const data = !json ? textsJSON : json.data.textos
-const sections = reduceSections(PAGE, data) satisfies HomeSections
+const sections = reduceSections(PAGE, textsJSON) satisfies HomeSections
 ---
 
 <Layout>

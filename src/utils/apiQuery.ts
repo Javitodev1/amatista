@@ -1,7 +1,12 @@
 export default function apiQuery(query: string) {
-  return fetch(import.meta.env.HYGRAPH_ENDPOINT, {
-    method:"POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({query:query})
-  })
+  const config = {
+    method: "POST",
+    headers: { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({ query: query }),
+  };
+  const { HYGRAPH_ENDPOINT } = import.meta.env;
+  return fetch(HYGRAPH_ENDPOINT, config);
 }

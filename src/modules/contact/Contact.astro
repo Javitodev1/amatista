@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro'
 import SectionContainer from '@/components/SectionContainer.astro'
 import TextContainer from '@/components/TextContainer.astro'
+import Whatsapp from '@/components/Whatsapp.astro'
 ---
 
 <Layout>
@@ -33,7 +34,7 @@ import TextContainer from '@/components/TextContainer.astro'
           type="tel"
           name="phone"
           id="form-phone"
-          placeholder="Numero"
+          placeholder="Celular"
           class="w-full col-span-2 p-2 rounded-md outline-none focus:border-amatista dark:bg-gray-200"
         />
         <textarea
@@ -42,6 +43,7 @@ import TextContainer from '@/components/TextContainer.astro'
           cols="30"
           rows="10"
           placeholder="Mensaje"
+          set:text="Hola, me comunico con amatista porque tengo interés de vender mis prendas en su tienda."
           class="w-full col-span-2 p-2 rounded-md outline-none focus:border-amatista dark:bg-gray-200"
         ></textarea>
         <input
@@ -52,4 +54,5 @@ import TextContainer from '@/components/TextContainer.astro'
       </form>
     </div>
   </SectionContainer>
+  <Whatsapp text='Hola, me comunico con amatista porque tengo interés de vender mis prendas en su tienda.'/>
 </Layout>

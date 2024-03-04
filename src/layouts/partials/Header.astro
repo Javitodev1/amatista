@@ -1,19 +1,28 @@
 ---
-import DarkModeSwitcher from '@/components/DarkModeSwitcher.astro'
-import Logo from '@/icons/Logo.astro'
+import DarkModeSwitcher from "@/components/DarkModeSwitcher.astro";
+import Logo from "@/icons/Logo.astro";
+
+const links = [
+  { href: "/", title: "Inicio" },
+  { href: "/tienda", title: "Tienda" },
+  { href: "/nosotras", title: "Nosotras" },
+  { href: "/comunidad", title: "Comunidad" },
+  { href: "/contacto", title: "Vendé tu ropa" },
+];
 ---
 
-<header>
-  <div class="w-full py-1 bg-raw_white dark:bg-black">
-    <h2 class="font-semibold text-center text-black dark:text-raw_white">
-      Envíos a todo Uruguay
-    </h2>
-  </div>
-  <nav class="bg-raw_white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-black">
+<div class="w-full py-1 bg-raw_white dark:bg-black">
+  <h2 class="font-semibold text-center text-black dark:text-raw_white">
+    Envíos a todo Uruguay
+  </h2>
+</div>
+
+<header class="bg-raw_white dark:bg-black py-2">
+  <nav class=" px-4 lg:px-6 py-2.5 ">
     <div
       class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto"
     >
-      <Logo class='w-60' />
+      <Logo class="w-60" />
       <div class="flex items-center lg:order-2">
         <DarkModeSwitcher />
         <button
@@ -30,9 +39,8 @@ import Logo from '@/icons/Logo.astro'
             ><path
               fill-rule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
-            ></path></svg
-          >
+              clip-rule="evenodd"></path>
+          </svg>
         </button>
       </div>
       <div
@@ -42,42 +50,17 @@ import Logo from '@/icons/Logo.astro'
         <ul
           class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
         >
-          <li>
-            <a
-              href="/"
-              class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-amatista lg:p-0 dark:text-gray-400 lg:dark:hover:text-raw_white dark:hover:bg-gray-700 dark:hover:text-raw_white lg:dark:hover:bg-transparent dark:border-gray-700"
-              aria-current="page"
-              >Inicio</a
-            >
-          </li>
-          <li>
-            <a
-              href="/tienda/todo"
-              class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-amatista lg:p-0 dark:text-gray-400 lg:dark:hover:text-raw_white dark:hover:bg-gray-700 dark:hover:text-raw_white lg:dark:hover:bg-transparent dark:border-gray-700"
-              >Tienda</a
-            >
-          </li>
-          <li>
-            <a
-              href="/nosotras"
-              class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-amatista lg:p-0 dark:text-gray-400 lg:dark:hover:text-raw_white dark:hover:bg-gray-700 dark:hover:text-raw_white lg:dark:hover:bg-transparent dark:border-gray-700"
-              >Nosotras</a
-            >
-          </li>
-          <li>
-            <a
-              href="/comunidad"
-              class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-amatista lg:p-0 dark:text-gray-400 lg:dark:hover:text-raw_white dark:hover:bg-gray-700 dark:hover:text-raw_white lg:dark:hover:bg-transparent dark:border-gray-700"
-              >Comunidad</a
-            >
-          </li>
-          <li>
-            <a
-              href="/contacto"
-              class="block py-2 pl-3 pr-4 text-gray-700 capitalize border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-amatista lg:p-0 dark:text-gray-400 lg:dark:hover:text-raw_white dark:hover:bg-gray-700 dark:hover:text-raw_white lg:dark:hover:bg-transparent dark:border-gray-700"
-              >Vendé tu ropa</a
-            >
-          </li>
+          {links.map(({ href, title }) => (
+            <li>
+              <a
+                href={href}
+                class="block pl-2 lg:pl-0 py-2 lg:py-0 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-amatista lg:p-0 dark:text-gray-400 lg:dark:hover:text-raw_white dark:hover:bg-gray-700 dark:hover:text-raw_white lg:dark:hover:bg-transparent dark:border-gray-700"
+                aria-current="page"
+              >
+                {title}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -86,11 +69,11 @@ import Logo from '@/icons/Logo.astro'
 
 <script>
   const mobileButtonHandleClick = () => {
-    const menu = document.querySelector('#mobile-menu')!
-    menu.classList.toggle('hidden')
-  }
-  document.addEventListener('astro:page-load', () => {
-    const button = document.querySelector('#mobile-button')!
-    button.addEventListener('click', mobileButtonHandleClick)
-  })
+    const menu = document.querySelector("#mobile-menu")!;
+    menu.classList.toggle("hidden");
+  };
+  document.addEventListener("astro:page-load", () => {
+    const button = document.querySelector("#mobile-button")!;
+    button.addEventListener("click", mobileButtonHandleClick);
+  });
 </script>

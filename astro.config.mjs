@@ -24,4 +24,5 @@ export default defineConfig({
     robotsTxt(),
     astroImageTools,
   ],
+  output: "hybrid",
 });

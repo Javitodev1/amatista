@@ -1,4 +1,4 @@
 /// <reference types="astro/client" />
 interface ImportMetaEnv {
-  readonly HYGRAPH_ENDPOINT: string;
+  readonly PUBLIC_HYGRAPH_ENDPOINT: string;
 }
