@@ -18,6 +18,9 @@
     "@astropub/icons": "^0.2.0",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
+    "@fontsource-variable/lora": "5.0.9",
+    "@fontsource/montez": "5.0.18",
+    "@fontsource/roboto": "^5.0.8",
     "@jridgewell/sourcemap-codec": "^1.4.15",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.10",
@@ -45,10 +48,7 @@
     "prettier": "^2.6.2",
     "prettier-plugin-astro": "0.1.0-next.5",
     "rimraf": "^5.0.5",
-    "tailwindcss": "^3.3.6",
-    "@fontsource-variable/lora": "5.0.9",
-    "@fontsource/montez": "5.0.18",
-    "@fontsource/roboto": "^5.0.8"
+    "tailwindcss": "^3.3.6"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.2",

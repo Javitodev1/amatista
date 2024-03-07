@@ -7,27 +7,30 @@ import TextContainer from "@/components/TextContainer.astro"
 import SoldOutBadge from "@/components/SoldOutBadge.astro"
 import formatCurreny from "@/utils/currency"
 
-import { fetchProductById } from "@/libs/hygraph"
-
-interface Props {
-  id: string | undefined
+const product = {
+    "id": "clt60li4u0bed07k8030839vh",
+    "price": 290,
+    "size": "M",
+    "stock": 1,
+    "tag": [
+        "Abrigos",
+        "Gangas",
+        "Tejido_Artesanal"
+    ],
+    "title": "SACO NIEVE",
+    "backImg": {
+        "url": "https://media.graphassets.com/L0msDworRWKHg8ImAUxn"
+    },
+    "frontImg": {
+        "url": "https://media.graphassets.com/vdi4jwcQ8GpwKoTmubZQ"
+    },
+    "description": "SACO DE HILO, COLOR BLANCO CON PEQUEÑOS BRILLOS "
 }
 
-const { id } = Astro.props
-let error = false
-
-const data = id ? await fetchProductById(id) : undefined
-if (!data) error = true
-const product = data?.producto
 ---
 
 <Layout>
   <SectionContainer>
-    {error && (
-      <p>
-        Error al conectar con la base de datos, por favor intentar más tarde.
-      </p>
-    )}
     {product && (
       <div class="grid md:grid-cols-3 grid-cols-1">
         <div class="md:order-1 order-2">

@@ -1,0 +1,17 @@
+---
+export const prerender = false
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import TextContainer from "@/components/TextContainer.astro"
+import ProductPage from "@/react/ProductPage"
+const { id } = Astro.params
+const { href } = Astro.url
+---
+
+<Layout>
+  <SectionContainer>
+    <TextContainer>
+      <ProductPage client:load productID={id} productURL={href} />
+    </TextContainer>
+  </SectionContainer>
+</Layout>

@@ -6,4 +6,5 @@ export const c = noop;
 export const i = noop;
 export const l = noop;
 export const n = noop;
+export const p = noop;
 export const t = noop;

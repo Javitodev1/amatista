@@ -99,7 +99,7 @@ export async function fetchProductById(id: string): Promise<{
   return hygraphQuery({
     query: `
     {
-      producto(where: {id: ${id}}) {
+      producto(where: {id: "${id}"}) {
         id
         price
         size

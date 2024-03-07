@@ -1,0 +1,37 @@
+---
+import BuyButton from "@/components/BuyButton.astro"
+import ImageTransition from "@/components/ImageTransition.astro"
+
+const items = [
+  {
+    imageUrl: "/images/pages/home/hero-bg-1.jpeg",
+    text: "NOS VESTIMOS CON CONCIENCIA Y PROPÓSITO",
+  },
+  {
+    imageUrl: "/images/pages/home/hero-bg-2.jpeg",
+    text: "SUSTENTABILIDAD EN CADA ELECCIÓN",
+  },
+  {
+    imageUrl: "/images/pages/home/hero-bg-3.jpeg",
+    text: "TU COMPRA, TU CONTRIBUCIÓN A LA MADRE TIERRA",
+  },
+]
+
+interface Texts {
+  content: string
+  cta: string
+}
+
+interface Props {
+  texts: Texts
+}
+
+const { texts } = Astro.props
+---
+
+<section class="bg-black relative z-0">
+  <ImageTransition items={items} />
+  <div class="absolute bottom-1/4 left-1/2 -translate-x-1/2">
+    <BuyButton dark={false}>{texts.cta}</BuyButton>
+  </div>
+</section>
