@@ -9,8 +9,7 @@ interface Props {
   items?: ImageItem[]
 }
 
-const { class: className, items=[] } = Astro.props
-
+const { class: className, items = [] } = Astro.props
 ---
 
 <div
@@ -28,9 +27,10 @@ const { class: className, items=[] } = Astro.props
         </div>
         <span class="absolute left-0 top-0 h-full w-full bg-slate-950/40" />
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <h2 class="text-center text-5xl font-bold uppercase text-white">
-            {text}
-          </h2>
+          <h2
+            class="text-center text-5xl font-bold uppercase text-white [&_strong]:text-amatista"
+            set:html={text}
+          />
         </div>
       </div>
     ))}

@@ -17,7 +17,6 @@ export default class ProductPage extends Component<IProps, IState> {
     this.state = {
       product: undefined,
     }
-    console.log(this.props.productURL)
   }
 
   componentDidMount(): void {
@@ -37,17 +36,53 @@ export default class ProductPage extends Component<IProps, IState> {
     const isSoldOut = product.stock < 1
     const content = isSoldOut ? "agotado" : "disponible"
     const classBadgeBg = isSoldOut ? "bg-black" : "bg-amatista"
-    const hrefWsp = `https://api.whatsapp.com/send?phone=59896667633&text=${productURL}`
+    const hrefWsp = `https://api.whatsapp.com/send?phone=59896667633&text=Quiero este producto: ${productURL}`
+    const images = [
+      {
+        src: product.frontImg.url,
+        alt: product.title,
+        id: "1",
+      },
+      {
+        src: product.backImg.url,
+        alt: product.title,
+        id: "2",
+      },
+      {
+        src: product.frontImg.url,
+        alt: product.title,
+        id: "3",
+      },
+    ]
     return (
-      <div>
+      <div className="">
         <div className="grid md:grid-cols-3 grid-cols-1">
-          <div className="md:order-1 order-2">
-            <img src={product.frontImg.url} alt={product.title} />
+          <div className="relative overflow-y-hidden col-span-2">
+            <div
+              style={{ scrollbarWidth: "none" }}
+              className="max-h-[650px] flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
+            >
+              {images.map(({ src, alt, id }) => (
+                <img
+                  className="aspect-square shrink-0 grow basis-full snap-start object-cover"
+                  id={id}
+                  src={src}
+                  alt={alt}
+                  decoding="async"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+            <div className="md:flex hidden mt-4 justify-center gap-8">
+              {images.map(({ id }) => (
+                <a
+                  href={`#${id}`}
+                  className="aspect-square h-12 rounded-full bg-raw_white duration-200 hover:bg-amatista"
+                />
+              ))}
+            </div>
           </div>
-          <div className="md:order-2 order-3">
-            <img src={product.backImg.url} alt={product.title} />
-          </div>
-          <div className="md:p-12 px-6 mb-12 md:mb-0 md:order-3 order-1">
+          <div className="md:p-12 px-6 mb-12 md:mb-0 md:order-last order-first">
             <h2>{product.title}</h2>
             <h3>{product.tag}</h3>
             <p>{product.description}</p>
@@ -58,7 +93,11 @@ export default class ProductPage extends Component<IProps, IState> {
             >
               {content}
             </span>
-            <a href={hrefWsp} className=" bg-green-500 mt-12  block py-4 px-6 rounded-full hover:bg-green-400 duration-200 shadow-black/20 shadow">
+            <a
+              href={hrefWsp}
+              target="_blank"
+              className=" bg-green-500 mt-12  block py-4 px-6 rounded-full hover:bg-green-400 duration-200 shadow-black/20 shadow"
+            >
               <div className="flex justify-center items-center gap-4">
                 <h4 className="text-3xl text-white">LO QUIERO!</h4>
                 <svg
