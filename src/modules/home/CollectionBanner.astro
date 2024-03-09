@@ -1,7 +1,11 @@
 ---
 import SectionContainer from '@/components/SectionContainer.astro'
 import TextContainer from '@/components/TextContainer.astro'
-import testImage from '@public/images/products/1_1.webp'
+
+import leftImage from "@public/optimized/home_categories_1.webp"
+import centerImage from "@public/optimized/home_categories_2.webp"
+import rightImage from "@public/optimized/home_categories_3.webp"
+
 interface Texts {
   title_1: string
   title_2: string
@@ -16,17 +20,17 @@ const { texts } = Astro.props
 
 const banners = [
   {
-    img: testImage.src,
+    img: leftImage.src,
     text: texts.title_1,
     href: '/tienda/vestidos',
   },
   {
-    img: testImage.src,
+    img: centerImage.src,
     text: texts.title_2,
     href: '/tienda/blusas',
   },
   {
-    img: testImage.src,
+    img: rightImage.src,
     text: texts.title_3,
     href: '/tienda',
   },

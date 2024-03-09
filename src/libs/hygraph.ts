@@ -54,7 +54,9 @@ export async function hygraphQuery({
     fetch(HYGRAPH_ENDPOINT, config)
       .then((response) => {
         if (!response.ok)
-          reject(`Error on fetching to Hygraph, Status: ${response.statusText}`)
+          reject(
+            "Error al comunicarse con el servidor, porfavor intente mas tárde."
+          )
         return response.json()
       })
       .then((json) => json.data)

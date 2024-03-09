@@ -1,15 +1,21 @@
 ---
-import TextContainer from '@/components/TextContainer.astro'
-import SectionContainer from '@/components/SectionContainer.astro'
-import BuyButton from '@/components/BuyButton.astro'
-import SpreadImages from '@/components/SpreadImages.astro'
-import testImage from '@public/images/products/1_1.webp'
+import TextContainer from "@/components/TextContainer.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import BuyButton from "@/components/BuyButton.astro"
+import SpreadImages from "@/components/SpreadImages.astro"
+
+import centerImage from "@public/optimized/home_comunidad_5.webp"
+import leftTopImage from "@public/optimized/home_comunidad_4.webp"
+import rightBottomImage from "@public/optimized/home_comunidad_3.webp"
+import rightTopImage from "@public/optimized/home_comunidad_2.webp"
+import leftBottomImage from "@public/optimized/home_comunidad_1.webp"
+
 const images = {
-  center: testImage.src,
-  leftTop: testImage.src,
-  leftBottom: testImage.src,
-  rightTop: testImage.src,
-  rightBottom: testImage.src,
+  center: centerImage.src,
+  leftTop: leftTopImage.src,
+  leftBottom: leftBottomImage.src,
+  rightTop: rightTopImage.src,
+  rightBottom: rightBottomImage.src,
 }
 
 interface Texts {

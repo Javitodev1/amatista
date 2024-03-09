@@ -1,5 +1,5 @@
-import { ProductList } from "./ProductList"
-import { FilterList } from "./FilterList"
+import { ProductList } from "../ShopPage/ProductList"
+import { FilterList } from "../ShopPage/FilterList"
 import { Component, type ReactNode } from "react"
 import { ProductTag, type Product } from "@/types/product"
 import { fetchProducts } from "@/libs/hygraph"

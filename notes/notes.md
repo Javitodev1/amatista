@@ -4,8 +4,9 @@ TODO:
 - [] cambiar aged banner href to filtro de tallas
 - [] Agregar una pagina de como activar tu kit de sanacion y añadir enlace en la seccion home/como-activar-tu-kit-de-sanacion
 - [] Cambiar fotos del drive en la pagina
-- [] Agregar un carrusel en la pagina de productos
 - [] cambiar fotos del hero por las del cliente
+- [] realizar estos cambios https://suads.my.canva.site/beige-dorado-marr-n-c-lido-neutro-moderno-minimalista-fotograf-a-sitio-web-para-portfolio
+- [✅] Agregar un carrusel en la pagina de productos
 - [✅] Cambiar las frases que selecciono el cliente.
 - [✅] agregar en el banner, la forma mas simple de comprar, icono de tiktok y facebook  
 - [✅] Agregar transiciones de frases en el hero de home

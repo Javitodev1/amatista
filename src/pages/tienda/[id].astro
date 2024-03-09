@@ -3,7 +3,7 @@ export const prerender = false
 import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
-import ProductPage from "@/react/ProductPage"
+import { ProductPage } from "@/react"
 const { id } = Astro.params
 const { href } = Astro.url
 ---

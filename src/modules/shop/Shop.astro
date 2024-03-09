@@ -1,11 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
-import ShopRC from "@/react/Shop.tsx"
+import { ShopPage } from "@/react"
 ---
 
 <Layout>
   <SectionContainer>
-    <ShopRC client:load />
+    <ShopPage client:load />
   </SectionContainer>
 </Layout>
