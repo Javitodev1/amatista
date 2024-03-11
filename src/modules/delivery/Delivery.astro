@@ -1,0 +1,137 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import TextContainer from "@/components/TextContainer.astro"
+import BuyButton from "@/components/BuyButton.astro"
+import Separator from "@/components/Separator.astro"
+
+import sectionImage1 from "@public/optimized/envios_sec_1.webp"
+import sectionImage2 from "@public/optimized/envios_sec_4.webp"
+import sectionImage3 from "@public/optimized/envios_sec_5.webp"
+import sectionImage4 from "@public/optimized/envios_sec_3.webp"
+import sectionImage5 from "@public/optimized/envios_sec_2.webp"
+import sectionHero from "@public/optimized/envios_hero.webp"
+---
+
+<Layout>
+  <SectionContainer variant="darker">
+    <div class="grid grid-cols-2">
+      <div>
+        <div
+          style={`background-image: url(${sectionImage1.src});`}
+          class="w-full aspect-square bg-cover bg-center bg-no-repeat"
+        >
+        </div>
+      </div>
+      <div class="py-4 px-12">
+        <TextContainer class="mb-20">
+          <h2>ASÍ EMPAQUETAMOS NUESTROS PEDIDOS SIN PLÁSTICO</h2>
+          <p>
+            A la hora de eligir los materiales se nos presentaron muchos
+            desafíos.
+          </p>
+          <p>
+            ¿Con que podíamos cerrar las cajas? ¿Qué material utilizar como
+            relleno en los envíos más delicados?
+          </p>
+          <p>
+            Por suerte cada día hay más personas preocupadas por reducir la
+            cantidad de plástico del Planeta y encontrar soluciones a estos
+            problemas fue más sencillo de lo que en un principio pensamos.
+          </p>
+        </TextContainer>
+        <BuyButton href="/contacto">CONTACTAME</BuyButton>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <Separator />
+
+  <SectionContainer variant="light">
+    <div class="grid grid-cols-5 ">
+      <div class="col-span-2 py-4 px-12">
+        <TextContainer>
+          <h2>Nuestros empaques</h2>
+          <p>
+            Todos los materiales que Amatista utiliza en sus envíos son
+            reciclables, biodegradables y sin plástico.
+          </p>
+          <p>
+            Un packaging ecológico muy sencillo. Su sencillez lo hace especial.
+          </p>
+          <p>
+            Una vez más demostramos que lo sostenible también puede ser bonito.
+          </p>
+        </TextContainer>
+      </div>
+      <div class="col-span-3 ">
+        <div class="grid grid-cols-5 grid-rows-2 gap-4">
+          <div class="w-full aspect-square col-span-2">
+            <div
+              style={`background-image: url(${sectionImage2.src});`}
+              class="w-full h-full bg-cover bg-center bg-no-repeat"
+            >
+            </div>
+          </div>
+          <div class="w-full h-full row-span-2 col-span-3">
+            <div
+              style={`background-image: url(${sectionImage3.src});`}
+              class="w-full h-full bg-cover bg-center bg-no-repeat"
+            >
+            </div>
+          </div>
+          <div class="w-full aspect-square col-span-2">
+            <div
+              style={`background-image: url(${sectionImage4.src});`}
+              class="w-full h-full bg-cover bg-center bg-no-repeat"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <SectionContainer variant="light">
+    <div class="grid grid-cols-2">
+      <div>
+        <div
+          style={`background-image: url(${sectionImage5.src});`}
+          class="w-full aspect-square bg-cover bg-center bg-no-repeat"
+        >
+        </div>
+      </div>
+      <div class="py-4 px-12">
+        <TextContainer>
+          <h2>TENEMOS EN CUENTA TODOS LOS DETALLES</h2>
+          <p>
+            Si has sido o vas a ser cliente de Amatista te animamos aque
+            reutilices, compostes o recicles nuestro packaging.
+          </p>
+        </TextContainer>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <section class="h-screen w-full relative">
+    <div
+      class="absolute w-full h-full top-0 left-0 bg-cover bg-center bg-no-repeat"
+      style={`background-image: url(${sectionHero.src});`}
+    >
+    </div>
+    <div class="absolute top-1/2 -translate-y-1/2 right-20">
+      <div class="bg-raw_white/70 px-12 py-40">
+        <h2 class="text-6xl max-w-md mb-20 font-bold text-black leading-tight">
+          Valoramos cada prenda por su historia
+        </h2>
+        <div class="flex justify-center">
+          <a
+            href="/contacto"
+            class="uppercase text-xl text-black font-semibold border-black border-4 py-4 px-12 hover:backdrop-blur-3xl hover:text-black/75 hover:border-black/75 duration-300"
+            >contactame
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

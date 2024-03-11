@@ -11,6 +11,10 @@ export default {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        portrait: '2 / 3',
+        landscape: '9 / 16',
+      },
       fontFamily: {
         lora: '"Lora Variable"',
         roboto: 'Roboto',
