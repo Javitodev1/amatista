@@ -9,7 +9,7 @@ import CollectionBanner from "./CollectionBanner.astro"
 import AgedBanner from "./AgedBanner.astro"
 import HealingKit from "./HealingKit.astro"
 import SubscribeBanner from "./SubscribeBanner.astro"
-import ContactBanner from "./ContactBanner.astro"
+import DeliveryBanner from "./DeliveryBanner.astro"
 import HowToBuyBanner from "./HowToBuyBanner.astro"
 import Separator from "@/components/Separator.astro"
 
@@ -70,7 +70,7 @@ const sections = reduceSections(PAGE, textsJSON) satisfies HomeSections
   <Separator direction="left" variant="H2" />
 
   <SubscribeBanner texts={sections.banner_suscribite} />
-  <ContactBanner texts={sections.banner_contacto} />
+  <DeliveryBanner texts={sections.banner_contacto} />
 
   <Whatsapp />
 </Layout>

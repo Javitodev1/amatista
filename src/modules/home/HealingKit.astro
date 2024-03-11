@@ -1,10 +1,7 @@
 ---
 import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
-import kitReikiImg from "@public/images/kit-reiki.png"
-const images = {
-  right: kitReikiImg.src,
-}
+import kitHealingImg from "@public/optimized/home_kitsanacion.webp"
 
 interface Texts {
   title: string
@@ -14,6 +11,10 @@ interface Texts {
 
 interface Props {
   texts: Texts
+}
+
+const images = {
+  right: kitHealingImg.src,
 }
 
 const { texts } = Astro.props

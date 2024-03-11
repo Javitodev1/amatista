@@ -1,13 +1,16 @@
 ---
 import SectionContainer from '@/components/SectionContainer.astro'
-import testImage from '@public/images/products/1_1.webp'
 import VerticalHero from '@/components/VerticalHero.astro'
 import BuyButton from '@/components/BuyButton.astro'
 
+import leftImg from "@public/optimized/home_delivery_3.webp"
+import centerImg from "@public/optimized/home_delivery_2.webp"
+import rightImg from "@public/optimized/home_delivery_1.webp"
+
 const images = {
-  banner1: testImage.src,
-  banner2: testImage.src,
-  banner3: testImage.src,
+  banner1: leftImg.src,
+  banner2: centerImg.src,
+  banner3: rightImg.src,
 }
 
 interface Texts {

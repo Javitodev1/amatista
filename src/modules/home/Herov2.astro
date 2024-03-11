@@ -1,18 +1,21 @@
 ---
-import BuyButton from "@/components/BuyButton.astro"
+// import BuyButton from "@/components/BuyButton.astro"
 import ImageTransition from "@/components/ImageTransition.astro"
+import heroImg1 from "@public/optimized/home_hero_1.webp"
+import heroImg2 from "@public/optimized/home_hero_2.webp"
+import heroImg3 from "@public/optimized/home_hero_3.webp"
 
 const items = [
   {
-    imageUrl: "/images/pages/home/hero-bg-1.jpeg",
+    imageUrl: heroImg1.src,
     text: "Con conciencia y propósito elegí ser <strong>sostenible</strong>",
   },
   {
-    imageUrl: "/images/pages/home/hero-bg-2.jpeg",
+    imageUrl: heroImg2.src,
     text: "Tu compra tu <strong>contribución</strong> con nuestra madre tierra",
   },
   {
-    imageUrl: "/images/pages/home/hero-bg-3.jpeg",
+    imageUrl: heroImg3.src,
     text: "Vestimos cuerpos sagrados con prendas <strong>únicas</strong>",
   },
 ]
@@ -32,6 +35,11 @@ const { texts } = Astro.props
 <section class="bg-black relative z-0">
   <ImageTransition items={items} />
   <div class="absolute bottom-1/4 left-1/2 -translate-x-1/2">
-    <BuyButton dark={false}>{texts.cta}</BuyButton>
+    <!-- <BuyButton dark={false}>{texts.cta}</BuyButton> -->
+    <a
+      href="/contacto"
+      class="uppercase text-xl text-raw_white font-semibold border-raw_white border-4 py-4 px-12 hover:backdrop-blur hover:text-raw_white/75 hover:border-raw_white/75 duration-300"
+      >{texts.cta}
+    </a>
   </div>
 </section>
