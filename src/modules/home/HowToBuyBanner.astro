@@ -24,7 +24,7 @@ const { texts } = Astro.props
     <h3>{texts.subtitle}</h3>
     <p class="max-w-xl mx-auto">{texts.description}</p>
   </TextContainer>
-  <div class="flex justify-center mb-4 gap-x-12">
+  <div class="flex justify-center mb-4 py-4 gap-x-12">
     <a
       href="https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0"
       target="_blank"
@@ -65,6 +65,6 @@ const { texts } = Astro.props
     </a>
   </div>
   <TextContainer class="max-w-xl mx-auto text-center">
-    <h3>{texts.slogan}</h3>
+    <h3 class="text-balance">{texts.slogan}</h3>
   </TextContainer>
 </SectionContainer>

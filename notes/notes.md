@@ -3,6 +3,7 @@ TODO:
 - [] agregar filtro por tallas a la tienda
 - [] cambiar aged banner href to filtro de tallas
 - [] Agregar una pagina de como activar tu kit de sanacion y añadir enlace en la seccion home/como-activar-tu-kit-de-sanacion
+- [] Agregar una pagina sobre nuestras entregas.
 - [] realizar estos cambios https://suads.my.canva.site/beige-dorado-marr-n-c-lido-neutro-moderno-minimalista-fotograf-a-sitio-web-para-portfolio
 - [✅] cambiar fotos del hero por las del cliente
 - [✅] agregar pagina de nuestros envios

@@ -15,7 +15,7 @@ import sectionHero from "@public/optimized/envios_hero.webp"
 
 <Layout>
   <SectionContainer variant="darker">
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-1 md:grid-cols-2">
       <div>
         <div
           style={`background-image: url(${sectionImage1.src});`}
@@ -23,9 +23,11 @@ import sectionHero from "@public/optimized/envios_hero.webp"
         >
         </div>
       </div>
-      <div class="py-4 px-12">
+      <div class="py-4 md:px-12">
         <TextContainer class="mb-20">
-          <h2>ASÍ EMPAQUETAMOS NUESTROS PEDIDOS SIN PLÁSTICO</h2>
+          <h2 class="text-center md:text-left">
+            ASÍ EMPAQUETAMOS NUESTROS PEDIDOS SIN PLÁSTICO
+          </h2>
           <p>
             A la hora de eligir los materiales se nos presentaron muchos
             desafíos.
@@ -40,7 +42,9 @@ import sectionHero from "@public/optimized/envios_hero.webp"
             problemas fue más sencillo de lo que en un principio pensamos.
           </p>
         </TextContainer>
-        <BuyButton href="/contacto">CONTACTAME</BuyButton>
+        <div class="flex justify-center md:justify-start">
+          <BuyButton href="/contacto">CONTACTAME</BuyButton>
+        </div>
       </div>
     </div>
   </SectionContainer>
@@ -48,10 +52,10 @@ import sectionHero from "@public/optimized/envios_hero.webp"
   <Separator />
 
   <SectionContainer variant="light">
-    <div class="grid grid-cols-5 ">
-      <div class="col-span-2 py-4 px-12">
+    <div class="grid grid-cols-1 md:grid-cols-5">
+      <div class="order-2 md:order-1 md:col-span-2 py-4 md:px-12">
         <TextContainer>
-          <h2>Nuestros empaques</h2>
+          <h2 class="text-center md:text-left">Nuestros empaques</h2>
           <p>
             Todos los materiales que Amatista utiliza en sus envíos son
             reciclables, biodegradables y sin plástico.
@@ -64,7 +68,7 @@ import sectionHero from "@public/optimized/envios_hero.webp"
           </p>
         </TextContainer>
       </div>
-      <div class="col-span-3 ">
+      <div class="order-1 md:order-2 md:col-span-3 ">
         <div class="grid grid-cols-5 grid-rows-2 gap-4">
           <div class="w-full aspect-square col-span-2">
             <div
@@ -93,7 +97,7 @@ import sectionHero from "@public/optimized/envios_hero.webp"
   </SectionContainer>
 
   <SectionContainer variant="light">
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-1 md:grid-cols-2">
       <div>
         <div
           style={`background-image: url(${sectionImage5.src});`}
@@ -101,9 +105,11 @@ import sectionHero from "@public/optimized/envios_hero.webp"
         >
         </div>
       </div>
-      <div class="py-4 px-12">
+      <div class="py-4 md:px-12">
         <TextContainer>
-          <h2>TENEMOS EN CUENTA TODOS LOS DETALLES</h2>
+          <h2 class="text-center md:text-left">
+            TENEMOS EN CUENTA TODOS LOS DETALLES
+          </h2>
           <p>
             Si has sido o vas a ser cliente de Amatista te animamos aque
             reutilices, compostes o recicles nuestro packaging.
@@ -119,17 +125,23 @@ import sectionHero from "@public/optimized/envios_hero.webp"
       style={`background-image: url(${sectionHero.src});`}
     >
     </div>
-    <div class="absolute top-1/2 -translate-y-1/2 right-20">
-      <div class="bg-raw_white/70 px-12 py-40">
-        <h2 class="text-6xl max-w-md mb-20 font-bold text-black leading-tight">
-          Valoramos cada prenda por su historia
-        </h2>
-        <div class="flex justify-center">
-          <a
-            href="/contacto"
-            class="uppercase text-xl text-black font-semibold border-black border-4 py-4 px-12 hover:backdrop-blur-3xl hover:text-black/75 hover:border-black/75 duration-300"
-            >contactame
-          </a>
+    <div
+      class="absolute top-0 right-1/2 translate-x-1/2 md:translate-x-0 md:right-20 h-full"
+    >
+      <div class="flex items-center h-full">
+        <div class="bg-raw_white/70 p-12 h-5/6 flex flex-col justify-center">
+          <h2
+            class="text-4xl md:text-6xl max-w-md mb-20 font-bold text-black leading-tight"
+          >
+            Valoramos cada prenda por su historia
+          </h2>
+          <div class="flex justify-center">
+            <a
+              href="/contacto"
+              class="uppercase text-xl text-black font-semibold border-black border-4 py-4 px-12 hover:backdrop-blur-3xl hover:text-black/75 hover:border-black/75 duration-300"
+              >contactame
+            </a>
+          </div>
         </div>
       </div>
     </div>
