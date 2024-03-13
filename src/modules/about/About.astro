@@ -1,59 +1,129 @@
 ---
-import Layout from '@/layouts/Layout.astro'
-import SectionContainer from '@/components/SectionContainer.astro'
-import TextContainer from '@/components/TextContainer.astro'
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+
+import hero_image from "@public/optimized/nosotras_hero.webp"
+import owner_img_1 from "@public/optimized/nosotras_sec_3.webp"
+import owner_img_2 from "@public/optimized/nosotras_sec_1.webp"
+import owner_img_3 from "@public/optimized/nosotras_sec_2.webp"
 ---
 
 <Layout>
-  <SectionContainer>
-    <TextContainer class="max-w-3xl mx-auto text-justify">
-      <h2 class="text-center">Quiénes somos</h2>
+  <section class="relative">
+    <div
+      class="bg-center bg-cover bg-no-repeat w-full aspect-video"
+      style={`background-image: url(${hero_image.src});`}
+    >
+    </div>
+    <span class="w-full h-full bg-black/60 absolute top-0 left-0"></span>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
+    >
+      <div class="flex flex-col items-center">
+        <h2 class="uppercase text-5xl text-raw_white font-lora">
+          Bienvenida a la comunidad
+        </h2>
+        <h2 class="uppercase text-5xl text-amatista font-lora">Amatista</h2>
+      </div>
+    </div>
+  </section>
 
-      <h3>Bienvenida a la comunidad Amatista</h3>
+  <SectionContainer class="text-justify">
+    <article class="grid grid-cols-2 mb-20">
+      <div class="flex items-center justify-center">
+        <p class="font-lora text-3xl max-w-lg uppercase">
+          En Amatista combinamos la autenticidad, creatividad y calidad de la
+          moda en un impacto más positivo.
+        </p>
+      </div>
+      <div>
+        <div
+          style={`background-image: url(${owner_img_1.src});`}
+          class="bg-cover bg-center w-[400px] aspect-square"
+        >
+        </div>
+      </div>
+    </article>
 
-      <p>Soy Luciana Noble, una emprendedora uruguaya nacida en 2001.</p>
-      <p>
-        Soy el corazón y la mente detrás de esta idea gestada hace más de 5
-        años. Desde pequeña siento una gran admiración por las prendas y el
-        sentido de expresar la creatividad a través de la indumentaria.
-      </p>
-      <p>
-        Evolucionando hacia una idea de comunidad basada en la economía
-        circular, la co-creación con otras mujeres y una idea de vestirnos más
-        sustentablemente.
-      </p>
-      <p>
-        En mis inicios me movió la conexión humana al adquirir prendas de
-        aquellas personas que luchan para subsistir vendiendo prendas
-        maravillosas en ferias, remates, iglesias o asociaciones sin fines de
-        lucro, que muchas veces brindan ayuda a niñas y niños en situaciones
-        complejas, brindándoles así una valiosa fuente de ingresos también a
-        ellos.
-      </p>
-      <p>
-        Cada prenda que pasa por nuestras manos se convierte en un diamante
-        único, celebrando la singularidad y el renacimiento de prendas que
-        quedaron en el olvido para algunos.
-      </p>
-      <p>
-        Amatista no solo viste si no que transforma y alquimiza prendas
-        convirtiendo lo ya utilizado en una nueva propuesta de valor y calidad
-        para las personas que buscan dejar menos huellas de consumo en su
-        camino.
-      </p>
-      <p>
-        En Amatista cada prenda es pulida con amor y está lista para iniciar un
-        nuevo capítulo junto a su nuevo portador o portadora.
-      </p>
-      <p>
-        Te invitamos a que te unas a nuestra comunidad, que funciona como una
-        cadena de ayuda y donde puedes vestirte de forma auténtica, original y
-        accesible.
-      </p>
-      <p>
-        En Amatista combinamos la autenticidad, creatividad y calidad de la moda
-        en un impacto más positivo.
-      </p>
-    </TextContainer>
+    <article class="grid grid-cols-2 mb-20">
+      <div>
+        <div
+          style={`background-image: url(${owner_img_2.src});`}
+          class="bg-cover bg-center w-[400px] aspect-portrait"
+        >
+        </div>
+      </div>
+      <div class="flex flex-col justify-center font-roboto text-2xl max-w-96">
+        <p class="mb-10">
+          Soy Luciana Noble, una emprendedora uruguaya nacida en 2001.
+        </p>
+        <p class="mb-10">
+          Soy el corazón y la mente detrás de esta idea gestada hace más de 5
+          años.
+        </p>
+        <p>
+          Desde pequeña siento una gran admiración por las prendas y el sentido
+          de expresar la creatividad a través de la indumentaria.
+        </p>
+      </div>
+    </article>
+
+    <article class="grid grid-cols-2">
+      <div>
+        <h3 class="text-5xl font-lora text-amatista uppercase mb-4 pl-16">
+          Amatista
+        </h3>
+        <div class=" mb-4">
+          <p class="italic max-w-96 font-roboto text-2xl bg-raw_white p-10">
+            Evolucionando hacia una idea de comunidad basada en la economía
+            circular, la co-creación con otras mujeres y una idea de vestirnos
+            más sustentablemente.
+          </p>
+        </div>
+        <div class="max-w-96 font-roboto text-2xl flex flex-col gap-4">
+          <p>
+            Cada prenda que pasa por nuestras manos se convierte en un diamante
+            único, celebrando la singularidad y el renacimiento de prendas que
+            quedaron en el olvido para algunos.
+          </p>
+          <p>
+            Amatista no solo viste si no que transforma y alquimiza prendas
+            convirtiendo lo ya utilizado en una nueva propuesta de valor y
+            calidad para las personas que buscan dejar menos huellas de consumo
+            en su camino.
+          </p>
+          <p>
+            En Amatista cada prenda es pulida con amor y está lista para iniciar
+            un nuevo capítulo junto a su nuevo portador o portadora.
+          </p>
+          <p>
+            Te invitamos a que te unas a nuestra comunidad, que funciona como
+            una cadena de ayuda y donde puedes vestirte de forma auténtica,
+            original y accesible.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="mb-4">
+          <div
+            style={`background-image: url(${owner_img_3.src});`}
+            class="bg-cover bg-center w-[400px] aspect-portrait"
+          >
+          </div>
+        </div>
+        <div class="max-w-96 font-roboto text-2xl flex flex-col gap-4">
+          <p>
+            En mis inicios me movió la conexión humana al adquirir prendas de
+            aquellas personas que luchan para subsistir.
+          </p>
+          <p>
+            Vendiendo prendas maravillosas en ferias, remates, iglesias o
+            asociaciones sin fines de lucro, que muchas veces brindan ayuda a
+            niñas y niños en situaciones complejas, brindándoles así una valiosa
+            fuente de ingresos también a ellos.
+          </p>
+        </div>
+      </div>
+    </article>
   </SectionContainer>
 </Layout>

@@ -2,6 +2,7 @@
 import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
 import kitHealingImg from "@public/optimized/home_kitsanacion.webp"
+import BuyButton from "@/components/BuyButton.astro"
 
 interface Texts {
   title: string
@@ -23,7 +24,7 @@ const { texts } = Astro.props
 <SectionContainer variant="darker">
   <div class="grid grid-cols-1 md:grid-cols-3">
     <div class="bg-amatista col-span-2 p-4 md:p-10 order-2 md:order-1">
-      <TextContainer variant="white">
+      <TextContainer class="mb-12" variant="white">
         <h2>{texts.title}</h2>
         <p>
           Descubrí el poder de la sanación a través de nuestro kit intencionado
@@ -45,6 +46,7 @@ const { texts } = Astro.props
 
         <h3>Transforma tu experiencia de vestir con nuestro kit</h3>
       </TextContainer>
+      <BuyButton href="/kit-sanacion">Como activar mi kit</BuyButton>
     </div>
     <div class="md:h-full h-[350px] order-1 md:order-2">
       <div

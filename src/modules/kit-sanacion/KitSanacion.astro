@@ -1,0 +1,89 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import TextContainer from "@/components/TextContainer.astro"
+
+import step_image_1 from "@public/optimized/envios_sec_1.webp"
+import step_image_2 from "@public/optimized/envios_sec_1.webp"
+import step_image_3 from "@public/optimized/envios_sec_1.webp"
+import step_image_4 from "@public/optimized/envios_sec_1.webp"
+import step_image_5 from "@public/optimized/envios_sec_1.webp"
+import step_image_6 from "@public/optimized/envios_sec_1.webp"
+import step_image_7 from "@public/optimized/envios_sec_1.webp"
+import step_image_8 from "@public/optimized/envios_sec_1.webp"
+
+const steps = [
+  {
+    image: step_image_1.src,
+    content: "Encuentra un lugar tranquilo y cómodo donde puedas concentrarte.",
+    padding: "pt-0 md:pt-0",
+  },
+  {
+    image: step_image_2.src,
+    content:
+      "Toma la amatista y tocala suavemente permitiendo que sientas su energía.",
+    padding: "pt-0 md:pt-12",
+  },
+  {
+    image: step_image_3.src,
+    content:
+      "Visualiza tus prendas en tu mente y establece una intención clara de transmutar su energía anterior y conectarlas contigo.",
+    padding: "pt-0 md:pt-24",
+  },
+  {
+    image: step_image_4.src,
+    content:
+      "Pasa la amatista sobre cada prenda, visualizando como se carga con tu energía y proposito.",
+    padding: "pt-0 md:pt-36",
+  },
+  {
+    image: step_image_5.src,
+    content:
+      "Enciende la vela y deja que su llama te guíe en este proceso de sanación y activación",
+    padding: "pt-0 md:pt-0",
+  },
+  {
+    image: step_image_6.src,
+    content:
+      "Enciende el incienso y permite que su aroma te envuelva, creando un ambiente de paz y armonía.",
+    padding: "pt-0 md:pt-12",
+  },
+  {
+    image: step_image_7.src,
+    content:
+      "Mientras la vela y el incienso se consumen. respira profundamente y siente como tu energía se armoniza con la de tus prendas.",
+    padding: "pt-0 md:pt-24",
+  },
+  {
+    image: step_image_8.src,
+    content:
+      "Una vez completado el proceso, guarda tus prendas en un lugar especial donde puedas acceder facilmente a ellas cuando las necesites.",
+    padding: "pt-0 md:pt-36",
+  },
+]
+---
+
+<Layout>
+  <SectionContainer>
+    <TextContainer class="mb-12">
+      <h2>como activar mi kit</h2>
+      <h3 class="max-w-2xl">
+        Para usar nuestro Kit de Sanación y Activación de prendas, sigue estos
+        sencillos pasos:
+      </h3>
+    </TextContainer>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {steps.map(({ image, content, padding }) => (
+        <div class="w-full h-full" class:list={[padding]}>
+          <div
+            class="w-full aspect-square rounded-full bg-center bg-cover bg-no-repeat"
+            style={`background-image: url(${image});`}
+          />
+          <TextContainer>
+            <p>{content}</p>
+          </TextContainer>
+        </div>
+      ))}
+    </div>
+  </SectionContainer>
+</Layout>

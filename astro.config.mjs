@@ -4,8 +4,9 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 import { astroImageTools } from 'astro-imagetools';
-
 import netlify from "@astrojs/netlify";
+
+import compressor from "astro-compressor";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +22,7 @@ export default defineConfig({
       theme: 'monokai'
     }
   },
-  integrations: [react(), tailwind({}), sitemap(), robotsTxt(), astroImageTools],
+  integrations: [react(), tailwind({}), sitemap(), robotsTxt(), astroImageTools, compressor({gzip:false, brotli:true})],
   output: "hybrid",
   adapter: netlify()
 });
