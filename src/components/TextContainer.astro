@@ -26,7 +26,7 @@ const { class: className, variant = 'normal', hover = false } = Astro.props
       '[&_h3]:hover:opacity-100 [&_h3]:group-hover:opacity-100 [&_h3]:peer-hover:opacity-100':
         hover,
     },
-    '[&_p]:font-roboto [&_p]:mb-4 [&_p]:text-lg [&_p_strong]:text-amatista',
+    '[&_p]:font-roboto [&_p]:mb-4 [&_p]:text-lg [&_p]:text-justify [&_p_strong]:text-amatista',
     { '[&_p]:text-black [&_p]:dark:text-white': variant === 'normal' },
     { '[&_p]:text-white [&_p]:dark:text-black': variant === 'white' },
     { '[&_p]:text-black [&_p]:dark:text-white': variant === 'black' },

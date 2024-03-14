@@ -3,9 +3,51 @@ import Layout from '@/layouts/Layout.astro'
 import SectionContainer from '@/components/SectionContainer.astro'
 import TextContainer from '@/components/TextContainer.astro'
 import Whatsapp from '@/components/Whatsapp.astro'
+
+import banner_left_img from "@public/optimized/comunidad_banner_1.webp"
+import banner_center_img from "@public/optimized/comunidad_banner_1.webp"
+import banner_right_img from "@public/optimized/comunidad_banner_1.webp"
+
+const banner = [
+  {
+    title: "Limpiá tu closet",
+    description:
+      "Seleccioná lo que ya no uses. Recordá que en Amatista, tomamos prendas en perfecto estado, recién lavadas, como nuevas.",
+    image: banner_left_img.src,
+  },
+  {
+    title: "Entregá tus prendas",
+    description: "Comunicate con nosotros para la entrega de las prendas.",
+    image: banner_center_img.src,
+  },
+  {
+    title: "Cobrá tus ventas",
+    description: "Ganarás un porcentaje de tus ventas",
+    image: banner_right_img.src,
+  },
+]
 ---
 
 <Layout>
+  <SectionContainer variant="darker">
+    <TextContainer>
+      <h2>VALORAMOS CADA PRENDA POR SU HISTORIA</h2>
+    </TextContainer>
+    <div class="grid grid-cols-3 mb-12 gap-4">
+      {banner.map(({ title, description, image }) => (
+        <div>
+          <div
+            style={`background-image: url(${image});`}
+            class="bg-cover bg-no-repeat bg-center aspect-square"
+          />
+          <TextContainer>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </TextContainer>
+        </div>
+      ))}
+    </div>
+  </SectionContainer>
   <SectionContainer>
     <TextContainer>
       <h2 class="text-center">Contacto</h2>
