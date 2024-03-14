@@ -1,10 +1,12 @@
 TODO:
-- [] agregar en comunidad una seccion donde publicar cupones para otras tiendas.
 - [] agregar filtro por tallas a la tienda
 - [] cambiar aged banner href to filtro de tallas
-- [] Agregar una pagina de como activar tu kit de sanacion y añadir enlace en la seccion home/como-activar-tu-kit-de-sanacion
-- [] Agregar una pagina sobre nuestras entregas.
-- [] realizar estos cambios https://suads.my.canva.site/beige-dorado-marr-n-c-lido-neutro-moderno-minimalista-fotograf-a-sitio-web-para-portfolio
+- [] agregar pagina de como comprar https://www.divino.com.uy/como-comprar
+- [] cambiar en footer tienda por sitemap
+- [✅] agregar en comunidad una seccion donde publicar cupones para otras tiendas.
+- [✅] Agregar una pagina de como activar tu kit de sanacion y añadir enlace en la seccion home/como-activar-tu-kit-de-sanacion
+- [✅] Agregar una pagina sobre nuestras entregas.
+- [✅] realizar estos cambios https://suads.my.canva.site/beige-dorado-marr-n-c-lido-neutro-moderno-minimalista-fotograf-a-sitio-web-para-portfolio
 - [✅] cambiar fotos del hero por las del cliente
 - [✅] agregar pagina de nuestros envios
 - [✅] Cambiar fotos del drive en la pagina
