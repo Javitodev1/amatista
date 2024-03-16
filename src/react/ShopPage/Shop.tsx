@@ -42,15 +42,19 @@ export default class Shop extends Component<IProps, IStates> {
     )
   }
 
+  setProducts = (products: Product[]) => {
+    this.setState((prevState) => ({ ...prevState, products: products }))
+  }
+
   render(): ReactNode {
     const { loading } = this.state
 
     return (
       <div className="min-h-screen">
         <div className=" mx-auto md:max-w-6xl">
-          <FilterList />
+          <FilterList setProducts={this.setProducts}/>
           <hr className="h-1 my-4 bg-gray-500 rounded-full opacity-20" />
-          {loading && <p>loading...</p>}
+          {loading && <p>cargando...</p>}
           {!loading && <ProductList products={this.filterProducts()} />}
         </div>
       </div>

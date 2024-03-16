@@ -2,36 +2,14 @@
 import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
-import BuyButton from "@/components/BuyButton.astro"
 import Logo from "@/icons/Logo.astro"
 
 import heroImg from "@public/optimized/comunidad_hero.webp"
-import banner_left_img from "@public/optimized/comunidad_banner_1.webp"
-import banner_center_img from "@public/optimized/comunidad_banner_1.webp"
-import banner_right_img from "@public/optimized/comunidad_banner_1.webp"
 import cupon_bg_img from "@public/optimized/cupon_bg.webp"
 import logo_papeleria from "@public/optimized/papeleriacreative.webp"
 import logo_biocosmetica from "@public/optimized/biocosmetica.webp"
 import logo_ecojabones from "@public/optimized/ecojabones.webp"
-
-const banner = [
-  {
-    title: "Limpiá tu closet",
-    description:
-      "Seleccioná lo que ya no uses. Recordá que en Amatista, tomamos prendas en perfecto estado, recién lavadas, como nuevas.",
-    image: banner_left_img.src,
-  },
-  {
-    title: "Entregá tus prendas",
-    description: "Comunicate con nosotros para la entrega de las prendas.",
-    image: banner_center_img.src,
-  },
-  {
-    title: "Cobrá tus ventas",
-    description: "Ganarás un porcentaje de tus ventas",
-    image: banner_right_img.src,
-  },
-]
+import comunidad_sec_1 from "@public/optimized/comunidad_sec_1.webp"
 
 const alliance = [
   {
@@ -101,30 +79,37 @@ const alliance = [
   </section>
   <!-- End Banner -->
 
-  <!-- Banner -->
-  <SectionContainer variant="darker">
-    <TextContainer>
-      <h2>VALORAMOS CADA PRENDA POR SU HISTORIA</h2>
-    </TextContainer>
-    <div class="grid grid-cols-3 mb-12 gap-4">
-      {banner.map(({ title, description, image }) => (
-        <div>
-          <div
-            style={`background-image: url(${image});`}
-            class="bg-cover bg-no-repeat bg-center aspect-square"
-          />
-          <TextContainer>
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </TextContainer>
+  <SectionContainer>
+    <div class="grid grid-cols-2 gap-12">
+      <div>
+        <div
+          style={`background-image: url(${comunidad_sec_1.src});`}
+          class="w-full aspect-square bg-center bg-cover"
+        >
         </div>
-      ))}
-    </div>
-    <div class="flex justify-center">
-      <BuyButton href="/contacto">CONTACTANOS</BuyButton>
+      </div>
+
+      <div class="flex justify-center items-center">
+        <TextContainer>
+          <h2>Comunidad amatista</h2>
+          <p>
+            Nos unimos para formar una comunidad donde creamos juntas un mundo
+            tanto tangible como energético.
+          </p>
+          <p>
+            Aquí, la unión de mujeres trasciende las limitaciones, ofreciendo un
+            espacio accesible para todos y todas. Nuestro enfoque se centra en
+            un estilo de vida sostenible, minimalista, auténtico y unica,
+            diseñada para personas de todos los estilos.
+          </p>
+          <p>
+            ¡Bienvenidos a un lugar donde la belleza se encuentra en la
+            diversidad y la autenticidad!
+          </p>
+        </TextContainer>
+      </div>
     </div>
   </SectionContainer>
-  <!-- End Banner -->
 
   <!-- Banner Cupones -->
   <SectionContainer>

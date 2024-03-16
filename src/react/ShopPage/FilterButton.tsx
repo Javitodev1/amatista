@@ -1,23 +1,25 @@
-import type { ProductTag } from "@/types/product";
-import { Component, type ReactNode } from "react";
+import type { Product, ProductTag } from "@/types/product"
+import { Component, type ReactNode } from "react"
+import { fetchProductsByTag } from "@/libs/hygraph"
 
 interface IProps {
-  filter: ProductTag;
-  setFilter: (filter: ProductTag) => void
+  filter: ProductTag
   activeFilter: ProductTag
+  setFilter: (filter: ProductTag) => void
+  setProducts: (products: Product[]) => void
 }
 
 export class FilterButton extends Component<IProps> {
-
   clickHandler = () => {
-    const {filter, setFilter} = this.props
+    const { filter, setFilter, setProducts } = this.props
     setFilter(filter)
   }
 
   render(): ReactNode {
-    const { filter, activeFilter } = this.props;
-    const activeStyle = filter === activeFilter ? "text-amatista" : ""
-    const {clickHandler} = this
+    const { filter, activeFilter } = this.props
+    const activeStyle =
+      filter === activeFilter ? "text-amatista before:max-w-full" : ""
+    const { clickHandler } = this
     return (
       <button
         onClick={clickHandler}
@@ -25,6 +27,6 @@ export class FilterButton extends Component<IProps> {
       >
         {filter}
       </button>
-    );
+    )
   }
 }

@@ -14,6 +14,7 @@ export default {
       aspectRatio: {
         portrait: '2 / 3',
         landscape: '9 / 16',
+        product: '250 / 334',
       },
       fontFamily: {
         lora: '"Lora Variable"',

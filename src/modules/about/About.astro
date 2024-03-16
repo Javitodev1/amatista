@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
+import TextContainer from "@/components/TextContainer.astro"
 
 import hero_image from "@public/optimized/nosotras_hero.webp"
 import owner_img_1 from "@public/optimized/nosotras_sec_3.webp"
@@ -28,13 +29,15 @@ import owner_img_3 from "@public/optimized/nosotras_sec_2.webp"
     </div>
   </section>
 
-  <SectionContainer class="text-justify">
+  <SectionContainer>
     <article class="grid grid-cols-2 mb-20">
-      <div class="flex items-center justify-center">
-        <p class="font-lora text-3xl max-w-lg uppercase">
-          En Amatista combinamos la autenticidad, creatividad y calidad de la
-          moda en un impacto más positivo.
-        </p>
+      <div class="flex items-center">
+        <TextContainer class="max-w-80">
+          <h3>
+            En Amatista combinamos la autenticidad, creatividad y calidad de la
+            moda en un impacto más positivo.
+          </h3>
+        </TextContainer>
       </div>
       <div>
         <div
@@ -54,17 +57,17 @@ import owner_img_3 from "@public/optimized/nosotras_sec_2.webp"
         </div>
       </div>
       <div class="flex flex-col justify-center font-roboto text-2xl max-w-96">
-        <p class="mb-10">
-          Soy Luciana Noble, una emprendedora uruguaya nacida en 2001.
-        </p>
-        <p class="mb-10">
-          Soy el corazón y la mente detrás de esta idea gestada hace más de 5
-          años.
-        </p>
-        <p>
-          Desde pequeña siento una gran admiración por las prendas y el sentido
-          de expresar la creatividad a través de la indumentaria.
-        </p>
+        <TextContainer>
+          <p>Soy <strong>Luciana Noble</strong>, una emprendedora uruguaya nacida en 2001.</p>
+          <p>
+            Soy el corazón y la mente detrás de esta idea gestada hace más de 5
+            años.
+          </p>
+          <p>
+            Desde pequeña siento una gran admiración por las prendas y el
+            sentido de expresar la creatividad a través de la indumentaria.
+          </p>
+        </TextContainer>
       </div>
     </article>
 
@@ -74,33 +77,37 @@ import owner_img_3 from "@public/optimized/nosotras_sec_2.webp"
           Amatista
         </h3>
         <div class=" mb-4">
-          <p class="italic max-w-96 font-roboto text-2xl bg-raw_white p-10">
+          <p
+            class="italic max-w-96 font-roboto text-2xl bg-raw_white p-10 text-balance"
+          >
             Evolucionando hacia una idea de comunidad basada en la economía
             circular, la co-creación con otras mujeres y una idea de vestirnos
             más sustentablemente.
           </p>
         </div>
         <div class="max-w-96 font-roboto text-2xl flex flex-col gap-4">
-          <p>
-            Cada prenda que pasa por nuestras manos se convierte en un diamante
-            único, celebrando la singularidad y el renacimiento de prendas que
-            quedaron en el olvido para algunos.
-          </p>
-          <p>
-            Amatista no solo viste si no que transforma y alquimiza prendas
-            convirtiendo lo ya utilizado en una nueva propuesta de valor y
-            calidad para las personas que buscan dejar menos huellas de consumo
-            en su camino.
-          </p>
-          <p>
-            En Amatista cada prenda es pulida con amor y está lista para iniciar
-            un nuevo capítulo junto a su nuevo portador o portadora.
-          </p>
-          <p>
-            Te invitamos a que te unas a nuestra comunidad, que funciona como
-            una cadena de ayuda y donde puedes vestirte de forma auténtica,
-            original y accesible.
-          </p>
+          <TextContainer>
+            <p>
+              Cada prenda que pasa por nuestras manos se convierte en un
+              diamante único, celebrando la singularidad y el renacimiento de
+              prendas que quedaron en el olvido para algunos.
+            </p>
+            <p>
+              Amatista no solo viste si no que transforma y alquimiza prendas
+              convirtiendo lo ya utilizado en una nueva propuesta de valor y
+              calidad para las personas que buscan dejar menos huellas de
+              consumo en su camino.
+            </p>
+            <p>
+              En Amatista cada prenda es pulida con amor y está lista para
+              iniciar un nuevo capítulo junto a su nuevo portador o portadora.
+            </p>
+            <p>
+              Te invitamos a que te unas a nuestra comunidad, que funciona como
+              una cadena de ayuda y donde puedes vestirte de forma auténtica,
+              original y accesible.
+            </p>
+          </TextContainer>
         </div>
       </div>
       <div>
@@ -112,16 +119,18 @@ import owner_img_3 from "@public/optimized/nosotras_sec_2.webp"
           </div>
         </div>
         <div class="max-w-96 font-roboto text-2xl flex flex-col gap-4">
-          <p>
-            En mis inicios me movió la conexión humana al adquirir prendas de
-            aquellas personas que luchan para subsistir.
-          </p>
-          <p>
-            Vendiendo prendas maravillosas en ferias, remates, iglesias o
-            asociaciones sin fines de lucro, que muchas veces brindan ayuda a
-            niñas y niños en situaciones complejas, brindándoles así una valiosa
-            fuente de ingresos también a ellos.
-          </p>
+          <TextContainer>
+            <p>
+              En mis inicios me movió la conexión humana al adquirir prendas de
+              aquellas personas que luchan para subsistir.
+            </p>
+            <p>
+              Vendiendo prendas maravillosas en ferias, remates, iglesias o
+              asociaciones sin fines de lucro, que muchas veces brindan ayuda a
+              niñas y niños en situaciones complejas, brindándoles así una
+              valiosa fuente de ingresos también a ellos.
+            </p>
+          </TextContainer>
         </div>
       </div>
     </article>

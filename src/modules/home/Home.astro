@@ -6,7 +6,6 @@ import Hero from "./Herov2.astro"
 import NewArrival from "./NewArrival.astro"
 import ComunidadBanner from "./ComunidadBanner.astro"
 import CollectionBanner from "./CollectionBanner.astro"
-import AgedBanner from "./AgedBanner.astro"
 import HealingKit from "./HealingKit.astro"
 import SubscribeBanner from "./SubscribeBanner.astro"
 import DeliveryBanner from "./DeliveryBanner.astro"
@@ -64,10 +63,9 @@ const sections = reduceSections(PAGE, textsJSON) satisfies HomeSections
 
   <Separator reverseColors={true} direction="right" variant="H3" />
 
-  <AgedBanner texts={sections.banner_aged} />
   <HealingKit texts={sections.kit_sanacion} />
 
-  <Separator direction="left" variant="H2" />
+  <Separator direction="right" variant="H2" />
 
   <SubscribeBanner texts={sections.banner_suscribite} />
   <DeliveryBanner texts={sections.banner_contacto} />

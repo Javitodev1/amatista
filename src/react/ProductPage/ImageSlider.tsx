@@ -26,14 +26,15 @@ export default class ImageSlider extends Component<IProps> {
       },
     ]
     return (
-      <div className="relative overflow-y-hidden col-span-2">
+      <div className="relative overflow-y-hidden">
         <div
           style={{ scrollbarWidth: "none" }}
-          className="max-h-[650px] flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
+          className="max-w-[500px] flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
         >
           {images.map(({ src, alt, id }) => (
             <img
-              className="aspect-square shrink-0 grow basis-full snap-start object-cover"
+              key={id}
+              className="max-w-[500px] aspect-product shrink-0 grow basis-full snap-start object-cover"
               id={id}
               src={src}
               alt={alt}
@@ -45,6 +46,7 @@ export default class ImageSlider extends Component<IProps> {
         <div className="md:flex hidden mt-4 justify-center gap-8">
           {images.map(({ id }) => (
             <a
+              key={id}
               href={`#${id}`}
               className="aspect-square h-12 rounded-full bg-raw_white duration-200 hover:bg-amatista"
             />

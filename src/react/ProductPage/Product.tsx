@@ -1,5 +1,5 @@
 import { Component, type ReactNode } from "react"
-import { type Product } from "@/types/product"
+import { ProductTag, type Product } from "@/types/product"
 import { fetchProductById } from "@/libs/hygraph"
 import formatCurreny from "@/utils/currency"
 import WspButton from "./WspButton"
@@ -47,7 +47,8 @@ export default class ProductPage extends Component<IProps, IState> {
       .catch(() => {
         this.setState((prevState) => ({
           ...prevState,
-          error: "Error al comunicarse con el servidor, por favor intentar más tarde.",
+          error:
+            "Error al comunicarse con el servidor, por favor intentar más tarde.",
         }))
       })
   }
@@ -64,11 +65,13 @@ export default class ProductPage extends Component<IProps, IState> {
     const hrefWsp = `https://api.whatsapp.com/send?phone=59896667633&text=Quiero este producto: ${productURL}`
     return (
       <div>
-        <div className="grid md:grid-cols-3 grid-cols-1">
+        <div className="grid md:grid-cols-2 grid-cols-1">
           <ImageSlider product={product!} />
           <div className="md:p-12 px-6 mb-12 md:mb-0 md:order-last order-first">
             <h2>{title}</h2>
-            <h3>{tag}</h3>
+            {tag.map((t) => (
+              <h3>{t.replace("_", " ")}</h3>
+            ))}
             <p>{description}</p>
             <p>Talla: {size}</p>
             <p>Precio: {formatCurreny(price)}</p>

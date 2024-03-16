@@ -29,6 +29,7 @@ export enum ProductTag {
 
 export interface Image {
   url: string
+  id: string
 }
 
 export interface Product {
@@ -41,4 +42,5 @@ export interface Product {
   description: string
   frontImg: Image
   backImg: Image
+  miniatura: Image
 }
