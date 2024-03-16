@@ -1,5 +1,5 @@
 import { Component, type ReactNode } from "react"
-import { ProductTag, type Product } from "@/types/product"
+import { type Product } from "@/types/product"
 import { fetchProductById } from "@/libs/hygraph"
 import formatCurreny from "@/utils/currency"
 import WspButton from "./WspButton"

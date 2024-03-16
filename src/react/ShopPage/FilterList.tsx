@@ -25,7 +25,7 @@ export class FilterList extends Component<IProps, IStates> {
 
   render(): ReactNode {
     const { activeFilter } = this.state
-    const { setProducts } = this.props
+    // const { setProducts } = this.props
     return (
       <div className="overflow-x-scroll whitespace-nowrap lg:whitespace-normal lg:overflow-x-auto lg:flex lg:justify-center">
         <div className="flex gap-4 w-fit py-4 lg:py-0">
@@ -36,7 +36,7 @@ export class FilterList extends Component<IProps, IStates> {
               filter={filter}
               activeFilter={activeFilter}
               setFilter={this.setActiveFilter}
-              setProducts={setProducts}
+              // setProducts={setProducts}
             />
           ))}
           <span className="lg:hidden">{"<"}</span>
