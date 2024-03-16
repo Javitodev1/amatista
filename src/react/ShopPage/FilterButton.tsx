@@ -1,17 +1,17 @@
-import type { Product, ProductTag } from "@/types/product"
+import type { ProductTag } from "@/types/product"
 import { Component, type ReactNode } from "react"
-import { fetchProductsByTag } from "@/libs/hygraph"
+// import { fetchProductsByTag } from "@/libs/hygraph"
 
 interface IProps {
   filter: ProductTag
   activeFilter: ProductTag
   setFilter: (filter: ProductTag) => void
-  setProducts: (products: Product[]) => void
+  // setProducts: (products: Product[]) => void
 }
 
 export class FilterButton extends Component<IProps> {
   clickHandler = () => {
-    const { filter, setFilter, setProducts } = this.props
+    const { filter, setFilter } = this.props
     setFilter(filter)
   }
 
