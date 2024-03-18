@@ -3,6 +3,7 @@ import TextContainer from "@/components/TextContainer.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import InstagramIcon from "@/icons/Instagram.astro"
 import WhatappsIcon from "@/icons/Whatapps.astro"
+import BuyButton from "@/components/BuyButton.astro"
 
 interface Texts {
   title: string
@@ -67,4 +68,8 @@ const { texts } = Astro.props
   <TextContainer class="max-w-xl mx-auto text-center">
     <h3 class="text-balance">{texts.slogan}</h3>
   </TextContainer>
+
+  <div class="flex justify-center">
+    <BuyButton href="/como-comprar">Como comprar</BuyButton>
+  </div>
 </SectionContainer>

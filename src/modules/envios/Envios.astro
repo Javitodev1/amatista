@@ -1,0 +1,130 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import TextContainer from "@/components/TextContainer.astro"
+import hero_img from "@public/optimized/entregas_hero.webp"
+import entregas_img from "@public/optimized/entregas_sec_1.webp"
+import correo_uruguayo_logo from "@public/optimized/correo-uruguayo.webp"
+import dac_logo from "@public/optimized/dac-logo.webp"
+import lighthouse_logo from "@public/optimized/Lighthouse.webp"
+---
+
+<Layout>
+  <section>
+    <div class="relative">
+      <div>
+        <div
+          style={`background-image: url(${hero_img.src});`}
+          class="bg-cover bg-center bg-no-repeat w-full aspect-video"
+        >
+        </div>
+      </div>
+      <span class="absolute top-0 left-0 w-full h-full bg-black/50"></span>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <h2 class="font-lora font-bold text-5xl text-raw_white uppercase">
+          Envios y Entregas sin costo en <strong class="text-amatista"
+            >Maldonado
+          </strong> y <strong class="text-amatista">Punta del Este</strong>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <SectionContainer class="h-screen">
+    <TextContainer>
+      <h2 class="w-3/4">
+        No tenés preocuparte por costos adicionales al recibir tus productos!
+      </h2>
+    </TextContainer>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <div
+          style={`background-image: url(${entregas_img.src});`}
+          class="bg-cover bg-center bg-no-repeat w-full aspect-square"
+        >
+        </div>
+      </div>
+      <div class="py-12 px-12">
+        <TextContainer>
+          <h3>En Amatista Comunidad te brindamos la mejor experiencia</h3>
+          <p>
+            Nos preocupamos por brindarte la mejor experiencia de compra
+            posible. Por eso, ofrecemos entregas gratuitas en Maldonado y Punta
+            del Este. Para hacer aún más conveniente tu experiencia de entrega,
+            coordinamos contigo el lugar y la hora que te resulten más cómodos.
+          </p>
+        </TextContainer>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <SectionContainer>
+    <TextContainer>
+      <h2>
+        Podes optar por recoger tus compras en nuestros puntos de recogida
+        establecidos.
+      </h2>
+    </TextContainer>
+    <div class="grid grid-cols-3 gap-12">
+      <div>
+        <div class="flex justify-center mb-4">
+          <div
+            style=`background-image: url(${correo_uruguayo_logo.src});`
+            class="w-[150px] aspect-square bg-center bg-cover bg-no-repeat"
+          >
+          </div>
+        </div>
+        <TextContainer>
+          <h3>CORREO URUGUAYO</h3>
+          <p><strong>COSTOS APROXIMADOS</strong>:</p>
+          <p>
+            entre $180 y $250 (sujeto al peso del paquete o costos adicionales
+            agregados por las agencias de envío)
+          </p>
+        </TextContainer>
+      </div>
+      <div>
+        <div class="flex justify-center mb-4">
+          <div
+            style=`background-image: url(${dac_logo.src});`
+            class="w-[150px] aspect-square bg-center bg-cover bg-no-repeat"
+          >
+          </div>
+        </div>
+        <TextContainer>
+          <h3>DAC</h3>
+          <p><strong>COSTOS APROXIMADOS</strong>:</p>
+          <p>
+            entre $180 y $250 (sujeto al peso del paquete o costos adicionales
+            agregados por las agencias de envío)
+          </p>
+        </TextContainer>
+      </div>
+      <div>
+        <div class="flex justify-center mb-4">
+          <div
+            style=`background-image: url(${lighthouse_logo.src});`
+            class="w-[150px] aspect-square bg-center bg-cover bg-no-repeat"
+          >
+          </div>
+        </div>
+        <TextContainer>
+          <h3>Lighthouse</h3>
+          <p>
+            Puedes ir a lighthouse en Maldonado, Zelmar Michelini esquina, 20000
+            Maldonado, Departamento de Maldonado y recibir el paquete.
+          </p>
+        </TextContainer>
+      </div>
+    </div>
+
+    <TextContainer class="flex justify-center mt-10">
+      <h3 class="max-w-xl text-center">
+        UNA VEZ EL PAQUETE SE ENCUENTRE EN EL <strong class="text-amatista"
+          >LOCAL
+        </strong> TIENES <strong class="text-amatista">10 DÍAS</strong> HÁBILES PARA
+        RETIRARLO
+      </h3>
+    </TextContainer>
+  </SectionContainer>
+</Layout>

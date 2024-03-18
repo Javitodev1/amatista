@@ -2,34 +2,13 @@
 import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
-
-import hero_image from "@public/optimized/comunidad_hero.webp"
 ---
 
 <Layout>
-  <section>
-    <div class="relative">
-      <div>
-        <div
-          class="bg-cover bg-center bg-no-repeat w-full aspect-video"
-          style=`background-image: url(${hero_image.src});`
-        >
-        </div>
-      </div>
-      <span class="absolute top-0 left-0 w-full h-full bg-black/60"></span>
-      <div class="absolute left-1/2 -translate-y-1/2 top-1/2 -translate-x-1/2">
-        <h2
-          class="text-5xl text-white text-center font-lora font-bold uppercase"
-        >
-          PASOS SENCILLOS PARA COMPRAR EN <strong class="text-amatista"
-            >AMATISTA
-          </strong>
-        </h2>
-      </div>
-    </div>
-  </section>
-
   <SectionContainer>
+    <TextContainer>
+      <h2>PASOS SENCILLOS PARA COMPRAR EN AMATISTA</h2>
+    </TextContainer>
     <div class="grid grid-cols-2 grid-rows-3 gap-y-4 h-screen">
       <div class="row-span-3 bg-green-300 h-full aspect-portrait"></div>
       <div class="py-4 ">
