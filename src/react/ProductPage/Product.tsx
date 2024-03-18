@@ -1,5 +1,5 @@
 import { Component, type ReactNode } from "react"
-import { type Product } from "@/types/product"
+import { type Product } from "@/types/api"
 import { fetchProductById } from "@/libs/hygraph"
 import formatCurreny from "@/utils/currency"
 import WspButton from "./WspButton"
@@ -58,7 +58,7 @@ export default class ProductPage extends Component<IProps, IState> {
 
     if (error) return <div>{error}</div>
     if (loading) return <div>cargando...</div>
-    if (!product) return <div>Producto No encontrado o ha sido eliminado.</div>
+    if (!product) return <div>Este producto ha encontrado un nuevo hogar</div>
 
     const { productURL } = this.props
     const { stock, title, description, tag, size, price } = product
@@ -70,7 +70,7 @@ export default class ProductPage extends Component<IProps, IState> {
           <div className="md:p-12 px-6 mb-12 md:mb-0 md:order-last order-first">
             <h2>{title}</h2>
             {tag.map((t) => (
-              <h3>{t.replace("_", " ")}</h3>
+              <h3 key={t}>{t.replace("_", " ")}</h3>
             ))}
             <p>{description}</p>
             <p>Talla: {size}</p>

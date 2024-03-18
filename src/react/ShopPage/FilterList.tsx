@@ -1,42 +1,28 @@
 import { Component, type ReactNode } from "react"
 import { FilterButton } from "./FilterButton"
-import { ProductTag } from "@/types/product"
-import { type Product } from "@/types/product"
+import { ProductTag } from "@/types/api"
 
 interface IProps {
-  setProducts: (products: Product[]) => void
+  filter: ProductTag
+  setFilter: (filter: ProductTag) => void
+  prefetch: (filter: ProductTag) => void
 }
 
-interface IStates {
-  activeFilter: ProductTag
-}
-
-export class FilterList extends Component<IProps, IStates> {
-  constructor(props: IProps) {
-    super(props)
-    this.state = {
-      activeFilter: ProductTag.Todo,
-    }
-  }
-
-  setActiveFilter = (filter: ProductTag) => {
-    this.setState((prevState) => ({ ...prevState, activeFilter: filter }))
-  }
+export class FilterList extends Component<IProps> {
 
   render(): ReactNode {
-    const { activeFilter } = this.state
-    // const { setProducts } = this.props
+    const { filter, setFilter, prefetch } = this.props
     return (
       <div className="overflow-x-scroll whitespace-nowrap lg:whitespace-normal lg:overflow-x-auto lg:flex lg:justify-center">
         <div className="flex gap-4 w-fit py-4 lg:py-0">
           <span className="lg:hidden">{">"}</span>
-          {Object.values(ProductTag).map((filter) => (
+          {Object.values(ProductTag).map((tag) => (
             <FilterButton
-              key={filter}
-              filter={filter}
-              activeFilter={activeFilter}
-              setFilter={this.setActiveFilter}
-              // setProducts={setProducts}
+              key={tag}
+              filter={tag}
+              activeFilter={filter}
+              setFilter={setFilter}
+              onMouseEnter={prefetch}
             />
           ))}
           <span className="lg:hidden">{"<"}</span>

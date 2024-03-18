@@ -1,5 +1,5 @@
 import { Component, type ReactNode } from "react"
-import { type Product } from "@/types/product"
+import { type Product } from "@/types/api"
 
 interface IProps {
   product: Product
@@ -12,17 +12,20 @@ export default class ImageSlider extends Component<IProps> {
       {
         src: product.frontImg.url,
         alt: product.title,
-        id: "1",
+        key: product.frontImg.id,
+        id: "firstImage",
       },
       {
         src: product.backImg.url,
         alt: product.title,
-        id: "2",
+        key: product.backImg.id,
+        id: "secondImage",
       },
       {
-        src: product.frontImg.url,
+        src: product.miniatura.url,
         alt: product.title,
-        id: "3",
+        key: product.miniatura.id,
+        id: "thirdImage",
       },
     ]
     return (
@@ -31,9 +34,9 @@ export default class ImageSlider extends Component<IProps> {
           style={{ scrollbarWidth: "none" }}
           className="max-w-[500px] flex snap-x snap-mandatory overflow-x-auto scroll-smooth"
         >
-          {images.map(({ src, alt, id }) => (
+          {images.map(({ src, alt, key, id }) => (
             <img
-              key={id}
+              key={key}
               className="max-w-[500px] aspect-product shrink-0 grow basis-full snap-start object-cover"
               id={id}
               src={src}
@@ -44,9 +47,9 @@ export default class ImageSlider extends Component<IProps> {
           ))}
         </div>
         <div className="md:flex hidden mt-4 justify-center gap-8">
-          {images.map(({ id }) => (
+          {images.map(({ id }, index) => (
             <a
-              key={id}
+              key={index}
               href={`#${id}`}
               className="aspect-square h-12 rounded-full bg-raw_white duration-200 hover:bg-amatista"
             />

@@ -1,22 +1,28 @@
-import { ProductTag } from "@/types/product"
+import { ProductTag } from "@/types/api"
 
 export const GET_PRODUCT_BY_ID = (id: string) => {
   return `
   {
     producto(where: {id: "${id}"}) {
+      description
       id
       price
       size
       stock
       tag
       title
+      miniatura {
+        url
+        id
+      }
       backImg {
+        id
         url
       }
       frontImg {
+        id
         url
       }
-      description
     }
   }
   `
@@ -30,7 +36,7 @@ export const GET_PRODUCTS = (
   return `
   {
     productosConnection(
-      first: 10,
+      first: 20,
       ${!cursor ? "" : `after: "${cursor}",`}
       ${
         !tag || tag === ProductTag.Todo
@@ -48,6 +54,10 @@ export const GET_PRODUCTS = (
           stock
           tag
           title
+          miniatura {
+            url
+            id
+          }
           backImg {
             id
             url

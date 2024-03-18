@@ -1,6 +1,6 @@
 import { Component, type ReactNode } from "react";
 import { ProductCard } from "./ProductCard.tsx"
-import { type Product } from "@/types/product.ts";
+import { type Product } from "@/types/api";
 
 interface IProps {
   products: Product[]

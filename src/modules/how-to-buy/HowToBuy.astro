@@ -1,0 +1,124 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import TextContainer from "@/components/TextContainer.astro"
+
+import hero_image from "@public/optimized/comunidad_hero.webp"
+---
+
+<Layout>
+  <section>
+    <div class="relative">
+      <div>
+        <div
+          class="bg-cover bg-center bg-no-repeat w-full aspect-video"
+          style=`background-image: url(${hero_image.src});`
+        >
+        </div>
+      </div>
+      <span class="absolute top-0 left-0 w-full h-full bg-black/60"></span>
+      <div class="absolute left-1/2 -translate-y-1/2 top-1/2 -translate-x-1/2">
+        <h2
+          class="text-5xl text-white text-center font-lora font-bold uppercase"
+        >
+          PASOS SENCILLOS PARA COMPRAR EN <strong class="text-amatista"
+            >AMATISTA
+          </strong>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <SectionContainer>
+    <div class="grid grid-cols-2 grid-rows-3 gap-y-4 h-screen">
+      <div class="row-span-3 bg-green-300 h-full aspect-portrait"></div>
+      <div class="py-4 ">
+        <div class="flex gap-4">
+          <span class="text-4xl text-golden font-bold">01</span>
+          <TextContainer>
+            <h2>Elegí tu prenda</h2>
+            <p>
+              Explorá nuestra amplia gama de productos disponibles en nuestro
+              sitio web. Una vez que hayas identificado la prenda que te
+              interesa, por favor háznoslo saber.
+            </p>
+          </TextContainer>
+        </div>
+      </div>
+      <div class="py-4 ">
+        <div class="flex gap-4">
+          <span class="text-4xl text-golden font-bold">02</span>
+          <TextContainer>
+            <h2>Conctactanos</h2>
+            <p>
+              Escríbenos por WhatsApp o Instagram mencionando la prenda que te
+              gustó, adjuntando un enlace o captura de la misma Indícanos tu
+              ubicación y el método de pago que prefieres.
+            </p>
+          </TextContainer>
+        </div>
+      </div>
+      <div class="py-4 ">
+        <div class="flex gap-4">
+          <span class="text-4xl text-golden font-bold">03</span>
+          <TextContainer>
+            <h2>Confirmamos disponibilidad</h2>
+            <p>
+              Te confirmaremos la disponibilidad de la prenda, responderemos
+              cualquier pregunta que tengas Una vez que estés listo para
+              realizar la compra, procede con el pago según el método acordado.
+            </p>
+          </TextContainer>
+        </div>
+      </div>
+    </div>
+  </SectionContainer>
+
+  <SectionContainer>
+    <div class="grid grid-cols-2 grid-rows-3 gap-y-4 h-screen">
+      <div class="py-4 ">
+        <div class="flex gap-4">
+          <span class="text-4xl text-golden font-bold">04</span>
+          <TextContainer>
+            <h2>Realizá el pago</h2>
+            <p>
+              Después de realizar el pago, envíanos el comprobante de la
+              transacción.
+            </p>
+          </TextContainer>
+        </div>
+      </div>
+      <div
+        class="row-span-3 bg-green-300 h-full aspect-portrait justify-self-end"
+      >
+      </div>
+      <div class="py-4 ">
+        <div class="flex gap-4">
+          <span class="text-4xl text-golden font-bold">05</span>
+          <TextContainer>
+            <h2>Detalles del envio</h2>
+            <p>
+              Proporciona los detalles de envío, incluyendo tu nombre completo,
+              dirección de entrega (localidad, sucursal o dirección si
+              solicitaste un envío a domicilio ) y número de teléfono.
+            </p>
+          </TextContainer>
+        </div>
+      </div>
+      <div class="py-4 ">
+        <div class="flex gap-4">
+          <span class="text-4xl text-golden font-bold">06</span>
+          <TextContainer>
+            <h2>Enviamos tu paquete</h2>
+            <p>
+              Una vez recibido el comprobante de pago y los datos de envío,
+              procesaremos tu pedido. Te enviaremos el paquete en las próximas
+              48 horas y te proporcionaremos el número de seguimiento mediante
+              una foto del comprobante.
+            </p>
+          </TextContainer>
+        </div>
+      </div>
+    </div>
+  </SectionContainer>
+</Layout>

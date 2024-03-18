@@ -1,5 +1,5 @@
 import { Component, type ReactNode } from "react";
-import { type Product } from "@/types/product";
+import { type Product } from "@/types/api";
 import formatCurency from "@/utils/currency";
 
 interface IProps {

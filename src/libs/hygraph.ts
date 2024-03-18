@@ -1,6 +1,6 @@
-import { ProductTag, type Product } from "@/types/product"
 import { catchFecthInMemory } from "./cacheMemory"
 import { GET_PRODUCT_BY_ID, GET_PRODUCTS } from "./queries"
+import { type Product, type ProductTag, type Data } from "@/types/api"
 
 const HYGRAPH_ENDPOINT = import.meta.env.PUBLIC_HYGRAPH_ENDPOINT
 
@@ -16,10 +16,10 @@ function createGraphConfig(query: string) {
 
 export async function hygraphQuery({
   query,
-  expireTimeInHours,
+  expireTimeInMinutes = 10,
 }: {
   query: string
-  expireTimeInHours: number
+  expireTimeInMinutes?: number
 }) {
   const config = createGraphConfig(query)
   return catchFecthInMemory(
@@ -36,35 +36,8 @@ export async function hygraphQuery({
         .then((data) => resolve(data))
     }),
     query,
-    expireTimeInHours
+    expireTimeInMinutes
   )
-}
-
-export async function fetchProducts(): Promise<{
-  productos: Product[]
-}> {
-  return hygraphQuery({
-    query: `
-    {
-      productos {
-        id
-        price
-        size
-        stock
-        tag
-        title
-        backImg {
-          url
-        }
-        frontImg {
-          url
-        }
-        description
-      }
-    }
-  `,
-    expireTimeInHours: 1,
-  })
 }
 
 export async function fetchProductById(id: string): Promise<{
@@ -72,27 +45,14 @@ export async function fetchProductById(id: string): Promise<{
 }> {
   return hygraphQuery({
     query: GET_PRODUCT_BY_ID(id),
-    expireTimeInHours: 24,
   })
 }
 
 export async function fetchProductsByTag(
   tag: ProductTag | null,
   cursor: string | null
-): Promise<{
-  edges: [
-    {
-      cursor: string
-      node: Product
-    }
-  ]
-  pageInfo: {
-    endCursor: string
-    hasNextPage: boolean
-  }
-}> {
+): Promise<Data> {
   return hygraphQuery({
     query: GET_PRODUCTS(tag, cursor),
-    expireTimeInHours: 1,
   })
 }
