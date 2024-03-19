@@ -75,3 +75,21 @@ export const GET_PRODUCTS = (
     }
   }`
 }
+
+export const GET_LATEST_PRODUCTS = (n:number) => {
+  return `{
+    productos(last: ${n}) {
+      description
+      id
+      miniatura {
+        id
+        url
+      }
+      price
+      size
+      stock
+      tag
+      title
+    }
+  }`
+}

@@ -14,7 +14,7 @@ export class ProductCard extends Component<IProps> {
   }
 
   render(): ReactNode {
-    const { id, title, price, frontImg, stock } = this.props.product
+    const { id, title, price, miniatura, stock } = this.props.product
 
     const href = `/tienda/${id}`
     const priceFormatted = formatCurency(price)
@@ -27,9 +27,9 @@ export class ProductCard extends Component<IProps> {
       >
         <div className="relative mb-4 overflow-hidden">
           <img
-            src={frontImg.url}
+            src={miniatura.url}
             alt={title}
-            className="duration-1000 group-hover:scale-110"
+            className="duration-1000 group-hover:scale-110 w-full aspect-portrait object-cover object-center"
           />
           {isSoldout && (
             <span className="absolute px-3 py-1 text-sm rounded-full bottom-3 left-3 text-raw_white bg-midnight_green-900">

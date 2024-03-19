@@ -1,5 +1,5 @@
 import { catchFecthInMemory } from "./cacheMemory"
-import { GET_PRODUCT_BY_ID, GET_PRODUCTS } from "./queries"
+import { GET_LATEST_PRODUCTS, GET_PRODUCT_BY_ID, GET_PRODUCTS } from "./queries"
 import { type Product, type ProductTag, type Data } from "@/types/api"
 
 const HYGRAPH_ENDPOINT = import.meta.env.PUBLIC_HYGRAPH_ENDPOINT
@@ -54,5 +54,13 @@ export async function fetchProductsByTag(
 ): Promise<Data> {
   return hygraphQuery({
     query: GET_PRODUCTS(tag, cursor),
+  })
+}
+
+export async function fetchLatestProducts(n = 8): Promise<{
+  productos: Product[]
+}> {
+  return hygraphQuery({
+    query: GET_LATEST_PRODUCTS(n),
   })
 }
