@@ -8,6 +8,10 @@ interface IProps {
 export default class ImageSlider extends Component<IProps> {
   render(): ReactNode {
     const { product } = this.props
+    if (!product.frontImg) return <div>Imagen de Producto 1 no cargada en el gestor de contenido</div>
+    if (!product.middleImg) return <div>Imagen Producto 2 no cargada en el gestor de contenido</div>
+    if (!product.backImg) return <div>Imagen Producto 3 no cargada en el gestor de contenido</div>
+
     const images = [
       {
         src: product.frontImg.url,
@@ -16,18 +20,20 @@ export default class ImageSlider extends Component<IProps> {
         id: "firstImage",
       },
       {
+        src: product.middleImg.url,
+        alt: product.title,
+        key: product.middleImg.id,
+        id: "thirdImage",
+      },
+      {
         src: product.backImg.url,
         alt: product.title,
         key: product.backImg.id,
         id: "secondImage",
       },
-      {
-        src: product.miniatura.url,
-        alt: product.title,
-        key: product.miniatura.id,
-        id: "thirdImage",
-      },
     ]
+    
+
     return (
       <div className="relative overflow-y-hidden">
         <div

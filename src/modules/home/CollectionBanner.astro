@@ -16,23 +16,21 @@ interface Props {
   texts: Texts
 }
 
-const { texts } = Astro.props
-
 const banners = [
   {
     img: leftImage.src,
-    text: texts.title_1,
-    href: '/tienda/vestidos',
+    text: "Vestidos y Poleras",
+    href: '/tienda/vestidos_y_poleras',
   },
   {
     img: centerImage.src,
-    text: texts.title_2,
-    href: '/tienda/blusas',
+    text: "Shorts y Pantalones",
+    href: '/tienda/shorts_y_pantalones',
   },
   {
     img: rightImage.src,
-    text: texts.title_3,
-    href: '/tienda',
+    text: "Tejidos Artesanales",
+    href: '/tienda/tejido_artesanal',
   },
 ]
 ---

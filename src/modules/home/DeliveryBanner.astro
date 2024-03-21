@@ -1,7 +1,7 @@
 ---
 import SectionContainer from "@/components/SectionContainer.astro"
 import VerticalHero from "@/components/VerticalHero.astro"
-import BuyButton from "@/components/BuyButton.astro"
+import ContactButton from "@/components/ContactButton.astro"
 
 import leftImg from "@public/optimized/home_delivery_3.webp"
 import centerImg from "@public/optimized/home_delivery_2.webp"
@@ -59,6 +59,6 @@ const { texts } = Astro.props
   </div>
 
   <div class="flex justify-center">
-    <BuyButton href="/contacto">{texts.cta}</BuyButton>
+    <ContactButton>Contactanos</ContactButton>
   </div>
 </SectionContainer>

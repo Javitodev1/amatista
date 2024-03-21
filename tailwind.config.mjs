@@ -34,6 +34,10 @@ export default {
         },
       },
       colors: {
+        primary: '#fff',
+        secondary: '#eff2ed',
+        "dark-primary": '#111',
+        "dark-secondary": '#000',
         raw_white: '#eff2ed',
         amatista: '#9E5C99',
         golden: '#e5ae5e',

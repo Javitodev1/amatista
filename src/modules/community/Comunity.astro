@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
 import Logo from "@/icons/Logo.astro"
+import ContactButton from "@/components/ContactButton.astro"
 
 import heroImg from "@public/optimized/comunidad_hero.webp"
 import cupon_bg_img from "@public/optimized/cupon_bg.webp"
@@ -39,40 +40,36 @@ const alliance = [
     <div class="relative z-0">
       <div
         style={`background-image: url(${heroImg.src});`}
-        class="h-screen w-full bg-cover bg-center bg-no-repeat"
+        class="w-full h-screen bg-center bg-no-repeat bg-cover"
       >
       </div>
-      <span class="absolute top-0 left-0 h-screen w-full bg-black/50"></span>
-      <div class="absolute h-screen w-full top-0 left-0">
+      <span class="absolute top-0 left-0 w-full h-screen bg-black/50"></span>
+      <div class="absolute top-0 left-0 w-full h-screen">
         <div
-          class="flex h-full flex-col text-center justify-center items-center"
+          class="flex flex-col items-center justify-center h-full text-center"
         >
-          <h2 class="text-raw_white text-3xl md:text-5xl font-bold">
+          <h2 class="text-3xl font-bold text-raw_white md:text-5xl">
             REVOLUCIONANDO LA CULTURA
           </h2>
-          <h2 class="text-raw_white text-3xl md:text-5xl font-bold">
+          <h2 class="text-3xl font-bold text-raw_white md:text-5xl">
             COLABORATIVA MIENTRAS
           </h2>
-          <h2 class="text-raw_white text-3xl md:text-5xl font-bold mb-6">
+          <h2 class="mb-6 text-3xl font-bold text-raw_white md:text-5xl">
             <strong class="text-amatista">CO-CREAMOS</strong>
           </h2>
 
           <p
-            class="text-raw_white text-xl md:text-3xl font-normal font-roboto max-w-sm md:max-w-fit"
+            class="max-w-sm text-xl font-normal text-raw_white md:text-3xl font-roboto md:max-w-fit"
           >
             UNA VISIÓN COMPARTIDA DEL FUTURO PARA LOGRAR NUESTRA
           </p>
           <p
-            class="text-raw_white text-xl md:text-3xl font-normal font-roboto mb-12"
+            class="mb-12 text-xl font-normal text-raw_white md:text-3xl font-roboto"
           >
             <strong class="text-amatista">SOSTENIBILIDAD</strong>
           </p>
 
-          <a
-            href="/contacto"
-            class="uppercase text-xl text-raw_white font-semibold border-raw_white border-4 py-4 px-12 hover:backdrop-blur hover:text-raw_white/75 hover:border-raw_white/75 duration-300"
-            >contactame
-          </a>
+          <ContactButton variant="white">contactame</ContactButton>
         </div>
       </div>
     </div>
@@ -80,16 +77,16 @@ const alliance = [
   <!-- End Banner -->
 
   <SectionContainer>
-    <div class="grid grid-cols-2 gap-12">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
       <div>
         <div
           style={`background-image: url(${comunidad_sec_1.src});`}
-          class="w-full aspect-square bg-center bg-cover"
+          class="w-full bg-center bg-cover aspect-square"
         >
         </div>
       </div>
 
-      <div class="flex justify-center items-center">
+      <div class="place-content-center">
         <TextContainer>
           <h2>Comunidad amatista</h2>
           <p>
@@ -117,24 +114,24 @@ const alliance = [
       <div class="relative w-[700px]">
         <div
           style={`background-image: url(${cupon_bg_img.src});`}
-          class="aspect-video w-full bg-center bg-cover"
+          class="w-full bg-center bg-cover aspect-video"
         >
         </div>
         <div class="absolute top-0 left-0 w-full h-full">
-          <div class="flex px-12 py-14">
-            <div class="w-full text-center flex flex-col justify-center">
-              <h3 class="text-2xl text-golden font-bold uppercase mb-4">
+          <div class="grid grid-cols-2 px-4 py-8">
+            <div class="w-full text-center justify-self-center place-content-center">
+              <h3 class="mb-4 font-bold uppercase md:text-2xl text-golden">
                 cupón de descuento
               </h3>
               <h2
-                class="text-4xl text-amatista font-normal uppercase leading-tight mb-6"
+                class="font-normal leading-tight uppercase md:mb-6 md:text-4xl text-amatista"
               >
                 co-creamos alianzas
               </h2>
-              <p class="text-7xl font-bold text-amatista">10%</p>
+              <p class="font-bold md:text-7xl text-amatista">10%</p>
             </div>
-            <div class="w-full">
-              <Logo variant="v" />
+            <div class="w-full p-4 place-content-center">
+              <Logo variant="v" class="w-full aspect-square"/>
             </div>
           </div>
         </div>
@@ -147,7 +144,7 @@ const alliance = [
     <TextContainer>
       <h2 class="flex justify-center">Co-crea con Amatistas</h2>
     </TextContainer>
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-12">
       {alliance.map(({ logo, name, instagramTag, href }) => (
         <div class="flex flex-col items-center">
           <img
@@ -155,10 +152,10 @@ const alliance = [
             alt={name}
             class="w-[300px] aspect-square object-cover object-center"
           />
-          <h3>{name}</h3>
+          <h3 class="text-black dark:text-white">{name}</h3>
           <a
             href={href}
-            class="hover:underline hover:text-amatista"
+            class="text-black hover:underline hover:text-amatista dark:text-white"
             target="_blank"
           >
             <p>{instagramTag}</p>

@@ -2,8 +2,8 @@
 import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
-import BuyButton from "@/components/BuyButton.astro"
 import Separator from "@/components/Separator.astro"
+import ContactButton from "@/components/ContactButton.astro"
 
 import sectionImage1 from "@public/optimized/envios_sec_1.webp"
 import sectionImage2 from "@public/optimized/envios_sec_4.webp"
@@ -43,7 +43,7 @@ import sectionHero from "@public/optimized/envios_hero.webp"
           </p>
         </TextContainer>
         <div class="flex justify-center md:justify-start">
-          <BuyButton href="/contacto">CONTACTAME</BuyButton>
+          <ContactButton>Contactame</ContactButton>
         </div>
       </div>
     </div>
@@ -136,11 +136,7 @@ import sectionHero from "@public/optimized/envios_hero.webp"
             Valoramos cada prenda por su historia
           </h2>
           <div class="flex justify-center">
-            <a
-              href="/contacto"
-              class="uppercase text-xl text-black font-semibold border-black border-4 py-4 px-12 hover:backdrop-blur-3xl hover:text-black/75 hover:border-black/75 duration-300"
-              >contactame
-            </a>
+            <ContactButton variant="black">contactame</ContactButton>
           </div>
         </div>
       </div>

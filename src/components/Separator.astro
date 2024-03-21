@@ -1,62 +1,47 @@
 ---
-import * as Highlights from '@/icons/highlight'
+import * as Highlights from "@/icons/highlight"
 interface Props {
-  direction?: 'left' | 'right'
-  backgroundColor?: string
-  forwardColor?: string
-  reverseColors?: boolean
-  variant?: 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6' | 'H7'
+  directionX?: "normal" | "reverse"
+  directionY?: "normal" | "reverse"
+  variant?: "H1" | "H2" | "H3" | "H4" | "H5" | "H6" | "H7"
 }
+
 const {
-  direction = 'left',
-  backgroundColor = 'bg-raw_white dark:bg-black',
-  forwardColor = 'bg-white dark:bg-black dark:bg-opacity-95',
-  reverseColors = false,
-  variant = 'H1',
+  directionX = "normal",
+  directionY = "normal",
+  variant = "H1",
 } = Astro.props
 
-const isLeft = direction === 'left'
-const isRight = direction === 'right'
 const IconComponent = Highlights[variant]
 ---
 
-<div
-  class="relative z-0 w-full h-32"
-  class:list={[
-    {
-      [backgroundColor]: !reverseColors,
-      [forwardColor]: reverseColors,
-    },
-  ]}
->
+<section class="relative h-32 w-full">
   <div
-    class="absolute top-0 left-0 w-full h-full"
-    class:list={[
-      {
-        [forwardColor]: !reverseColors,
-        [backgroundColor]: reverseColors,
-        'cut-polygon-1': isLeft,
-        'cut-polygon-2': isRight,
-      },
-    ]}
+    class="h-full w-full bg-primary dark:bg-dark-primary"
+    class:list={[{ "rotate-180": directionY === "reverse" }]}
   >
-  </div>
-  <div class="absolute top-0 left-0 w-full h-full">
-    <div class="flex items-center justify-center w-full h-full">
-      <IconComponent class="h-full aspect-square text-amatista" />
+    <div
+      class="h-full w-full bg-secondary dark:bg-dark-secondary"
+      class:list={[
+        {
+          "cut-1": directionX === "normal",
+          "cut-2": directionX === "reverse",
+        },
+      ]}
+    >
     </div>
   </div>
-</div>
-
-<!-- <span class="w-2/5 h-1 mr-4 rounded-full bg-amatista"></span> -->
-<!-- <span class="w-2/5 h-1 ml-4 rounded-full bg-amatista"></span> -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 h-full">
+    <IconComponent class="h-full aspect-square text-amatista" />
+  </div>
+</section>
 
 <style>
-  .cut-polygon-1 {
-    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  .cut-1 {
+    clip-path: polygon(0 0, 0 100%, 100% 0);
   }
 
-  .cut-polygon-2 {
-    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  .cut-2 {
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
   }
 </style>

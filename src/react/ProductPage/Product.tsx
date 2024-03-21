@@ -10,6 +10,7 @@ interface IProps {
   productID: string | undefined
   productURL: string
 }
+
 interface IState {
   product: Product | undefined
   loading: boolean

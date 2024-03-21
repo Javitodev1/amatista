@@ -20,20 +20,20 @@ const { texts } = Astro.props
 ---
 
 <SectionContainer variant="darker">
-  <h2 class="text-center text-4xl text-amatista font-semibold mb-4 uppercase font-lora">{texts.title}</h2>
+  <h2 class="mb-4 text-4xl font-semibold text-center uppercase text-amatista font-lora">{texts.title}</h2>
   <TextContainer class="text-center">
     <h3>{texts.subtitle}</h3>
     <p class="max-w-xl mx-auto">{texts.description}</p>
   </TextContainer>
-  <div class="flex justify-center mb-4 py-4 gap-x-12">
+  <div class="flex justify-center py-4 mb-4 gap-x-12">
     <a
       href="https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0"
       target="_blank"
     >
-      <WhatappsIcon class="hover:text-amatista h-12 w-12 duration-200" />
+      <WhatappsIcon class="w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista" />
     </a>
     <a href="https://www.instagram.com/amatista.comunidad/" target="_blank">
-      <InstagramIcon class="hover:text-amatista h-12 w-12 duration-200" />
+      <InstagramIcon class="w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista" />
     </a>
     <a
       href="https://web.facebook.com/amatista.comunidad/?_rdc=1&_rdr"
@@ -41,7 +41,7 @@ const { texts } = Astro.props
     >
       <svg
         fill="currentColor"
-        class="hover:text-amatista h-12 w-12 duration-200"
+        class="w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
         ><path
@@ -54,7 +54,7 @@ const { texts } = Astro.props
       target="_blank"
     >
       <svg
-        class="hover:text-amatista h-12 w-12 duration-200"
+        class="w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"

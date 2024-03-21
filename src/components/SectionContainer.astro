@@ -13,8 +13,8 @@ const { class: className, variant = 'light', id } = Astro.props
   class="py-12"
   class:list={[
     className,
-    { 'bg-white dark:bg-black dark:bg-opacity-95': variant === 'light' },
-    { 'bg-raw_white dark:bg-black': variant === 'darker' },
+    { 'bg-primary dark:bg-dark-primary': variant === 'light' },
+    { 'bg-secondary dark:bg-dark-secondary': variant === 'darker' },
   ]}
 >
   <div class="max-w-sm mx-auto md:max-w-2xl lg:max-w-6xl">

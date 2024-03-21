@@ -11,7 +11,7 @@ export const GET_PRODUCT_BY_ID = (id: string) => {
       stock
       tag
       title
-      miniatura {
+      middleImg {
         url
         id
       }
@@ -57,14 +57,6 @@ export const GET_PRODUCTS = (
           miniatura {
             url
             id
-          }
-          backImg {
-            id
-            url
-          }
-          frontImg {
-            id
-            url
           }
         }
       }

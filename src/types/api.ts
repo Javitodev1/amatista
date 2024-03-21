@@ -24,24 +24,15 @@ export interface Product {
   stock: number
   tag: string[]
   title: string
-  miniatura: Miniatura
-  backImg: BackImg
-  frontImg: FrontImg
+  miniatura: Image
+  backImg: Image
+  middleImg: Image
+  frontImg: Image
 }
 
-export interface Miniatura {
+export interface Image {
   url: string
   id: string
-}
-
-export interface BackImg {
-  id: string
-  url: string
-}
-
-export interface FrontImg {
-  id: string
-  url: string
 }
 
 export interface PageInfo {
@@ -72,8 +63,8 @@ export enum ProductTag {
   Todo = "Todo",
   Gangas = "Gangas",
   Abrigos = "Abrigos",
-  Shorts_y_Pantalones = "Shorts y Pantalones",
-  Vestidos_y_Poleras = "Vestidos y Poleras",
-  Accesorios_y_Calzado = "Accesorios y Calzado",
+  Shorts_y_Pantalones = "Shorts Y Pantalones",
+  Vestidos_y_Poleras = "Vestidos Y Poleras",
+  Accesorios_y_Calzado = "Accesorios Y Calzado",
   Tejido_Artesanal = "Tejido Artesanal",
 }

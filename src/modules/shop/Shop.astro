@@ -2,10 +2,17 @@
 import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import { ShopPage } from "@/react"
+import { ProductTag } from "@/types/api"
+
+interface Props {
+  initFilter?: ProductTag
+}
+
+const { initFilter = ProductTag.Todo } = Astro.props
 ---
 
 <Layout>
   <SectionContainer>
-    <ShopPage client:load />
+    <ShopPage client:load initFilter={initFilter} />
   </SectionContainer>
 </Layout>

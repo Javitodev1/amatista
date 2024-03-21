@@ -4,30 +4,24 @@ import ThemeToggleLightIcon from "@/icons/ThemeToggleLight.astro"
 ---
 
 <button
+  transition:persist
   id="theme-toggle"
   title="Modo Oscuro"
-  transition:persist
   type="button"
   class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
 >
-  <ThemeToggleDarkIcon
-    id="theme-toggle-dark-icon"
-    class="hidden w-5 h-5"
-  />
-  <ThemeToggleLightIcon
-    id="theme-toggle-light-icon"
-    class="hidden w-5 h-5"
-  />
+  <ThemeToggleDarkIcon id="theme-toggle-dark-icon" class="hidden w-5 h-5" />
+  <ThemeToggleLightIcon id="theme-toggle-light-icon" class="hidden w-5 h-5" />
 </button>
 
 <script>
   const handleThemeToggleClick = () => {
     // toggle icons inside button
     const themeToggleDarkIcon = document.getElementById(
-      "theme-toggle-dark-icon",
+      "theme-toggle-dark-icon"
     )!
     const themeToggleLightIcon = document.getElementById(
-      "theme-toggle-light-icon",
+      "theme-toggle-light-icon"
     )!
     const documentClassList = document.documentElement.classList
 
@@ -58,10 +52,10 @@ import ThemeToggleLightIcon from "@/icons/ThemeToggleLight.astro"
 
   const handleThemeTogglePageLoad = () => {
     const themeToggleDarkIcon = document.getElementById(
-      "theme-toggle-dark-icon",
+      "theme-toggle-dark-icon"
     )!
     const themeToggleLightIcon = document.getElementById(
-      "theme-toggle-light-icon",
+      "theme-toggle-light-icon"
     )!
     const documentClassList = document.documentElement.classList
 

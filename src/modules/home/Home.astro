@@ -56,16 +56,16 @@ const sections = reduceSections(PAGE, textsJSON) satisfies HomeSections
   <NewArrival />
   <HowToBuyBanner texts={sections.como_comprar} />
 
-  <Separator />
+  <Separator directionX="reverse" />
 
   <ComunidadBanner texts={sections.banner_comunidad} />
   <CollectionBanner texts={sections.banner_coleccion} />
 
-  <Separator reverseColors={true} direction="right" variant="H3" />
+  <Separator directionY="reverse" variant="H3" />
 
   <HealingKit texts={sections.kit_sanacion} />
 
-  <Separator direction="right" variant="H2" />
+  <Separator variant="H2" />
 
   <SubscribeBanner texts={sections.banner_suscribite} />
   <DeliveryBanner texts={sections.banner_contacto} />

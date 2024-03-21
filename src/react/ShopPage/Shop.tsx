@@ -4,7 +4,9 @@ import { Component, type ReactNode } from "react"
 import { ProductTag, type Product, type PageInfo } from "@/types/api"
 import { fetchProductsByTag } from "@/libs/hygraph"
 
-interface IProps {}
+interface IProps {
+  initFilter: ProductTag
+}
 
 interface IStates {
   products: Product[]
@@ -29,9 +31,10 @@ const fetchProducts = (filter: ProductTag, cursor: string | null = null) => {
 export default class Shop extends Component<IProps, IStates> {
   constructor(props: IProps) {
     super(props)
+    const { initFilter } = this.props
     this.state = {
       products: [],
-      filter: ProductTag.Todo,
+      filter: initFilter,
       loading: false,
       hasNextPage: false,
       cursor: null,

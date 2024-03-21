@@ -1,8 +1,8 @@
 TODO:
 - [] agregar filtro por tallas a la tienda
-- [] cambiar aged banner href to filtro de tallas
-- [] agregar pagina de como comprar https://www.divino.com.uy/como-comprar
-- [] cambiar en footer tienda por sitemap
+- [✅] eliminar aged banner
+- [✅] agregar pagina de como comprar https://www.divino.com.uy/como-comprar
+- [✅] cambiar en footer tienda por sitemap
 - [✅] agregar en comunidad una seccion donde publicar cupones para otras tiendas.
 - [✅] Agregar una pagina de como activar tu kit de sanacion y añadir enlace en la seccion home/como-activar-tu-kit-de-sanacion
 - [✅] Agregar una pagina sobre nuestras entregas.
