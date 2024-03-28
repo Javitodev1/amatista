@@ -1,5 +1,12 @@
 TODO:
-- [] agregar filtro por tallas a la tienda
+- [❌] agregar filtro por tallas a la tienda
+- [] agregar filtro de blusas y camisas
+- [] cambiar short y pantalones a blusas y camisas
+- [] agregar segmentacion dinamica a traves del gestor del contenido
+- [] cambiar en envios el titulo.
+- [] camibar rutas para que concuerde con el sitemap
+- [] filtros cambiar Y griega por ampersand
+- [] comunidad cambiar cupon por imagen
 - [✅] eliminar aged banner
 - [✅] agregar pagina de como comprar https://www.divino.com.uy/como-comprar
 - [✅] cambiar en footer tienda por sitemap

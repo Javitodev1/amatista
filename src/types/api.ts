@@ -64,7 +64,8 @@ export enum ProductTag {
   Gangas = "Gangas",
   Abrigos = "Abrigos",
   Shorts_y_Pantalones = "Shorts Y Pantalones",
-  Vestidos_y_Poleras = "Vestidos Y Poleras",
+  Vestidos_y_Polleras = "Vestidos Y Polleras",
   Accesorios_y_Calzado = "Accesorios Y Calzado",
   Tejido_Artesanal = "Tejido Artesanal",
+  Blusas_y_Camisas = "Blusas Y Camisas"
 }
