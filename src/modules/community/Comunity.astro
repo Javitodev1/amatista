@@ -7,29 +7,22 @@ import ContactButton from "@/components/ContactButton.astro"
 
 import heroImg from "@public/optimized/comunidad_hero.webp"
 import cupon_bg_img from "@public/optimized/cupon_bg.webp"
-import logo_papeleria from "@public/optimized/papeleriacreative.webp"
-import logo_biocosmetica from "@public/optimized/biocosmetica.webp"
-import logo_ecojabones from "@public/optimized/ecojabones.webp"
+import brand_left from "@public/optimized/brand_photography.webp"
+import brand_center from "@public/optimized/brand_tejidos.webp"
 import comunidad_sec_1 from "@public/optimized/comunidad_sec_1.webp"
 
 const alliance = [
   {
-    logo: logo_papeleria.src,
-    name: "PALEREIALCREATIVA",
-    instagramTag: "@PAPELERIACREATIVA",
-    href: "https://www.instagram.com/papeleriacreativa/",
+    logo: brand_left.src,
+    name: "Valentina Pereira",
+    instagramTag: "@valeepereyraphotos",
+    href: "https://www.instagram.com/valeepereyraphotos/",
   },
   {
-    logo: logo_biocosmetica.src,
-    name: "BIOCOSMETICA",
-    instagramTag: "@BIOCOSMETICA",
-    href: "#",
-  },
-  {
-    logo: logo_ecojabones.src,
-    name: "ECOJABONES",
-    instagramTag: "@ECOJABONES",
-    href: "https://www.instagram.com/ecojabones/",
+    logo: brand_center.src,
+    name: "Kardia Tejidos",
+    instagramTag: "098778638 - Rosario",
+    href: "https://api.whatsapp.com/send?phone=59098778638",
   },
 ]
 ---
@@ -167,7 +160,7 @@ const alliance = [
             class="text-black hover:underline hover:text-amatista dark:text-white"
             target="_blank"
           >
-            <p>{instagramTag}</p>
+            <p class="uppercase">{instagramTag}</p>
           </a>
         </div>
       ))}

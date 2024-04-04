@@ -4,6 +4,9 @@ import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
 import BuyButton from "@/components/BuyButton.astro"
 import ContactButton from "@/components/ContactButton.astro"
+
+import right_img from "@public/optimized/como_comprar_1.webp"
+import left_img from "@public/optimized/como_comprar_2.webp"
 ---
 
 <Layout>
@@ -12,7 +15,9 @@ import ContactButton from "@/components/ContactButton.astro"
       <h2>PASOS SENCILLOS PARA COMPRAR EN AMATISTA</h2>
     </TextContainer>
     <div class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-3 gap-y-12 md:gap-y-4">
-      <div class="h-full bg-green-300 md:row-span-3 aspect-portrait justify-self-center"></div>
+      <div class="h-auto w-[500px] bg-green-300 md:row-span-3 aspect-portrait place-self-center">
+        <img class="w-full h-auto aspect-portrait object-cover object-center" src={left_img.src} alt="chat de whatsapp con amatista" width="500" height="750">
+      </div>
       <div class="py-4 ">
         <div class="flex gap-4">
           <span class="text-4xl font-bold text-golden">01</span>
@@ -74,8 +79,9 @@ import ContactButton from "@/components/ContactButton.astro"
       </div>
 
       <div
-        class="hidden md:block h-[700px] row-span-3 bg-green-300 aspect-portrait justify-self-end"
+        class="hidden md:block h-auto w-[500px] row-span-3 bg-green-300 aspect-portrait place-self-center"
       >
+      <img src={right_img.src} alt="entrega de tu producto" width="500" height="750">
       </div>
 
       <div class="py-4 ">
