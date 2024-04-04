@@ -2,11 +2,10 @@
 import Layout from "@/layouts/Layout.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
-import Logo from "@/icons/Logo.astro"
 import ContactButton from "@/components/ContactButton.astro"
 
 import heroImg from "@public/optimized/comunidad_hero.webp"
-import cupon_bg_img from "@public/optimized/cupon_bg.webp"
+import cupon_img from "@public/optimized/cupon.webp"
 import brand_left from "@public/optimized/brand_photography.webp"
 import brand_center from "@public/optimized/brand_tejidos.webp"
 import comunidad_sec_1 from "@public/optimized/comunidad_sec_1.webp"
@@ -103,41 +102,14 @@ const alliance = [
 
   <!-- Banner Cupones -->
   <SectionContainer>
-    <TextContainer class="mb-12">
-      <h2>¡Construyamos juntas una comunidad fuerte y solidaria!</h2>
-      <div class="max-w-3xl mx-auto text-center">
-        <p>Presenta nuestro cupón en las marcas asociadas y obtén descuentos exclusivos.<br>
-          Apoya a emprendedoras nacionales y descubrí nuevos productos y servicios.
-        </p>
-      </div>
-      <h3 class="text-center">¡Únete a la comunidad  en este emocionante viaje de colaboración y descubrimiento!</h3>
-    </TextContainer>
-    <div class="flex justify-center">
-      <div class="relative w-[700px]">
-        <div
-          style={`background-image: url(${cupon_bg_img.src});`}
-          class="w-full bg-center bg-cover aspect-video"
-        >
-        </div>
-        <div class="absolute top-0 left-0 w-full h-full">
-          <div class="grid grid-cols-2 px-4 py-8">
-            <div class="w-full text-center justify-self-center place-content-center">
-              <h3 class="mb-4 font-bold uppercase md:text-2xl text-golden">
-                cupón de descuento
-              </h3>
-              <h2
-                class="font-normal leading-tight uppercase md:mb-6 md:text-4xl text-amatista"
-              >
-                co-creamos alianzas
-              </h2>
-              <p class="font-bold md:text-7xl text-amatista">10%</p>
-            </div>
-            <div class="w-full p-4 place-content-center">
-              <Logo variant="v" class="w-full aspect-square"/>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="max-w-[940px] mx-auto">
+      <img
+      src={cupon_img.src}
+      alt="cupon amatista"
+      width="940"
+      height="529"
+      class="w-full h-auto aspect-video object-cover object-center"
+    />
     </div>
   </SectionContainer>
   <!-- End Banner Cupones -->
