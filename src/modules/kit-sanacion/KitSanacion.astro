@@ -5,36 +5,41 @@ import TextContainer from "@/components/TextContainer.astro"
 import ContactButton from "@/components/ContactButton.astro"
 
 import amatistasImg from "@public/optimized/kit-sanacion-amatistas.webp"
+import starterKitImage1 from "@public/optimized/kit_sanacion_1.webp"
+import starterKitImage2 from "@public/optimized/kit_sanacion_2.webp"
+import starterKitImage3 from "@public/optimized/kit_sanacion_3.webp"
+import starterKitImage4 from "@public/optimized/kit_sanacion_4.webp"
+import starterKitImage5 from "@public/optimized/kit_sanacion_5.webp"
 
 const stepsStarterKit = [
   {
     title: "Encuentra tu Espacio Tranquilo",
     body: "Busca un lugar que te transmita paz y tranquilidad. Puede ser tu rincón favorito en casa o un espacio al aire libre donde te sientas cómoda, inspirada y relajada.",
-    imageSrc: "",
+    imageSrc: starterKitImage1.src,
     imageAlt: "",
   },
   {
     title: "Conéctate con la Energía Renovadora",
     body: "Tómate un momento para respirar profundamente y visualiza una luz blanca que te rodea, infundiéndote con energía fresca y positiva.",
-    imageSrc: "",
+    imageSrc: starterKitImage3.src,
     imageAlt: "",
   },
   {
     title: "Crea una Atmósfera Serena con Velas e Incienso",
     body: "Enciende la vela y el incienso para establecer una atmósfera serena. Mientras lo haces, establece una intención clara de transmutar tus prendas, permitiendo que te acompañen en nuevas experiencias y aventuras.",
-    imageSrc: "",
+    imageSrc: starterKitImage5.src,
     imageAlt: "",
   },
   {
     title: "Purifica tus Prendas con Amatista",
     body: "Pasa tu amatista por todas tus prendas, visualizando cómo su energía alquimiza y purifica cada una de ellas. Siéntete libre de tocarlas y sostenerlas mientras te conectas con su nueva vibración.",
-    imageSrc: "",
+    imageSrc: starterKitImage4.src,
     imageAlt: "",
   },
   {
     title: "Finaliza con Gratitud y Paz Interior",
     body: "Agradece a las energías universales, a tus prendas y a ti mismo por este proceso de sanación y renovación. Tómate un momento para respirar profundamente y sentirte en paz antes de continuar con tu día.",
-    imageSrc: "",
+    imageSrc: starterKitImage2.src,
     imageAlt: "",
   },
 ]
@@ -53,7 +58,7 @@ const stepsStarterKit = [
     <ul class="flex flex-col gap-12">
       {stepsStarterKit.map(({ title, body, imageSrc, imageAlt }, index) => {
         return (
-          <li class="border-4 border-amatista flex max-w-[840px] relative odd:flex-row-reverse even:ml-auto group items-center">
+          <li class="border-4 border-amatista flex max-w-[840px] relative odd:flex-row-reverse even:ml-auto group items-center shadow-black/20 shadow-md">
             <TextContainer class="px-12 group-odd:pr-24 group-even:pl-24">
               <h3>{title}</h3>
               <p>{body}</p>
@@ -67,7 +72,7 @@ const stepsStarterKit = [
                 class="object-cover object-center w-full h-auto aspect-square"
               />
             </div>
-            <div class="bg-amatista w-[100px] aspect-square rounded-full absolute top-1/2 -translate-y-1/2 group-odd:translate-x-1/2 group-even:-translate-x-1/2" >
+            <div class="bg-amatista w-[100px] aspect-square rounded-full absolute top-1/2 -translate-y-1/2 group-odd:translate-x-1/2 group-even:-translate-x-1/2 shadow-black/20 shadow-md" >
               <p class="text-white text-5xl flex h-full items-center justify-center font-bold font-lora">{index + 1}</p>
             </div>
           </li>
