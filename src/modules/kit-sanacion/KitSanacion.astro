@@ -4,62 +4,38 @@ import SectionContainer from "@/components/SectionContainer.astro"
 import TextContainer from "@/components/TextContainer.astro"
 import ContactButton from "@/components/ContactButton.astro"
 
-import step_image_1 from "@public/optimized/envios_sec_1.webp"
-import step_image_2 from "@public/optimized/envios_sec_1.webp"
-import step_image_3 from "@public/optimized/envios_sec_1.webp"
-import step_image_4 from "@public/optimized/envios_sec_1.webp"
-import step_image_5 from "@public/optimized/envios_sec_1.webp"
-import step_image_6 from "@public/optimized/envios_sec_1.webp"
-import step_image_7 from "@public/optimized/envios_sec_1.webp"
-import step_image_8 from "@public/optimized/envios_sec_1.webp"
+import amatistasImg from "@public/optimized/kit-sanacion-amatistas.webp"
 
-const steps = [
+const stepsStarterKit = [
   {
-    image: step_image_1.src,
-    content: "Encuentra un lugar tranquilo y cómodo donde puedas concentrarte.",
-    padding: "pt-0 md:pt-0",
+    title: "Encuentra tu Espacio Tranquilo",
+    body: "Busca un lugar que te transmita paz y tranquilidad. Puede ser tu rincón favorito en casa o un espacio al aire libre donde te sientas cómoda, inspirada y relajada.",
+    imageSrc: "",
+    imageAlt: "",
   },
   {
-    image: step_image_2.src,
-    content:
-      "Toma la amatista y tocala suavemente permitiendo que sientas su energía.",
-    padding: "pt-0 md:pt-12",
+    title: "Conéctate con la Energía Renovadora",
+    body: "Tómate un momento para respirar profundamente y visualiza una luz blanca que te rodea, infundiéndote con energía fresca y positiva.",
+    imageSrc: "",
+    imageAlt: "",
   },
   {
-    image: step_image_3.src,
-    content:
-      "Visualiza tus prendas en tu mente y establece una intención clara de transmutar su energía anterior y conectarlas contigo.",
-    padding: "pt-0 md:pt-24",
+    title: "Crea una Atmósfera Serena con Velas e Incienso",
+    body: "Enciende la vela y el incienso para establecer una atmósfera serena. Mientras lo haces, establece una intención clara de transmutar tus prendas, permitiendo que te acompañen en nuevas experiencias y aventuras.",
+    imageSrc: "",
+    imageAlt: "",
   },
   {
-    image: step_image_4.src,
-    content:
-      "Pasa la amatista sobre cada prenda, visualizando como se carga con tu energía y proposito.",
-    padding: "pt-0 md:pt-36",
+    title: "Purifica tus Prendas con Amatista",
+    body: "Pasa tu amatista por todas tus prendas, visualizando cómo su energía alquimiza y purifica cada una de ellas. Siéntete libre de tocarlas y sostenerlas mientras te conectas con su nueva vibración.",
+    imageSrc: "",
+    imageAlt: "",
   },
   {
-    image: step_image_5.src,
-    content:
-      "Enciende la vela y deja que su llama te guíe en este proceso de sanación y activación",
-    padding: "pt-0 md:pt-0",
-  },
-  {
-    image: step_image_6.src,
-    content:
-      "Enciende el incienso y permite que su aroma te envuelva, creando un ambiente de paz y armonía.",
-    padding: "pt-0 md:pt-12",
-  },
-  {
-    image: step_image_7.src,
-    content:
-      "Mientras la vela y el incienso se consumen. respira profundamente y siente como tu energía se armoniza con la de tus prendas.",
-    padding: "pt-0 md:pt-24",
-  },
-  {
-    image: step_image_8.src,
-    content:
-      "Una vez completado el proceso, guarda tus prendas en un lugar especial donde puedas acceder facilmente a ellas cuando las necesites.",
-    padding: "pt-0 md:pt-36",
+    title: "Finaliza con Gratitud y Paz Interior",
+    body: "Agradece a las energías universales, a tus prendas y a ti mismo por este proceso de sanación y renovación. Tómate un momento para respirar profundamente y sentirte en paz antes de continuar con tu día.",
+    imageSrc: "",
+    imageAlt: "",
   },
 ]
 ---
@@ -73,43 +49,122 @@ const steps = [
         sencillos pasos:
       </h3>
     </TextContainer>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {steps.map(({ image, content, padding }) => (
-        <div class="w-full h-full" class:list={[padding]}>
-          <div
-            class="w-full aspect-square rounded-full bg-center bg-cover bg-no-repeat"
-            style={`background-image: url(${image});`}
-          />
-          <TextContainer>
-            <p>{content}</p>
-          </TextContainer>
-        </div>
-      ))}
+
+    <ul class="flex flex-col gap-12">
+      {stepsStarterKit.map(({ title, body, imageSrc, imageAlt }, index) => {
+        return (
+          <li class="border-4 border-amatista flex max-w-[840px] relative odd:flex-row-reverse even:ml-auto group items-center">
+            <TextContainer class="px-12 group-odd:pr-24 group-even:pl-24">
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </TextContainer>
+            <div class="w-[300px] h-[300px] aspect-square bg-green-300">
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                width="300"
+                height="300"
+                class="object-cover object-center w-full h-auto aspect-square"
+              />
+            </div>
+            <div class="bg-amatista w-[100px] aspect-square rounded-full absolute top-1/2 -translate-y-1/2 group-odd:translate-x-1/2 group-even:-translate-x-1/2" >
+              <p class="text-white text-5xl flex h-full items-center justify-center font-bold font-lora">{index + 1}</p>
+            </div>
+          </li>
+        )
+      })}
+    </ul>
+
+    <div class="flex justify-center mt-20">
+      <ContactButton>contactame</ContactButton>
     </div>
-    
-      <div class="flex justify-center mt-12">
-        <ContactButton>contactame</ContactButton>
-      </div>
   </SectionContainer>
 
   <!-- TODO -->
   <SectionContainer>
-    <TextContainer>
-      <h2>Otros usos de la AMATISTA</h3>
-    </TextContainer>
-    
-1.Meditación: Coloca una amatista en tu espacio de meditación o sostén una en tus manos
-mientras meditas para aumentar la claridad mental y la conexión espiritual.
-2. Protección: Lleva una amatista contigo o colócala en tu hogar para protegerte de
-energías negativas y promover un ambiente de paz y armonía.
-3. Mejora del sueño: Coloca una amatista bajo tu almohada o en tu mesita de noche para
-promover un sueño reparador y combatir el insomnio.
-4. Concentración: Mantén una amatista cerca de tu espacio de trabajo o estudio para
-mejorar la concentración y la capacidad de enfoque.
-5. Alivio del estrés: Sostén una amatista en momentos de estrés o ansiedad para ayudar a
-calmar la mente y encontrar la serenidad interior.
-Recuerda limpiar y recargar tu amatista regularmente, ya sea con agua y sal marina, luz
-solar o luna llena, para mantener sus propiedades energéticas óptimas. ¡Disfruta de los
-beneficios de trabajar con este hermoso cristal
+    <div class="grid grid-rows-9 grid-cols-11 gap-x-12 gap-y-12">
+      <div class="row-start-1 col-start-4 col-span-5 row-span-1 w-full h-full">
+        <TextContainer class="flex justify-center"
+          ><h2>usos de la AMATISTA</h2>
+        </TextContainer>
+      </div>
+      <div
+        class="row-start-1 col-start-1 col-span-3 row-span-4 w-full h-auto aspect-square"
+      >
+        <TextContainer>
+          <h3>Meditación</h3>
+          <p>
+            Coloca una amatista en tu espacio de meditación o sostén una en tus
+            manos mientras meditas para aumentar la claridad mental y la
+            conexión espiritual.
+          </p>
+        </TextContainer>
+      </div>
+      <div
+        class="row-start-1 col-start-9 col-span-3 row-span-4 w-full h-auto aspect-square"
+      >
+        <TextContainer>
+          <h3>Protección</h3>
+          <p>
+            Lleva una amatista contigo o colócala en tu hogar para protegerte de
+            energías negativas y promover un ambiente de paz y armonía.
+          </p>
+        </TextContainer>
+      </div>
+      <div
+        class="row-start-4 col-start-1 col-span-3 row-span-4 w-full h-auto aspect-square"
+      >
+        <TextContainer>
+          <h3>Mejora del sueño</h3>
+          <p>
+            Coloca una amatista bajo tu almohada o en tu mesita de noche para
+            promover un sueño reparador y combatir el insomnio.
+          </p>
+        </TextContainer>
+      </div>
+      <div
+        class="row-start-4 col-start-9 col-span-3 row-span-4 w-full h-auto aspect-square"
+      >
+        <TextContainer>
+          <h3>Concentración</h3>
+          <p>
+            Mantén una amatista cerca de tu espacio de trabajo o estudio para
+            mejorar la concentración y la capacidad de enfoque.
+          </p>
+        </TextContainer>
+      </div>
+      <div
+        class="row-start-7 col-start-3 col-span-3 row-span-3 w-full h-auto aspect-square"
+      >
+        <TextContainer>
+          <h3>Alivio del estrés</h3>
+          <p>
+            Sostén una amatista en momentos de estrés o ansiedad para ayudar a
+            calmar la mente y encontrar la serenidad interior.
+          </p>
+        </TextContainer>
+      </div>
+      <div
+        class="row-start-7 col-start-7 col-span-3 row-span-3 w-full h-auto aspect-square"
+      >
+        <TextContainer>
+          <h3>cuida tu amatista</h3>
+          <p>
+            Recuerda limpiar y recargar tu amatista regularmente, ya sea con
+            agua y sal marina, luz solar o luna llena, para mantener sus
+            propiedades energéticas.
+          </p>
+        </TextContainer>
+      </div>
+      <div
+        class="row-start-2 col-start-4 col-span-5 row-span-5 w-full h-auto aspect-square"
+      >
+        <div
+          style=`background-image: url(${amatistasImg.src});`
+          class="w-full h-full aspect-square bg-center bg-cover"
+        >
+        </div>
+      </div>
+    </div>
   </SectionContainer>
 </Layout>
