@@ -25,3 +25,6 @@ Thumbs.db
 
 # dev notes
 notes/
+
+# package manager
+bun.lockb

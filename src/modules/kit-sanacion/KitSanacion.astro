@@ -58,12 +58,12 @@ const stepsStarterKit = [
     <ul class="flex flex-col gap-12">
       {stepsStarterKit.map(({ title, body, imageSrc, imageAlt }, index) => {
         return (
-          <li class="border-4 border-amatista flex max-w-[840px] relative odd:flex-row-reverse even:ml-auto group items-center shadow-black/20 shadow-md">
-            <TextContainer class="px-12 group-odd:pr-24 group-even:pl-24">
+          <li class="flex-col md:flex-row md:border-4 md:border-amatista flex max-w-[840px] relative md:odd:flex-row-reverse even:ml-auto group items-center md:shadow-black/20 md:shadow-md">
+            <TextContainer class="md:px-12 md:group-odd:pr-24 md:group-even:pl-24">
               <h3>{title}</h3>
               <p>{body}</p>
             </TextContainer>
-            <div class="w-[300px] h-[300px] aspect-square bg-green-300">
+            <div class="w-full h-auto md:w-[300px] md:h-[300px] aspect-square">
               <img
                 src={imageSrc}
                 alt={imageAlt}
@@ -72,9 +72,9 @@ const stepsStarterKit = [
                 class="object-cover object-center w-full h-auto aspect-square"
               />
             </div>
-            <div class="bg-amatista w-[100px] aspect-square rounded-full absolute top-1/2 -translate-y-1/2 group-odd:translate-x-1/2 group-even:-translate-x-1/2 shadow-black/20 shadow-md" >
+            <span class="hidden md:block bg-amatista w-[100px] aspect-square rounded-full absolute top-1/2 -translate-y-1/2 group-odd:translate-x-1/2 group-even:-translate-x-1/2 shadow-black/20 shadow-md" >
               <p class="text-white text-5xl flex h-full items-center justify-center font-bold font-lora">{index + 1}</p>
-            </div>
+            </span>
           </li>
         )
       })}
@@ -85,16 +85,16 @@ const stepsStarterKit = [
     </div>
   </SectionContainer>
 
-  <!-- TODO -->
+  <!-- Usos de la amatista -->
   <SectionContainer>
-    <div class="grid grid-rows-9 grid-cols-11 gap-x-12 gap-y-12">
-      <div class="row-start-1 col-start-4 col-span-5 row-span-1 w-full h-full">
+    <div class="grid grid-cols-2 md:grid-rows-9 md:grid-cols-11 md:gap-x-12 md:gap-y-12 gap-8">
+      <div class="col-span-2 md:row-start-1 md:col-start-4 md:col-span-5 md:row-span-1 w-full h-full">
         <TextContainer class="flex justify-center"
           ><h2>usos de la AMATISTA</h2>
         </TextContainer>
       </div>
       <div
-        class="row-start-1 col-start-1 col-span-3 row-span-4 w-full h-auto aspect-square"
+        class="md:row-start-1 md:col-start-1 md:col-span-3 md:row-span-4 w-full h-auto aspect-square"
       >
         <TextContainer>
           <h3>Meditación</h3>
@@ -106,7 +106,7 @@ const stepsStarterKit = [
         </TextContainer>
       </div>
       <div
-        class="row-start-1 col-start-9 col-span-3 row-span-4 w-full h-auto aspect-square"
+        class="md:row-start-1 md:col-start-9 md:col-span-3 md:row-span-4 w-full h-auto aspect-square"
       >
         <TextContainer>
           <h3>Protección</h3>
@@ -117,7 +117,7 @@ const stepsStarterKit = [
         </TextContainer>
       </div>
       <div
-        class="row-start-4 col-start-1 col-span-3 row-span-4 w-full h-auto aspect-square"
+        class="md:row-start-4 md:col-start-1 md:col-span-3 md:row-span-4 w-full h-auto aspect-square"
       >
         <TextContainer>
           <h3>Mejora del sueño</h3>
@@ -128,7 +128,7 @@ const stepsStarterKit = [
         </TextContainer>
       </div>
       <div
-        class="row-start-4 col-start-9 col-span-3 row-span-4 w-full h-auto aspect-square"
+        class="md:row-start-4 md:col-start-9 md:col-span-3 md:row-span-4 w-full h-auto aspect-square"
       >
         <TextContainer>
           <h3>Concentración</h3>
@@ -139,7 +139,7 @@ const stepsStarterKit = [
         </TextContainer>
       </div>
       <div
-        class="row-start-7 col-start-3 col-span-3 row-span-3 w-full h-auto aspect-square"
+        class="md:row-start-7 md:col-start-3 md:col-span-3 md:row-span-3 w-full h-auto aspect-square"
       >
         <TextContainer>
           <h3>Alivio del estrés</h3>
@@ -150,7 +150,7 @@ const stepsStarterKit = [
         </TextContainer>
       </div>
       <div
-        class="row-start-7 col-start-7 col-span-3 row-span-3 w-full h-auto aspect-square"
+        class="md:row-start-7 md:col-start-7 md:col-span-3 md:row-span-3 w-full h-auto aspect-square"
       >
         <TextContainer>
           <h3>cuida tu amatista</h3>
@@ -162,7 +162,7 @@ const stepsStarterKit = [
         </TextContainer>
       </div>
       <div
-        class="row-start-2 col-start-4 col-span-5 row-span-5 w-full h-auto aspect-square"
+        class="col-span-2 row-span-2 md:row-start-2 md:col-start-4 md:col-span-5 md:row-span-5 w-full h-auto aspect-square"
       >
         <div
           style=`background-image: url(${amatistasImg.src});`
