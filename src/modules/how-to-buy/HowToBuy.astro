@@ -14,8 +14,8 @@ import left_img from "@public/optimized/como_comprar_2.webp"
     <TextContainer>
       <h2>PASOS SENCILLOS PARA COMPRAR EN AMATISTA</h2>
     </TextContainer>
-    <div class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-3 gap-y-12 md:gap-y-4">
-      <div class="h-auto w-[500px] md:row-span-3 aspect-portrait place-self-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-y-12 md:gap-y-4 place-items-center">
+      <div class="h-auto w-full max-w-[500px] md:row-span-3 aspect-portrait">
         <img class="w-full h-auto aspect-portrait object-cover object-center" src={left_img.src} alt="chat de whatsapp con amatista" width="500" height="750">
       </div>
       <div class="py-4 ">
@@ -61,15 +61,15 @@ import left_img from "@public/optimized/como_comprar_2.webp"
   </SectionContainer>
 
   <SectionContainer>
-    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-y-12 md:gap-y-4 md:gap-x-12">
-      <div class="py-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-y-12 md:gap-y-4 md:gap-x-12 place-items-center">
+      <div class="py-4 order-1">
         <div class="flex gap-4">
           <span class="text-4xl font-bold text-golden">04</span>
           <TextContainer class="pr-12 md:pr-0">
             <h2>Realizá el pago</h2>
             <p>
               Después de realizar el pago, envíanos el comprobante de la
-              transacción.
+              transacción.  
             </p>
             <a href="#metodos-de-pago"
               ><h3>Revisa aqui nuestros métodos de pago</h3>
@@ -79,12 +79,12 @@ import left_img from "@public/optimized/como_comprar_2.webp"
       </div>
 
       <div
-        class="hidden md:block h-auto w-[500px] row-span-3 aspect-portrait place-self-center"
+        class="order-last md:order-2 md:block h-auto w-full row-span-3 aspect-portrait place-self-center"
       >
-      <img src={right_img.src} alt="entrega de tu producto" width="500" height="750">
+      <img src={right_img.src} alt="entrega de tu producto" width="500" height="750" class="w-full h-auto max-w-[500px] aspect-portrait">
       </div>
 
-      <div class="py-4 ">
+      <div class="py-4 order-3">
         <div class="flex gap-4">
           <span class="text-4xl font-bold text-golden">05</span>
           <TextContainer class="pr-12 md:pr-0">
@@ -98,7 +98,7 @@ import left_img from "@public/optimized/como_comprar_2.webp"
         </div>
       </div>
 
-      <div class="py-4 ">
+      <div class="py-4 order-4">
         <div class="flex gap-4">
           <span class="text-4xl font-bold text-golden">06</span>
           <TextContainer class="pr-12 md:pr-0">
