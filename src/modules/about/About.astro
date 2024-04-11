@@ -13,7 +13,7 @@ import owner_img_3 from "@public/optimized/nosotras_sec_1.webp"
 <Layout>
   <section class="relative">
     <div
-      class="w-full bg-center bg-no-repeat bg-cover aspect-video"
+      class="w-full h-screen bg-center bg-no-repeat bg-cover aspect-video"
       style={`background-image: url(${hero_image.src});`}
     >
     </div>
@@ -22,10 +22,10 @@ import owner_img_3 from "@public/optimized/nosotras_sec_1.webp"
       class="absolute w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
     >
       <div class="flex flex-col items-center">
-        <h2 class="text-5xl uppercase text-raw_white font-lora">
+        <h2 class="text-3xl md:text-5xl uppercase text-raw_white font-lora text-center">
           Bienvenida a la comunidad
         </h2>
-        <h2 class="text-5xl uppercase text-amatista font-lora">Amatista</h2>
+        <h2 class="text-3xl md:text-5xl uppercase text-amatista font-lora">Amatista</h2>
       </div>
     </div>
   </section>
@@ -43,7 +43,7 @@ import owner_img_3 from "@public/optimized/nosotras_sec_1.webp"
       <div>
         <div
           style={`background-image: url(${owner_img_1.src});`}
-          class="bg-cover bg-center w-[400px] h-auto aspect-square"
+          class="bg-cover bg-center w-full max-w-[400px] h-auto aspect-square"
         >
         </div>
       </div>
@@ -53,7 +53,7 @@ import owner_img_3 from "@public/optimized/nosotras_sec_1.webp"
       <div class="place-self-center">
         <div
           style={`background-image: url(${owner_img_3.src});`}
-          class="bg-cover bg-center w-[400px] aspect-portrait"
+          class="bg-cover bg-center w-full h-auto max-w-[400px] aspect-portrait"
         >
         </div>
       </div>
@@ -115,7 +115,7 @@ import owner_img_3 from "@public/optimized/nosotras_sec_1.webp"
         <div class="mb-4">
           <div
             style={`background-image: url(${owner_img_2.src});`}
-            class="bg-cover bg-center w-[400px] aspect-portrait"
+            class="bg-cover bg-center w-full h-auto max-w-[400px] aspect-portrait"
           >
           </div>
         </div>
