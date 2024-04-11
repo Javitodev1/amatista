@@ -19,7 +19,7 @@ export default {
       fontFamily: {
         lora: '"Lora Variable"',
         roboto: 'Roboto',
-        urbanist: '"Urbanist Variable"'
+        urbanist: 'Urbanist Variable'
       },
       animation: {
         'fade-in': 'fade-in 0.1s ease-in',
