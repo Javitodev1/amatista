@@ -12,6 +12,7 @@ export default {
   theme: {
     extend: {
       aspectRatio: {
+        banner: '3 / 1',
         portrait: '2 / 3',
         landscape: '9 / 16',
         product: '250 / 334',
