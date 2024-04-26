@@ -1,6 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies, global-require */
-import flowbite from 'flowbite/plugin'
-
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
@@ -72,5 +69,4 @@ export default {
       },
     },
   },
-  plugins: [flowbite],
 }
