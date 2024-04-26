@@ -4,7 +4,6 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 import { astroImageTools } from 'astro-imagetools';
-import netlify from "@astrojs/netlify";
 
 import compressor from "astro-compressor";
 
@@ -14,15 +13,6 @@ export default defineConfig({
   site: 'https://amatistacomunidad.com/',
   // Use to generate your sitemap and canonical URLs in your final build.
   trailingSlash: 'ignore',
-  // Use to always append '/' at end of url
-  markdown: {
-    shikiConfig: {
-      // Choose from Shiki's built-in themes (or add your own)
-      // https://github.com/shikijs/shiki/blob/main/docs/themes.md
-      theme: 'monokai'
-    }
-  },
   integrations: [react(), tailwind({}), sitemap(), robotsTxt(), astroImageTools, compressor({gzip:false, brotli:true})],
-  output: "hybrid",
-  adapter: netlify()
+  output: "static",
 });
