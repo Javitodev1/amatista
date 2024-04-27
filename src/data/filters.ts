@@ -1,11 +1,23 @@
-import { ProductTag } from "@/types/api"
-
-export const filters = {
-  Todo: {tag: ProductTag.Todo, display: 'Todo'},
-  Gangas: {tag: ProductTag.Gangas, display: 'Gangas'},
-  Abrigos: {tag: ProductTag.Abrigos, display: 'Abrigos'},
-  Shorts_y_Pantalones: {tag: ProductTag.Shorts_y_Pantalones, display: 'Shorts & Pantalones'},
-  Vestidos_y_Polleras: {tag: ProductTag.Vestidos_y_Polleras, display: 'Vestidos & Polleras'},
-  Accesorios_y_Calzado: {tag: ProductTag.Accesorios_y_Calzado, display: 'Accesorios & Calzado'},
-  Blusas_y_Camisas: {tag: ProductTag.Blusas_y_Camisas, display: 'Blusas & Camisas'},
+export enum Categories {
+  ALL = 'all',
+  ABRIGOS = "abrigos",
+  ACCESORIOS_Y_CALZADO = "accesorios-y-calzado",
+  BLUSAS_Y_CAMISAS = "blusas-y-camisas",
+  GANGAS = "gangas",
+  SHORTS_Y_PANTALONES = "shorts-y-pantalones",
+  VESTIDOS_Y_POLLERAS = "vestidos-y-polleras",
 }
+
+function createFilter( id: string, name: string ) {
+  return {id, name}
+}
+
+export const filters = [
+  createFilter(Categories.ALL, 'Todo'),
+  createFilter(Categories.ABRIGOS, "Abrigos"),
+  createFilter(Categories.ACCESORIOS_Y_CALZADO, "Accesorios & Calzado"),
+  createFilter(Categories.BLUSAS_Y_CAMISAS, "Blusas & Camisas"),
+  createFilter(Categories.GANGAS, "Gangas"),
+  createFilter(Categories.SHORTS_Y_PANTALONES, "Shorts & Pantalones"),
+  createFilter(Categories.VESTIDOS_Y_POLLERAS, "Vestidos & Polleras"),
+]

@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro .",
     "build-types": "tsc --noEmit --pretty"
   },
+  "type": "module",
   "devDependencies": {
     "@astrojs/react": "latest",
     "@astrojs/sitemap": "0.1.2",
@@ -34,6 +35,7 @@
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
+    "eslint-plugin-svelte": "2.38.0",
     "eslint-plugin-tailwindcss": "3.13.0",
     "eslint-plugin-unused-imports": "2.0.0",
     "prettier": "2.6.2",
@@ -43,12 +45,15 @@
   "dependencies": {
     "@astrojs/check": "0.5.2",
     "@astrojs/netlify": "5.1.3",
+    "@astrojs/svelte": "^5.4.0",
     "@fontsource-variable/lora": "5.0.9",
     "@fontsource-variable/urbanist": "5.0.20",
     "astro-compressor": "0.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.3.3"
+    "svelte": "4.2.15",
+    "svelte-spa-router": "4.0.1",
+    "typescript": "^5.4.5"
   },
   "volta": {
     "node": "16.15.1"

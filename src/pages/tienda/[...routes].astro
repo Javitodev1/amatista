@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import App from '../../svelte/App.svelte';
+
+export function getStaticPaths() {
+  return [
+    { params: { routes: 'producto' } },
+    { params: { routes: undefined } },
+  ]
+}
+---
+
+<Layout title="Welcome to Astro.">
+	<App client:only="svelte">
+</Layout>
