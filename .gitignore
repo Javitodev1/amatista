@@ -29,3 +29,5 @@ notes/
 
 # package manager
 bun.lockb
+
+rect-dep/
