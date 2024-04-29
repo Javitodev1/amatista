@@ -1,6 +1,6 @@
 ---
 import TextContainer from './TextContainer.astro'
-import formatCurency from '@/utils/currency'
+import { formatCurreny } from '../utils/currency'
 import SoldOutBadge from './SoldOutBadge.astro'
 interface Props {
   title: string
@@ -9,7 +9,7 @@ interface Props {
   isSoldout: boolean
 }
 const { title, price, imageUrl, isSoldout } = Astro.props
-const priceFormatted = formatCurency(price)
+const priceFormatted = formatCurreny(price)
 const href = '/tienda/producto'
 ---
 

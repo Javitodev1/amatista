@@ -19,22 +19,36 @@ export function wpByProductAdapter(edge: Edge) {
 
   const categories = node.productCategories.nodes.map((node) => node.slug)
   
-  const featuredImageNode = node.featuredImage?.node
-  const thumbnail = {
-    id: featuredImageNode.id,
-    url: PUBLIC_WP_UPLOAD + featuredImageNode.uri,
-    height: featuredImageNode.mediaDetails.height,
-    width: featuredImageNode.mediaDetails.width,
-  } satisfies ProductImage
+  let thumbnail: ProductImage
+  if (node.featuredImage) {
+    const featuredImageNode = node.featuredImage.node
+    thumbnail = {
+      id: featuredImageNode.id,
+      url: PUBLIC_WP_UPLOAD + featuredImageNode.uri,
+      height: featuredImageNode.mediaDetails.height,
+      width: featuredImageNode.mediaDetails.width,
+    } satisfies ProductImage
+  } else {
+    thumbnail = {
+      id: 'place-holder-image-500x500',
+      url: 'https://placehold.co/500x500',
+      height: 500,
+      width: 500,
+    } satisfies ProductImage
+  }
 
-  const images = node.galleryImages.nodes.map((node) => {
-    return {
-      id: node.id,
-      url: PUBLIC_WP_UPLOAD + node.uri,
-      height: node.mediaDetails.height,
-      width: node.mediaDetails.width,
-    }
-  }) satisfies ProductImage[]
+
+  let images = [] as ProductImage[]
+  if (node.galleryImages) {
+    images = node.galleryImages.nodes.map((node) => {
+      return {
+        id: node.id,
+        url: PUBLIC_WP_UPLOAD + node.uri,
+        height: node.mediaDetails.height,
+        width: node.mediaDetails.width,
+      }
+    }) satisfies ProductImage[]
+  }
 
   images.push(thumbnail)
 
