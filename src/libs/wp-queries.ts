@@ -22,7 +22,7 @@ export const WP_QUERIES = {
             id
             name
             description(format: RAW)
-            galleryImages(first: 3) {
+            galleryImages(first: 2) {
               nodes {
                 id
                 uri
@@ -78,7 +78,7 @@ export const WP_QUERIES = {
             id
           }
         }
-        galleryImages(first: 3) {
+        galleryImages(first: 2) {
           nodes {
             id
             uri

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Typographi from './Typographi.svelte';
   import { link } from 'svelte-spa-router'
   export let id
   export let activeFilter
@@ -14,6 +15,7 @@
     href="/?filter={id}"
     use:link
     class="{activeCss} relative after:transition-[width] after:duration-300 after:absolute after:-bottom-2 after:left-0 after:h-[3px] after:bg-amatista hover:after:w-full hover:text-amatista"
-    ><slot /></a
+    ><Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}><slot /></Typographi>
+  </a
   >
 </li>

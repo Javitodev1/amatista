@@ -16,7 +16,6 @@ export default {
       },
       fontFamily: {
         lora: '"Lora Variable"',
-        roboto: 'Roboto',
         urbanist: 'Urbanist Variable'
       },
       animation: {

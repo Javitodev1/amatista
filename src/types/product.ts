@@ -4,7 +4,8 @@ export interface Product {
   title: string
   description: string
   price: number
-  stock: number
+  isInStock: boolean
+  stockQuantity: number
   thumbnail: ProductImage
   images: ProductImage[]
   categories: string[]
@@ -15,4 +16,9 @@ export interface ProductImage {
   url: string
   width: number
   height: number
+}
+
+export enum StockStates {
+  IN_STOCK= "IN_STOCK",
+  OUT_STOCK= "OUT_STOCK"
 }

@@ -1,27 +1,8 @@
 ---
 // typos, colors, icons, basic buttons
 import type { HTMLTag, Polymorphic } from 'astro/types'
+import {Variants, TextColors, DarkColors} from '@/constants/typographi'
 
-enum Variants {
-  BANNER = 'text-3xl sm:text-4xl md:text-5xl uppercase',
-  TITLE = 'text-2xl sm:text-3xl md:text-4xl uppercase',
-  SUBTITLE = 'text-lg sm:text-xl md:text-2xl uppercase',
-  BODY = 'text-md md:text-lg',
-}
-
-enum TextColors {
-  ACCENT_AMATISTA = 'text-amatista',
-  WHITE = 'text-white',
-  RAW_WHITE = 'text-raw_white',
-  BLACK = 'text-black',
-}
-
-enum DarkColors {
-  ACCENT_AMATISTA = 'dark:text-amatista',
-  WHITE = 'dark:text-white',
-  RAW_WHITE = 'dark:text-raw_white',
-  BLACK = 'dark:text-black',
-}
 
 type Props<Tag extends HTMLTag> = Polymorphic<{
   as: Tag

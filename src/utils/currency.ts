@@ -4,8 +4,7 @@ const formatter = new Intl.NumberFormat("es-UY", {
   maximumFractionDigits: 0,
 })
 
-const formatCurreny = (price: number) => {
+export function formatCurreny(price: number) {
   return formatter.format(price)
 }
 
-export default formatCurreny

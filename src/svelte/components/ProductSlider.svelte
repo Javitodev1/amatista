@@ -20,7 +20,7 @@
   }
 </script>
 
-<div class="grid w-full grid-cols-3 grid-rows-4 gap-4">
+<div class="grid h-full w-auto aspect-portrait grid-cols-3 grid-rows-4 gap-x-2 max-h-[90vh]">
   <div
     class="w-full h-auto col-span-3 row-span-3 aspect-square overflow-hidden"
   >
@@ -35,7 +35,7 @@
   </div>
   {#each images as { height, id, url, width }, index (index)}
     <button
-      class="w-full h-auto aspect-square border-[2px] border-transparent hover:border-white hover:cursor-default"
+      class="w-full h-auto aspect-square border-[2px] border-transparent hover:border-amatista hover:cursor-default"
       on:mouseover={() => {
         activeIndex = index
       }}

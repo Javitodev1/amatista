@@ -21,3 +21,13 @@ export const filters = [
   createFilter(Categories.SHORTS_Y_PANTALONES, "Shorts & Pantalones"),
   createFilter(Categories.VESTIDOS_Y_POLLERAS, "Vestidos & Polleras"),
 ]
+
+export const mappedFilters = {
+  [Categories.ALL]: 'Todo',
+  [Categories.ABRIGOS]: "Abrigos",
+  [Categories.ACCESORIOS_Y_CALZADO]: "Accesorios & Calzado",
+  [Categories.BLUSAS_Y_CAMISAS]: "Blusas & Camisas",
+  [Categories.GANGAS]: "Gangas",
+  [Categories.SHORTS_Y_PANTALONES]: "Shorts & Pantalones",
+  [Categories.VESTIDOS_Y_POLLERAS]: "Vestidos & Polleras",
+}
