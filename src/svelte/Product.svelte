@@ -30,7 +30,7 @@
             <ProductSlider images={product.images} />
           </div>
   
-          <div class="sm:col-span-5 flex flex-col gap-4">
+          <div class="sm:col-span-5 flex flex-col gap-4 items-center md:items-start mt-6 md:mt-0">
             <Typographi as={'h2'} variant={'TITLE'} color={'ACCENT_AMATISTA'}>{product.title}</Typographi>
             <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'}>{formatCurreny(product.price)}</Typographi>
             <div>
@@ -57,6 +57,6 @@
       </section>
     {/if}
   {:catch}
-    <p>Server not available</p>
+    <p>Servidor no disponible en estos momentos, por favor, intente más tarde</p>
   {/await}
 </div>
