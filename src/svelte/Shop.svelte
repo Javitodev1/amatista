@@ -34,7 +34,19 @@
         pageState = PageStatus.READY
       })
   })
+
+  const handleHashchange = () => {
+    pageState = PageStatus.LOADING
+    fetchProducts(filter, currentPageInfo.endCursor)
+      .then(({products, pageInfo}) => {
+        currentProducts = products
+        currentPageInfo = pageInfo
+        pageState = PageStatus.READY
+      })
+  }
 </script>
+
+<svelte:window on:hashchange={handleHashchange} />
 
 <div class="dark:bg-dark-primary min-h-screen">
   <section class="max-w-6xl mx-auto py-8">
