@@ -5,6 +5,13 @@ const formatter = new Intl.NumberFormat("es-UY", {
 })
 
 export function formatCurreny(price: number) {
-  return formatter.format(price)
+  return `$ ${price}`
+}
+
+export function encodeWspLink(href: string) {
+  return href
+    .replaceAll('#', '%23')
+    .replaceAll('=', '%3D')
+    .replaceAll('/', '%2F')
 }
 

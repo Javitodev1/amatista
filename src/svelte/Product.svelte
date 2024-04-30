@@ -2,7 +2,7 @@
   import Typographi from './components/Typographi.svelte'
   import WspButton from './components/WspButton.svelte'
   import StockBadge from './components/StockBadge.svelte'
-  import { formatCurreny } from '@/utils/currency'
+  import { formatCurreny, encodeWspLink } from '@/utils/currency'
   import { fetchProudctById } from '../libs/graphql'
   import ProductSlider from './components/ProductSlider.svelte'
 
@@ -14,7 +14,7 @@
   const { id } = params
 
   const productURL = window.location.href
-  const hrefWsp = `https://api.whatsapp.com/send?phone=59896667633&text=Quiero este producto: ${productURL}/#/${id}`
+  const hrefWsp = `https://api.whatsapp.com/send?phone=59896667633&text=Hola. Me gustaría comprar este producto: ${encodeWspLink(productURL)}`
 </script>
 
 <div class="dark:bg-dark-primary py-12">
@@ -30,20 +30,20 @@
             <ProductSlider images={product.images} />
           </div>
   
-          <div class="sm:col-span-5">
+          <div class="sm:col-span-5 flex flex-col gap-4">
             <Typographi as={'h2'} variant={'TITLE'} color={'ACCENT_AMATISTA'}>{product.title}</Typographi>
-            <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'} className={'mb-4'}>{formatCurreny(product.price)}</Typographi>
-            <div class="mb-6">
+            <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'}>{formatCurreny(product.price)}</Typographi>
+            <div>
               {#each product.categories as {name}}
                 <Typographi as={'h3'} variant={'BODY_TITLE'} color={'BLACK'} darkColor={'WHITE'}>{name}</Typographi>
               {/each}
             </div>
 
-            <div class="mb-2">
+            <div>
               <StockBadge isInStock={product.isInStock}/>
             </div>
             {#if product.stockQuantity > 0}
-              <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'} className={'mb-6'}>Unidades disponibles: {product.stockQuantity}</Typographi>
+              <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>Unidades disponibles: {product.stockQuantity}</Typographi>
             {/if}
             
             <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>{@html product.description}</Typographi>
