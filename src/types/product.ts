@@ -8,7 +8,7 @@ export interface Product {
   stockQuantity: number
   thumbnail: ProductImage
   images: ProductImage[]
-  categories: string[]
+  categories: Category[]
 }
 
 export interface ProductImage {
@@ -21,4 +21,9 @@ export interface ProductImage {
 export enum StockStates {
   IN_STOCK= "IN_STOCK",
   OUT_STOCK= "OUT_STOCK"
+}
+
+export interface Category {
+  id: string
+  name: string
 }

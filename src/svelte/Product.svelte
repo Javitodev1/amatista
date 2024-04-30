@@ -25,7 +25,7 @@
       <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>Producto no encontrado</Typographi>
     {:else}
       <section class="max-w-6xl mx-auto">
-        <div class="grid sm:grid-cols-10">
+        <div class="grid sm:grid-cols-10 md:gap-x-12">
           <div class="sm:col-span-5">
             <ProductSlider images={product.images} />
           </div>
@@ -33,18 +33,24 @@
           <div class="sm:col-span-5">
             <Typographi as={'h2'} variant={'TITLE'} color={'ACCENT_AMATISTA'}>{product.title}</Typographi>
             <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'} className={'mb-4'}>{formatCurreny(product.price)}</Typographi>
-            {#each product.categories as category}
-              <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'}>{category}</Typographi>
-            {/each}
+            <div class="mb-6">
+              {#each product.categories as {name}}
+                <Typographi as={'h3'} variant={'BODY_TITLE'} color={'BLACK'} darkColor={'WHITE'}>{name}</Typographi>
+              {/each}
+            </div>
 
-            <StockBadge isInStock={product.isInStock}/>
-            <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>{@html product.description}</Typographi>
+            <div class="mb-2">
+              <StockBadge isInStock={product.isInStock}/>
+            </div>
             {#if product.stockQuantity > 0}
-              <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>Unidades disponibles: {product.stockQuantity}</Typographi>
+              <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'} className={'mb-6'}>Unidades disponibles: {product.stockQuantity}</Typographi>
             {/if}
-
-            <div>
-              <WspButton href={hrefWsp}/>
+            
+            <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>{@html product.description}</Typographi>
+            <div class="flex">
+              {#if product.isInStock}
+                <WspButton href={hrefWsp}/>
+              {/if}
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import type { WPResponse, PageInfo, Edge } from '../types/wp-response'
 import { StockStates, type Product, type ProductImage } from '../types/product'
+import { mappedFilters } from '@/data/filters'
 
 const { PUBLIC_WP_UPLOAD } = import.meta.env
 
@@ -20,7 +21,13 @@ export function wpByProductAdapter(edge: Edge) {
 
   const categories = node.productCategories.nodes
     .filter((node) => node.slug !== 'uncategorized')
-    .map((node) => node.slug)
+    .map((node) => {
+      const slug = node.slug as keyof typeof mappedFilters
+      return {
+        id: slug,
+        name: mappedFilters[slug] ?? `Categoría Desconocida: ${slug}`
+      }
+    })
 
   let thumbnail: ProductImage
   if (node.featuredImage) {

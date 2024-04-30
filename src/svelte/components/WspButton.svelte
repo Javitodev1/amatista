@@ -1,12 +1,15 @@
 <script lang="ts">
   import Typographi from "./Typographi.svelte";
-  export let href
+  export let href: string
+
+  const backgroundColor = 'bg-green-500 hover:bg-green-400'
 </script>
 
 <a
   {href}
   target="_blank"
-  class=" bg-green-500 mt-12 block py-4 px-6 md:px-12 rounded-full hover:bg-green-400 duration-200 shadow-black/20 shadow"
+  class="{backgroundColor} mt-12 block py-4 px-6 md:px-12 rounded-full  duration-200 shadow-black/20 shadow"
+  
 >
   <div class="flex justify-center items-center gap-4">
   <Typographi as={'p'} variant={'SUBTITLE'} color={'WHITE'}>¡LO QUIERO!</Typographi>
