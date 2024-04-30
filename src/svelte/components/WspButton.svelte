@@ -6,10 +6,10 @@
 <a
   {href}
   target="_blank"
-  class=" bg-green-500 mt-12  block py-4 px-6 rounded-full hover:bg-green-400 duration-200 shadow-black/20 shadow"
+  class=" bg-green-500 mt-12 block py-4 px-6 md:px-12 rounded-full hover:bg-green-400 duration-200 shadow-black/20 shadow"
 >
   <div class="flex justify-center items-center gap-4">
-  <Typographi as={'p'} variant={'TITLE'} color={'WHITE'}>¡LO QUIERO!</Typographi>
+  <Typographi as={'p'} variant={'SUBTITLE'} color={'WHITE'}>¡LO QUIERO!</Typographi>
   <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 448 512"

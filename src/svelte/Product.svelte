@@ -13,13 +13,13 @@
   export let params = {} as Params
   const { id } = params
 
-  const productURL = window.location
+  const productURL = window.location.href
   const hrefWsp = `https://api.whatsapp.com/send?phone=59896667633&text=Quiero este producto: ${productURL}`
 </script>
 
 <div class="dark:bg-dark-primary py-12">
   {#await fetchProudctById(id)}
-    <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>loading...</Typographi>
+    <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>cargando...</Typographi>
   {:then product}
     {#if !product}
       <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>Producto no encontrado</Typographi>
@@ -32,7 +32,7 @@
   
           <div class="sm:col-span-5">
             <Typographi as={'h2'} variant={'TITLE'} color={'ACCENT_AMATISTA'}>{product.title}</Typographi>
-            <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'}>{formatCurreny(product.price)}</Typographi>
+            <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'} className={'mb-4'}>{formatCurreny(product.price)}</Typographi>
             {#each product.categories as category}
               <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'}>{category}</Typographi>
             {/each}
@@ -42,7 +42,10 @@
             {#if product.stockQuantity > 0}
               <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>Unidades disponibles: {product.stockQuantity}</Typographi>
             {/if}
-            <WspButton href={hrefWsp}/>
+
+            <div>
+              <WspButton href={hrefWsp}/>
+            </div>
           </div>
         </div>
       </section>
