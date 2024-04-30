@@ -14,7 +14,7 @@
   const { id } = params
 
   const productURL = window.location.href
-  const hrefWsp = `https://api.whatsapp.com/send?phone=59896667633&text=Quiero este producto: ${productURL}`
+  const hrefWsp = `https://api.whatsapp.com/send?phone=59896667633&text=Quiero este producto: ${productURL}/#/${id}`
 </script>
 
 <div class="dark:bg-dark-primary py-12">
