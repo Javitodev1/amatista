@@ -8,9 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: '420px',
+      },
       aspectRatio: {
         banner: '3 / 1',
         portrait: '2 / 3',
+        "portrait-3-4": '3 / 4',
         landscape: '9 / 16',
         product: '250 / 334',
       },

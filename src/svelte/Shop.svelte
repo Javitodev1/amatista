@@ -53,7 +53,7 @@
       {#if pageState === PageStatus.LOADING}
         <p>Cargando...</p>
       {:else if pageState === PageStatus.READY}
-        {#each currentProducts as product (product.slug)}
+        {#each currentProducts as product (product.id)}
           <ProductCard {product} />
         {/each}
       {:else}

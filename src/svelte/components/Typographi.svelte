@@ -4,7 +4,7 @@
 
   export let as: HTMLTag
   export let variant: keyof typeof Variants
-  export let color: keyof typeof TextColors
+  export let color: keyof typeof TextColors = 'NONE'
   export let darkColor: keyof typeof DarkColors = 'NONE'
   export let className: string = ''
 

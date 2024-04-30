@@ -12,13 +12,16 @@ export const moneyFormatter = Intl.NumberFormat('es-UY', {
 export function wpByProductAdapter(edge: Edge) {
   const { node } = edge
 
-  const price = parseFloat(node.price)
+  const description = node.description ?? 'Sin descripción'
+  const price = parseFloat(node.price ?? 0)
 
   const isInStock = node.stockStatus === StockStates.IN_STOCK
   const stockQuantity: number =  isInStock && node.stockQuantity == null ? 1 : !isInStock ? 0 : node.stockQuantity
 
-  const categories = node.productCategories.nodes.map((node) => node.slug)
-  
+  const categories = node.productCategories.nodes
+    .filter((node) => node.slug !== 'uncategorized')
+    .map((node) => node.slug)
+
   let thumbnail: ProductImage
   if (node.featuredImage) {
     const featuredImageNode = node.featuredImage.node
@@ -37,7 +40,6 @@ export function wpByProductAdapter(edge: Edge) {
     } satisfies ProductImage
   }
 
-
   let images = [] as ProductImage[]
   if (node.galleryImages) {
     images = node.galleryImages.nodes.map((node) => {
@@ -55,14 +57,14 @@ export function wpByProductAdapter(edge: Edge) {
   return {
     id: node.id,
     title: node.name,
-    description: node.description ?? '',
+    description: description,
     price: price,
     slug: node.slug,
     isInStock: isInStock,
     stockQuantity: stockQuantity,
     categories: categories,
     thumbnail: thumbnail,
-    images: images
+    images: images,
   } satisfies Product
 }
 
