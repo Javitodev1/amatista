@@ -49,8 +49,8 @@
 <svelte:window on:hashchange={handleHashchange} />
 
 <div class="dark:bg-dark-primary min-h-screen">
-  <section class="max-w-6xl mx-auto py-8">
-    <ul class="flex gap-8 justify-center">
+  <section class="md:max-w-6xl mx-auto py-8 overflow-x-auto">
+    <ul class="flex gap-8 justify-center min-w-fit px-12 sm:px-0">
       {#each filters as { name, id } (id)}
         <FilterItem
           {id}
