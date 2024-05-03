@@ -10,7 +10,7 @@ interface Props {
   responsive?: keyof typeof ResponsiveClasses
 }
 
-const { class: className, responsive = ResponsiveClasses.RESPONSIVE } =
+const { class: className, responsive = ResponsiveClasses.NONE } =
   Astro.props
 
 const classes = [

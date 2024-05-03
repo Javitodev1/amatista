@@ -33,7 +33,7 @@ const banners = [
 ---
 
 <SectionContainer>
-  <div class="mb-12 overflow-x-auto md:overflow-x-visible">
+  <div class='mb-12 overflow-x-auto md:overflow-x-visible'>
     <div class='grid grid-cols-3 gap-x-2 min-w-[800px]'>
       {banners.map(({ title, content, image, href }) => (
         <a href={href}>
@@ -48,7 +48,5 @@ const banners = [
     </div>
   </div>
 
-  <div class='flex justify-center'>
-    <ContactButton variant="DARK_MODE">Contactanos</ContactButton>
-  </div>
+  <ContactButton variant='DARK_MODE' position="CENTER">Contactanos</ContactButton>
 </SectionContainer>

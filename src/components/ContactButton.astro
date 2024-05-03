@@ -7,28 +7,45 @@ enum VariantClasses {
   DARK_MODE = "text-black border-black hover:text-black/75 hover:border-black/75 dark:text-white dark:border-white dark:hover:text-white/75 dark:hover:border-white/75",
 }
 
+
+enum PositionClasses {
+  LEFT = 'flex justify-start',
+  CENTER = 'flex justify-center',
+  RIGHT = 'flex justify-end',
+  RESPONSIVE = 'flex md:justify-start justify-center',
+  NONE = '',
+}
+
 interface Props {
   href?: string
   variant?: keyof typeof VariantClasses
   target?: '_blank' | '_self'
+  position?: keyof typeof PositionClasses
+  class?: string
 }
 
 const {
   variant = VariantClasses.DARK_MODE,
   href = 'https://api.whatsapp.com/send?phone=59896667633',
   target = '_blank',
+  position = PositionClasses.NONE,
+  class: className,
 } = Astro.props
 
 const classes = [
   VariantClasses[variant as keyof typeof VariantClasses],
+  PositionClasses[position as keyof typeof PositionClasses],
+  className
 ]
 ---
 
-<a
-  href={href}
-  target={target}
-  class='block px-4 py-4 transition-transform duration-300 border-4 md:px-12 hover:backdrop-blur'
-  class:list={classes}
->
-  <Typographi as='p' variant='BODY_TITLE' color="NONE"><slot></slot></Typographi>
-</a>
+<div class:list={classes}>
+  <a
+    href={href}
+    target={target}
+    class='block px-4 py-4 transition-transform duration-300 border-4 md:px-12 hover:backdrop-blur'
+  >
+    <Typographi as='p' variant='BODY_TITLE'><slot></slot></Typographi>
+  </a>
+</div>
+
