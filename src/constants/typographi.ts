@@ -3,7 +3,7 @@ export enum Variants {
   TITLE = 'text-2xl sm:text-3xl md:text-4xl uppercase font-lora font-bold',
   SUBTITLE = 'text-lg sm:text-xl md:text-2xl uppercase font-lora',
   BODY_TITLE = 'text-lg md:text-xl uppercase font-semibold font-lora',
-  BODY = 'text-md md:text-lg font-urbanist',
+  BODY = 'text-lg md:text-xl font-urbanist',
 }
 
 export enum TextColors {
