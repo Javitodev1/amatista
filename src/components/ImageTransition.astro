@@ -1,4 +1,7 @@
 ---
+import {Variants, TextColors} from '@/constants/typographi'
+import TextContainer from './TextContainer.astro'
+
 interface ImageItem {
   imageUrl: string
   text: string
@@ -26,12 +29,13 @@ const { class: className, items = [] } = Astro.props
           />
         </div>
         <span class="absolute left-0 top-0 h-full w-full bg-black/50" />
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <TextContainer responsive="BOTH_CENTER" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <h2
-            class="text-center text-3xl md:text-5xl font-bold uppercase text-white [&_strong]:text-amatista mb-20 font-lora"
+            class="text-center [&_strong]:text-amatista mb-20"
+            class:list={[Variants.BANNER, TextColors.WHITE]}
             set:html={text}
           />
-        </div>
+        </TextContainer>
       </div>
     ))}
   </div>

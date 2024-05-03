@@ -1,75 +1,67 @@
 ---
-import TextContainer from "@/components/TextContainer.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import InstagramIcon from "@/icons/Instagram.astro"
-import WhatappsIcon from "@/icons/Whatapps.astro"
-import BuyButton from "@/components/BuyButton.astro"
+import Typographi from '@/components/foundations/Typographi.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import BuyButton from '@/components/BuyButton.astro'
+import InstagramIcon from '@/icons/Instagram.astro'
+import WhatappsIcon from '@/icons/Whatapps.astro'
+import Facebook from '@/icons/Facebook.astro'
+import Tiktok from '@/icons/Tiktok.astro'
 
-interface Texts {
-  title: string
-  subtitle: string
-  description: string
-  slogan: string
-}
-
-interface Props {
-  texts: Texts
-}
-
-const { texts } = Astro.props
+const socials = [
+  {
+    href: 'https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0',
+    Icon: WhatappsIcon,
+  },
+  {
+    href: 'https://www.instagram.com/amatista.comunidad/',
+    Icon: InstagramIcon,
+  },
+  {
+    href: 'https://web.facebook.com/amatista.comunidad/?_rdc=1&_rdr',
+    Icon: Facebook,
+  },
+  {
+    href: 'https://www.tiktok.com/@amatista.comunidad',
+    Icon: Tiktok,
+  },
+]
 ---
 
-<SectionContainer variant="darker">
-  <h2 class="mb-4 text-4xl font-semibold text-center uppercase text-amatista font-lora">{texts.title}</h2>
-  <TextContainer class="text-center">
-    <h3>{texts.subtitle}</h3>
-    <p class="max-w-xl mx-auto">{texts.description}</p>
-  </TextContainer>
-  <div class="grid grid-cols-2 md:grid-cols-4 place-items-center w-full max-w-[400px] mx-auto gap-y-12 mb-4">
-    <a
-      href="https://api.whatsapp.com/message/YSRW3CZPDBAED1?autoload=1&app_absent=0"
-      target="_blank"
+<SectionContainer variant='darker'>
+  <TextContainer
+    responsive='BOTH_CENTER'
+    class='flex flex-col items-center gap-y-4'
+  >
+    <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+      >LA FORMA MÁS SIMPLE DE COMPRAR
+    </Typographi>
+    <Typographi as='h3' variant='SUBTITLE' color='BLACK' darkColor='WHITE'
+      >HEMOS SIMPLIFICADO EL PROCESO DE COMPRA
+    </Typographi>
+    <Typographi as='p' variant='BODY' color='BLACK' darkColor='WHITE'
+      >Solo necesitas comunicarte con nosotras a través de WhatsApp o <br class="hidden md:block"/> un mensaje
+      en Instagram para obtener tus prendas favoritas
+    </Typographi>
+    <div
+      class='grid grid-cols-2 md:grid-cols-4 place-items-center w-full max-w-[400px] mx-auto gap-y-12 mb-4'
     >
-      <WhatappsIcon class="w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista" />
-    </a>
-    <a href="https://www.instagram.com/amatista.comunidad/" target="_blank">
-      <InstagramIcon class="w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista" />
-    </a>
-    <a
-      href="https://web.facebook.com/amatista.comunidad/?_rdc=1&_rdr"
-      target="_blank"
-    >
-      <svg
-        fill="currentColor"
-        class="w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        ><path
-          d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
-        ></path>
-      </svg>
-    </a>
-    <a
-      href="https://www.tiktok.com/@amatista.comunidad"
-      target="_blank"
-    >
-      <svg
-        class="w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista"
-        fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 448 512"
-        ><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-        <path
-          d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"
-        ></path>
-      </svg>
-    </a>
-  </div>
-  <TextContainer class="max-w-xl mx-auto text-center">
-    <h3 class="text-balance">{texts.slogan}</h3>
-  </TextContainer>
+      {socials.map(({ href, Icon }) => {
+        return (
+          <a
+            href={href}
+            target='_blank'
+          >
+            <Icon class='w-12 h-12 text-black duration-200 hover:text-amatista dark:text-raw_white dark:hover:text-amatista' />
+          </a>
+        )
+      })}
+    </div>
+    <Typographi as='h3' variant='SUBTITLE' color='BLACK' darkColor='WHITE'
+      >¡Sin complicaciones ni intermediarios! ¡Hacé tu <br class="hidden md:block"/> pedido hoy mismo por
+      cualquiera de nuestras redes!
+    </Typographi>
 
-  <div class="flex justify-center">
-    <BuyButton href="/como-comprar">Como comprar</BuyButton>
-  </div>
+    <BuyButton href='/como-comprar' variant='RESPONSIVE' class='my-12'>Como comprar</BuyButton>
+  </TextContainer>
 </SectionContainer>

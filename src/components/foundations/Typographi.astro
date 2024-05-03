@@ -1,23 +1,30 @@
 ---
 // typos, colors, icons, basic buttons
 import type { HTMLTag, Polymorphic } from 'astro/types'
-import {Variants, TextColors, DarkColors} from '@/constants/typographi'
-
+import { Variants, TextColors, DarkColors } from '@/constants/typographi'
 
 type Props<Tag extends HTMLTag> = Polymorphic<{
   as: Tag
   variant: keyof typeof Variants
-  color: keyof typeof TextColors
+  color?: keyof typeof TextColors
   darkColor?: keyof typeof DarkColors
 }>
 
 const {
   as: Tag,
   variant,
-  color,
-  darkColor = DarkColors.WHITE,
+  color = TextColors.NONE,
+  darkColor = DarkColors.NONE,
   ...props
 } = Astro.props
+
+const classes = [
+  Variants[variant as keyof typeof Variants],
+  TextColors[color as keyof typeof TextColors],
+  DarkColors[darkColor as keyof typeof DarkColors],
+]
 ---
 
-<Tag {...props} class:list={[variant, color, darkColor]} />
+<Tag class:list={classes} {...props}>
+  <slot></slot>
+</Tag>

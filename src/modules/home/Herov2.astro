@@ -19,22 +19,13 @@ const items = [
     text: "Vestimos cuerpos sagrados con prendas <strong>únicas</strong>",
   },
 ]
-
-interface Texts {
-  content: string
-  cta: string
-}
-
-interface Props {
-  texts: Texts
-}
 ---
 
 <section class="relative z-0 bg-black">
   <ImageTransition items={items} />
-  <div class="absolute bottom-1/4 left-0 w-full">
+  <div class="absolute left-0 w-full bottom-1/4">
     <div class="flex justify-center">
-      <ContactButton variant="white" href="/tienda" target="_self"
+      <ContactButton variant="WHITE" href="/tienda" target="_self"
         >compra ahora
       </ContactButton>
     </div>

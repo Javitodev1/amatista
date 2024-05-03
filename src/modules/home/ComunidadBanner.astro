@@ -1,14 +1,15 @@
 ---
-import TextContainer from "@/components/TextContainer.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import BuyButton from "@/components/BuyButton.astro"
-import SpreadImages from "@/components/SpreadImages.astro"
+import Typographi from '@/components/foundations/Typographi.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import BuyButton from '@/components/BuyButton.astro'
+import SpreadImages from '@/components/SpreadImages.astro'
 
-import centerImage from "@public/optimized/home_comunidad_5.webp"
-import leftTopImage from "@public/optimized/home_comunidad_4.webp"
-import rightBottomImage from "@public/optimized/home_comunidad_3.webp"
-import rightTopImage from "@public/optimized/home_comunidad_2.webp"
-import leftBottomImage from "@public/optimized/home_comunidad_1.webp"
+import centerImage from '@public/optimized/home_comunidad_5.webp'
+import leftTopImage from '@public/optimized/home_comunidad_4.webp'
+import rightBottomImage from '@public/optimized/home_comunidad_3.webp'
+import rightTopImage from '@public/optimized/home_comunidad_2.webp'
+import leftBottomImage from '@public/optimized/home_comunidad_1.webp'
 
 const images = {
   center: centerImage.src,
@@ -17,39 +18,43 @@ const images = {
   rightTop: rightTopImage.src,
   rightBottom: rightBottomImage.src,
 }
-
-interface Texts {
-  title: string
-  subtitle: string
-  description: string
-  cta: string
-}
-
-interface Props {
-  texts: Texts
-}
-
-const { texts } = Astro.props
 ---
 
 <SectionContainer>
   <div
-    class="flex flex-col items-center justify-center md:items-center lg:flex-row"
+    class='flex flex-col items-center justify-center md:items-center lg:flex-row md:gap-12'
   >
-    <div>
-      <TextContainer class="mb-12 pr-12">
-        <h3 class="tracking-wider uppercase">
-          {texts.subtitle}
-        </h3>
-        <h2 class="max-w-xs">{texts.title}</h2>
-        <p class="max-w-lg mt-4 tracking-wide">
-          {texts.description}
-        </p>
+  
+    <div class="flex flex-col items-center md:block">
+      <TextContainer class='mb-12' responsive="RESPONSIVE">
+        <Typographi
+          as='h3'
+          variant='SUBTITLE'
+          color='BLACK'
+          darkColor='WHITE'
+          class='tracking-wider'
+          >COMUNIDAD
+        </Typographi>
+        <Typographi as='h3' variant='TITLE' color='ACCENT_AMATISTA' class="mb-6"
+          >Construyendo <br class="hidden md:block"> Juntas
+        </Typographi>
+        <Typographi
+          as='h3'
+          variant='BODY'
+          color='BLACK'
+          darkColor='WHITE'
+          class='tracking-wide'
+          >Nos unimos para crear una comunidad donde creamos juntas un mundo,
+          tanto en su forma tangible como energética.
+        </Typographi>
       </TextContainer>
-      <BuyButton href="/comunidad">Conoce más</BuyButton>
+
+      <BuyButton href='/comunidad' variant='RESPONSIVE'>Conoce más</BuyButton>
     </div>
-    <div class="order-first hidden lg:order-last lg:block">
+
+    <div class='order-first hidden lg:order-last lg:block'>
       <SpreadImages images={images} />
     </div>
+    
   </div>
 </SectionContainer>

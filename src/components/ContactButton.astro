@@ -1,28 +1,34 @@
 ---
+import Typographi from './foundations/Typographi.astro'
+
+enum VariantClasses {
+  WHITE = "text-white border-white hover:text-white/75 hover:border-white/75",
+  BLACK = "text-black border-black hover:text-black/75 hover:border-black/75",
+  DARK_MODE = "text-black border-black hover:text-black/75 hover:border-black/75 dark:text-white dark:border-white dark:hover:text-white/75 dark:hover:border-white/75",
+}
+
 interface Props {
   href?: string
-  variant?: 'black' | 'white' | 'darkMode'
-  target?: "_blank" | "_self"
+  variant?: keyof typeof VariantClasses
+  target?: '_blank' | '_self'
 }
 
 const {
-  variant = "darkMode",
-  href = "https://api.whatsapp.com/send?phone=59896667633",
-  target = "_blank",
+  variant = VariantClasses.DARK_MODE,
+  href = 'https://api.whatsapp.com/send?phone=59896667633',
+  target = '_blank',
 } = Astro.props
 
-const css = () => {
-  if (variant === 'white') return 'text-white border-white hover:text-white/75 hover:border-white/75'
-  if (variant === 'black') return 'text-black border-black hover:text-black/75 hover:border-black/75'
-  return 'text-black border-black hover:text-black/75 hover:border-black/75 dark:text-white dark:border-white dark:hover:text-white/75 dark:hover:border-white/75'
-}
+const classes = [
+  VariantClasses[variant as keyof typeof VariantClasses],
+]
 ---
 
 <a
   href={href}
   target={target}
-  class="block px-4 py-4 text-xl font-semibold uppercase duration-300 border-4 md:px-12 hover:backdrop-blur font-lora"
-  class:list={css()}
+  class='block px-4 py-4 transition-transform duration-300 border-4 md:px-12 hover:backdrop-blur'
+  class:list={classes}
 >
-  <slot></slot>
+  <Typographi as='p' variant='BODY_TITLE' color="NONE"><slot></slot></Typographi>
 </a>

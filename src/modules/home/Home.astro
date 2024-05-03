@@ -1,7 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import Whatsapp from "@/components/Whatsapp.astro"
-// import Hero from "./Hero.astro"
 import Hero from "./Herov2.astro"
 import NewArrival from "./NewArrival.astro"
 import ComunidadBanner from "./ComunidadBanner.astro"
@@ -11,64 +10,26 @@ import SubscribeBanner from "./SubscribeBanner.astro"
 import DeliveryBanner from "./DeliveryBanner.astro"
 import HowToBuyBanner from "./HowToBuyBanner.astro"
 import Separator from "@/components/Separator.astro"
-
-import textsJSON from "@/data/texts.json"
-
-interface PageText {
-  id: number
-  page: string
-  section: string
-  key: string
-  value: string
-}
-
-function reduceSections(targetPage: string, data: PageText[]) {
-  return data
-    .filter(({ page }) => page === targetPage)
-    .reduce((acc: any, el: PageText) => {
-      const { section, key, value } = el
-      if (!acc[section]) {
-        acc[section] = {}
-      }
-      acc[section][key] = value
-      return acc
-    }, {})
-}
-
-interface HomeSections {
-  hero: { [key: string]: string }
-  recien_llegados: { [key: string]: string }
-  como_comprar: { [key: string]: string }
-  banner_comunidad: { [key: string]: string }
-  banner_coleccion: { [key: string]: string }
-  banner_aged: { [key: string]: string }
-  kit_sanacion: { [key: string]: string }
-  banner_suscribite: { [key: string]: string }
-  banner_contacto: { [key: string]: string }
-}
-
-const PAGE = "home"
-const sections = reduceSections(PAGE, textsJSON) satisfies HomeSections
 ---
 
 <Layout>
-  <Hero texts={sections.hero} />
+  <Hero />
   <NewArrival />
-  <HowToBuyBanner texts={sections.como_comprar} />
+  <HowToBuyBanner />
 
   <Separator directionX="reverse" />
 
-  <ComunidadBanner texts={sections.banner_comunidad} />
-  <CollectionBanner texts={sections.banner_coleccion} />
+  <ComunidadBanner />
+  <CollectionBanner />
 
   <Separator directionY="reverse" variant="H3" />
 
-  <HealingKit texts={sections.kit_sanacion} />
+  <HealingKit />
 
   <Separator variant="H2" />
 
-  <SubscribeBanner texts={sections.banner_suscribite} />
-  <DeliveryBanner texts={sections.banner_contacto} />
+  <SubscribeBanner />
+  <DeliveryBanner />
 
   <Whatsapp />
 </Layout>

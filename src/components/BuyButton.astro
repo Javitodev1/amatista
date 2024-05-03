@@ -1,20 +1,37 @@
 ---
+import Typographi from './foundations/Typographi.astro'
+
+enum VariantClasses {
+  RESPONSIVE = 'dark:bg-raw_white dark:text-black bg-black text-white',
+  BLACK = 'bg-black text-white',
+  WHITE = 'bg-raw_white text-black',
+}
+
 interface Props {
+  variant?: keyof typeof VariantClasses
   href?: string
-  dark?: boolean
   class?: string
 }
 
-const { href = '/tienda', dark = true, class: className } = Astro.props
+const {
+  href = '/tienda#',
+  variant = VariantClasses.RESPONSIVE,
+  class: className,
+} = Astro.props
+
+const classes = [
+  VariantClasses[variant as keyof typeof VariantClasses],
+  className,
+]
 ---
 
-<a
-  class="px-12 py-2 text-xl font-semibold duration-200 hover:opacity-80 font-lora"
-  class:list={[
-    { 'text-black bg-raw_white dark:text-white dark:bg-black': !dark },
-    { 'text-raw_white bg-black dark:text-black dark:bg-raw_white': dark },
-    className,
-  ]}
-  href={href}
-  ><slot /></a
->
+<a href={href}>
+  <div
+    class:list={classes}
+    class='px-12 py-2 text-center duration-200 hover:opacity-80 w-fit'
+  >
+    <Typographi as='p' variant='BODY' class='font-bold'
+      ><slot></slot>
+    </Typographi>
+  </div>
+</a>
