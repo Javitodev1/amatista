@@ -1,54 +1,57 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import TextContainer from "@/components/TextContainer.astro"
-import ContactButton from "@/components/ContactButton.astro"
-import hero_img from "@public/optimized/entregas_hero.webp"
-import entregas_img from "@public/optimized/entregas_sec_1.webp"
-import correo_uruguayo_logo from "@public/optimized/correo-uruguayo.webp"
-import dac_logo from "@public/optimized/dac-logo.webp"
-import lighthouse_logo from "@public/optimized/Lighthouse.webp"
+import Layout from '@/layouts/Layout.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import ContactButton from '@/components/ContactButton.astro'
+import hero_img from '@public/optimized/entregas_hero.webp'
+import entregas_img from '@public/optimized/entregas_sec_1.webp'
+import correo_uruguayo_logo from '@public/optimized/correo-uruguayo.webp'
+import dac_logo from '@public/optimized/dac-logo.webp'
+import lighthouse_logo from '@public/optimized/Lighthouse.webp'
 ---
 
 <Layout>
   <section>
-    <div class="relative">
+    <div class='relative'>
       <div>
         <div
           style={`background-image: url(${hero_img.src});`}
-          class="h-[700px] md:h-auto w-full bg-center bg-no-repeat bg-cover md:aspect-video"
+          class='h-[700px] md:h-auto w-full bg-center bg-no-repeat bg-cover md:aspect-video'
         >
         </div>
       </div>
-      <span class="absolute top-0 left-0 w-full h-full bg-black/50"></span>
-      <div class="absolute text-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-        <h2 class="text-5xl font-bold uppercase font-lora text-raw_white">
-          Envios y Entregas sin costo en <strong class="text-amatista"
+      <span class='absolute top-0 left-0 w-full h-full bg-black/50'></span>
+      <div
+        class='absolute text-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+      >
+        <h2 class='text-5xl font-bold uppercase font-lora text-raw_white'>
+          Envios y Entregas sin costo en <strong class='text-amatista'
             >Maldonado
-          </strong> y <strong class="text-amatista">Punta del Este</strong>
+          </strong> y <strong class='text-amatista'>Punta del Este</strong>
         </h2>
-        <div class="flex justify-center mt-12">
-          <ContactButton variant="WHITE">contactame</ContactButton>
-        </div>
+        <ContactButton variant='WHITE' position='CENTER'
+          >contactame
+        </ContactButton>
       </div>
     </div>
   </section>
 
   <SectionContainer>
     <TextContainer>
-      <h2 class="md:w-3/4">
-        No tienes que preocuparte por costos adicionales al recibir tus productos!
+      <h2 class='md:w-3/4'>
+        No tienes que preocuparte por costos adicionales al recibir tus
+        productos!
       </h2>
     </TextContainer>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <div class="justify-self-center">
+    <div class='grid grid-cols-1 gap-4 md:grid-cols-2'>
+      <div class='justify-self-center'>
         <div
           style={`background-image: url(${entregas_img.src});`}
-          class="bg-cover bg-center bg-no-repeat w-[350px] aspect-square"
+          class='bg-cover bg-center bg-no-repeat w-[350px] aspect-square'
         >
         </div>
       </div>
-      <div class="py-12 pr-12">
+      <div class='py-12 pr-12'>
         <TextContainer>
           <h3>En Amatista Comunidad te brindamos la mejor experiencia</h3>
           <p>
@@ -69,12 +72,12 @@ import lighthouse_logo from "@public/optimized/Lighthouse.webp"
         establecidos.
       </h2>
     </TextContainer>
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+    <div class='grid grid-cols-1 gap-12 md:grid-cols-3'>
       <div>
-        <div class="flex justify-center mb-4">
+        <div class='flex justify-center mb-4'>
           <div
             style=`background-image: url(${correo_uruguayo_logo.src});`
-            class="w-[100px] aspect-square bg-center bg-cover bg-no-repeat"
+            class='w-[100px] aspect-square bg-center bg-cover bg-no-repeat'
           >
           </div>
         </div>
@@ -88,10 +91,10 @@ import lighthouse_logo from "@public/optimized/Lighthouse.webp"
         </TextContainer>
       </div>
       <div>
-        <div class="flex justify-center mb-4">
+        <div class='flex justify-center mb-4'>
           <div
             style=`background-image: url(${dac_logo.src});`
-            class="w-[100px] aspect-square bg-center bg-cover bg-no-repeat"
+            class='w-[100px] aspect-square bg-center bg-cover bg-no-repeat'
           >
           </div>
         </div>
@@ -105,10 +108,10 @@ import lighthouse_logo from "@public/optimized/Lighthouse.webp"
         </TextContainer>
       </div>
       <div>
-        <div class="flex justify-center mb-4">
+        <div class='flex justify-center mb-4'>
           <div
             style=`background-image: url(${lighthouse_logo.src});`
-            class="w-[100px] aspect-square bg-center bg-cover bg-no-repeat"
+            class='w-[100px] aspect-square bg-center bg-cover bg-no-repeat'
           >
           </div>
         </div>
@@ -122,17 +125,17 @@ import lighthouse_logo from "@public/optimized/Lighthouse.webp"
       </div>
     </div>
 
-    <TextContainer class="flex justify-center mt-10">
-      <h3 class="max-w-xl text-center">
-        UNA VEZ EL PAQUETE SE ENCUENTRE EN EL <strong class="text-amatista"
+    <TextContainer class='flex justify-center mt-10'>
+      <h3 class='max-w-xl text-center'>
+        UNA VEZ EL PAQUETE SE ENCUENTRE EN EL <strong class='text-amatista'
           >LOCAL
-        </strong> TIENES <strong class="text-amatista">10 DÍAS</strong> HÁBILES PARA
+        </strong> TIENES <strong class='text-amatista'>10 DÍAS</strong> HÁBILES PARA
         RETIRARLO
       </h3>
     </TextContainer>
 
-    <div class="flex justify-center mt-4">
-      <ContactButton>contactame</ContactButton>
-    </div>
+    <ContactButton variant='DARK_MODE' position='CENTER'
+      >contactame
+    </ContactButton>
   </SectionContainer>
 </Layout>
