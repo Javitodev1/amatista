@@ -53,7 +53,9 @@ const alliances = [
             />
             <strong class='text-amatista'>SOSTENIBILIDAD</strong>
           </Typographi>
-          <ContactButton variant='WHITE' position="CENTER">contactame</ContactButton>
+          <ContactButton variant='WHITE' position='CENTER'
+            >contactame
+          </ContactButton>
         </TextContainer>
       </div>
     </div>
@@ -107,12 +109,12 @@ const alliances = [
   <!-- End Banner Cupones -->
 
   <SectionContainer>
-    <TextContainer>
-      <h2 class='flex justify-center'>Co-crea con Amatista</h2>
-    </TextContainer>
+    <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA' class="text-center md:mb-12 mb-6">
+      Co-crea con Amatista
+    </Typographi>
     <div class='grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10'>
       {alliances.map(({ logo, name, instagramTag, href }) => (
-        <div class='flex flex-col items-center group hover:cursor-pointer'>
+        <div class='flex flex-col items-center group hover:cursor-pointer gap-2'>
           <img
             src={logo}
             alt={name}
