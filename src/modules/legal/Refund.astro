@@ -1,87 +1,91 @@
-<h2>Política de devoluciones y reembolsos:</h2>
+---
+import SectionContainer from '@/components/SectionContainer.astro'
+import TextContainer from '@/components/TextContainer.astro'
+import Typographi from '@/components/foundations/Typographi.astro'
+---
 
-<ol>
-  <li>
-    <h3>Plazo de devolución</h3>
+<SectionContainer id='politicas-de-reembolso'>
+  <TextContainer class='max-w-3xl mx-auto flex flex-col gap-4' responsive='RESPONSIVE'>
+    <Typographi as='h2' variant='TITLE' color='ACCENT_AMATISTA'
+      >Política de devoluciones y reembolsos:
+    </Typographi>
 
-    <p>
+    <Typographi as='h3' variant='SUBTITLE' color='ACCENT_AMATISTA'
+      >Plazo de devolución
+    </Typographi>
+
+    <Typographi as='p' variant='BODY' color='RESPONSIVE'>
       Una vez que nos notifiques la rescisión del paquete, tienes un plazo de 48
       horas para solicitar la realización de un cambio de la prenda o accesorio
       que compraste.
-    </p>
-  </li>
+    </Typographi>
 
-  <li>
-    <h3>Procedimiento para clientes de Maldonado</h3>
-    <ul>
-      <li><p>Podemos coordinar un encuentro para el intercambio.</p></li>
+    <Typographi as='h3' variant='SUBTITLE' color='ACCENT_AMATISTA'
+      >Procedimiento para clientes de Maldonado
+    </Typographi>
+    <ul class='list-disc flex flex-col gap-2 pl-12'>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'
+        >Podemos coordinar un encuentro para el intercambio.
+      </Typographi>
 
-      <li>
-        <p>
-          También puedes pasar a probarte cerca de Punta Shopping (previa
-          agenda).
-        </p>
-      </li>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'>
+        También puedes pasar a probarte cerca de Punta Shopping (previa agenda).
+      </Typographi>
     </ul>
-  </li>
 
-  <li>
-    <h3>Procedimiento para clientes del interior del país</h3>
-    <ul>
-      <li>
-        <p>
-          El cliente deberá cubrir los costos de envío del paquete tanto al
-          momento de enviarlo como al momento de recibirlo nuevamente.
-        </p>
-      </li>
+    <Typographi as='h3' variant='SUBTITLE' color='ACCENT_AMATISTA'
+      >Procedimiento para clientes del interior del país
+    </Typographi>
+    <ul class='list-disc flex flex-col gap-2 pl-12'>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'>
+        El cliente deberá cubrir los costos de envío del paquete tanto al
+        momento de enviarlo como al momento de recibirlo nuevamente.
+      </Typographi>
 
-      <li>
-        <p>
-          Es importante que la prenda este en las mismas condiciones que la
-          recibiste (sin roturas, manchas, etc)
-        </p>
-      </li>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'>
+        Es importante que la prenda este en las mismas condiciones que la
+        recibiste (sin roturas, manchas, etc)
+      </Typographi>
 
-      <li><p>El paquete puede estar en otro embalaje.</p></li>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'
+        >El paquete puede estar en otro embalaje.
+      </Typographi>
 
-      <li>
-        <p>
-          Enviarlo por la misma agencia que lo recibiste con los datos:
-        </p>
-        <ul>
-          <li>Luciana Noble</li>
-          <li>Punta del Este</li>
-          <li>092 059 638</li>
-        </ul>
-      </li>
-
-      <li>
-        <p>
-          Luego de que recibamos el paquete de vuelta volvemos a enviarte tu
-          paquete con la prenda que seleccionaste dentro de las siguientes 48hrs
-          hábiles
-        </p>
-      </li>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'
+        >Enviarlo por la misma agencia que lo recibiste con los datos:
+      </Typographi>
     </ul>
-  </li>
-
-  <li>
-    <h3>Importante</h3>
-    <ul>
-      <li>
-        <p>
-          Cada prenda es única, por lo que te recomendamos consultar todas tus
-          dudas antes de realizar la compra para evitar gastos adicionales.
-        </p>
-      </li>
-
-      <li>
-        <p>
-          Para cualquier consulta adicional, no dudes en contactarnos. Espero
-          que esta política de devolución cumpla con tus necesidades. Si tienes
-          alguna otra pregunta o solicitud, no dudes en consultarnos.
-        </p>
-      </li>
+    <ul class='list-disc flex flex-col gap-2 pl-12'>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'
+        >Luciana Noble
+      </Typographi>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'
+        >Punta del Este
+      </Typographi>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'
+        >092 059 638
+      </Typographi>
     </ul>
-  </li>
-</ol>
+
+    <Typographi as='p' variant='BODY' color='RESPONSIVE'>
+      Luego de que recibamos el paquete de vuelta volvemos a enviarte tu paquete
+      con la prenda que seleccionaste dentro de las siguientes 48hrs hábiles
+    </Typographi>
+
+    <Typographi as='h3' variant='SUBTITLE' color='ACCENT_AMATISTA'
+      >Importante
+    </Typographi>
+    <ul class='list-disc flex flex-col gap-2 pl-12'>
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'>
+        Cada prenda es única, por lo que te recomendamos consultar todas tus
+        dudas antes de realizar la compra para evitar gastos adicionales.
+      </Typographi>
+
+      <Typographi as='li' variant='BODY' color='RESPONSIVE'>
+        Para cualquier consulta adicional, no dudes en contactarnos. Espero que
+        esta política de devolución cumpla con tus necesidades. Si tienes alguna
+        otra pregunta o solicitud, no dudes en consultarnos.
+      </Typographi>
+    </ul>
+  </TextContainer>
+</SectionContainer>

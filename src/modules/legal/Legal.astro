@@ -1,28 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import SectionContainer from '@/components/SectionContainer.astro'
-import TextContainer from '@/components/TextContainer.astro'
 import Privacy from './Privacy.astro'
 import Refund from './Refund.astro'
 import TermsAndConditions from './TermsAndConditions.astro'
 ---
 
 <Layout>
-  <SectionContainer id="politicas-de-privacidad">
-    <TextContainer class="max-w-3xl mx-auto">
-      <Privacy />
-    </TextContainer>
-  </SectionContainer>
-
-  <SectionContainer id="politicas-de-reembolso">
-    <TextContainer class="max-w-3xl mx-auto">
-      <Refund />
-    </TextContainer>
-  </SectionContainer>
-
-  <SectionContainer id="terminos-y-condiciones">
-    <TextContainer class="max-w-3xl mx-auto">
-      <TermsAndConditions />
-    </TextContainer>
-  </SectionContainer>
+  <Privacy />
+  <Refund />
+  <TermsAndConditions />
 </Layout>
