@@ -41,7 +41,7 @@
         <StockBadge {isInStock} variant={'JUST_OUT_STOCK'}/>
       </div>
     </div>
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center text-center">
       <Typographi as='h3' variant={'BODY_TITLE'} color={'BLACK'} darkColor={'WHITE'} className={'group-hover:text-amatista transition-colors duration-200'}>{title}</Typographi>
       <Typographi as='p' variant={'BODY'} color={'BLACK'} darkColor={'WHITE'} className={'mb-2'}>{formatCurreny(price)}</Typographi>
     </div>

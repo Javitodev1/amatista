@@ -5,6 +5,8 @@ export enum Variants {
   SUBTITLE = 'text-lg sm:text-xl md:text-2xl uppercase font-lora',
   BODY_TITLE = 'text-lg md:text-xl uppercase font-semibold font-lora',
   BODY = 'text-lg md:text-xl font-urbanist',
+  FOOTER_TITLE = 'text-md uppercase font-semibold font-lora',
+  FOOTER_BODY = 'text-md font-urbanist',
 }
 
 export enum TextColors {
