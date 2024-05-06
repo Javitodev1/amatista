@@ -1,0 +1,21 @@
+---
+import SpreadImages from '@/components/molecules/SpreadImages.astro'
+import center from '@public/optimized/home_comunidad_1.webp'
+import leftTop from '@public/optimized/home_comunidad_2.webp'
+import leftBottom from '@public/optimized/home_comunidad_3.webp'
+import rightTop from '@public/optimized/home_comunidad_4.webp'
+import rightBottom from '@public/optimized/home_comunidad_5.webp'
+
+const images = { 
+  centerSrc: center.src,
+  topLeftSrc: leftTop.src,
+  bottomLeftSrc: leftBottom.src,
+  bottomRightSrc: rightTop.src,
+  topRightSrc: rightBottom.src,
+  }
+---
+<div class="bg-neutral-900">
+  <section class="h-[2000px]"></section>
+  <SpreadImages {...images} />
+  <section class="h-[1000px]"></section>
+</div>
