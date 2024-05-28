@@ -1,26 +1,29 @@
 <script lang="ts">
+  import type { Product } from '../../adapters/products/product'
   import Typographi from './Typographi.svelte'
   import StockBadge from './StockBadge.svelte'
   import { link } from 'svelte-spa-router'
-  import type { Product } from '../../types/product'
   import { formatCurreny } from '../../utils/currency'
   import { NOT_FOUND_IMG_SRC } from '../errs/image'
 
   export let product: Product
+  export let variant: 'inApp' | 'outApp'
   
   const { id, title, price, isInStock } = product
-  const { url, width, height } = product.thumbnail
+  const { width, height } = product.thumbnail
   
   const outStockImgCss = !isInStock ? 'grayscale' : ''
 
-  let src = url
+  const dynamicHref = (id: string) => variant === 'inApp' ? `/${id}` : `/tienda#/${id}`
+
+  let src = product.thumbnail.src
 </script>
 
 <li
   class="p-6 transition-colors duration-300 border-2 border-transparent hover:border-amatista group"
 >
   <a
-    href="/{id}"
+    href={dynamicHref(id)}
     use:link
   >
     <div

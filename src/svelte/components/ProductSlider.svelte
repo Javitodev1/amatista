@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { ProductImage } from '../../types/product'
+  import type { ProductImage } from '../../adapters/products/product'
   import { NOT_FOUND_IMG_SRC } from '../errs/image'
 
   const defaultImg = {
-    url: "",
+    src: "",
     id: "",
     width: 0,
     height: 0,
@@ -26,16 +26,16 @@
     class="w-full h-auto col-span-3 row-span-3 aspect-square overflow-hidden"
   >
     <img
-      src={activeImage.url}
+      src={activeImage.src}
       alt={activeImage.id}
       width={activeImage.width}
       height={activeImage.height}
       class="h-full w-auto mx-auto object-center hover:scale-[2]"
       on:mousemove={handleMousemove}
-      on:error={() => activeImage = { ...activeImage, url: NOT_FOUND_IMG_SRC}}
+      on:error={() => activeImage = { ...activeImage, src: NOT_FOUND_IMG_SRC}}
     />
   </div>
-  {#each images as { height, id, url, width }, index (index)}
+  {#each images as { height, id, src, width }, index (index)}
     <button
       class="w-full h-auto aspect-square border-[2px] border-transparent hover:border-amatista hover:cursor-default"
       on:mouseover={() => {
@@ -47,11 +47,11 @@
     >
       <img
         class="object-center w-auto h-full mx-auto"
-        src={url}
         alt={id}
+        {src}
         {height}
         {width}
-        on:error={() => url = NOT_FOUND_IMG_SRC}
+        on:error={() => src = NOT_FOUND_IMG_SRC}
       />
     </button>
   {/each}

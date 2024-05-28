@@ -3,7 +3,7 @@
   import WspButton from './components/WspButton.svelte'
   import StockBadge from './components/StockBadge.svelte'
   import { formatCurreny, encodeWspLink } from '@/utils/currency'
-  import { fetchProudctById } from '../libs/graphql'
+  import { WPAdapter } from '../adapters/products/wp_adapter'
   import ProductSlider from './components/ProductSlider.svelte'
 
   interface Params {
@@ -18,7 +18,7 @@
 </script>
 
 <div class="dark:bg-dark-primary py-12">
-  {#await fetchProudctById(id)}
+  {#await WPAdapter.getProductById(id)}
     <Typographi as={'p'} variant={'BODY'} color={'BLACK'} darkColor={'WHITE'}>cargando...</Typographi>
   {:then product}
     {#if !product}
@@ -27,15 +27,15 @@
       <section class="max-w-6xl mx-auto">
         <div class="grid sm:grid-cols-10 md:gap-x-12">
           <div class="sm:col-span-5">
-            <ProductSlider images={product.images} />
+            <ProductSlider images={product.galleryImages} />
           </div>
   
           <div class="sm:col-span-5 flex flex-col gap-4 items-center md:items-start mt-6 md:mt-0">
             <Typographi as={'h2'} variant={'TITLE'} color={'ACCENT_AMATISTA'}>{product.title}</Typographi>
             <Typographi as={'h3'} variant={'SUBTITLE'} color={'BLACK'} darkColor={'WHITE'}>{formatCurreny(product.price)}</Typographi>
             <div>
-              {#each product.categories as {name}}
-                <Typographi as={'h3'} variant={'BODY_TITLE'} color={'BLACK'} darkColor={'WHITE'}>{name}</Typographi>
+              {#each product.categories as category}
+                <Typographi as={'h3'} variant={'BODY_TITLE'} color={'BLACK'} darkColor={'WHITE'}>{category.display}</Typographi>
               {/each}
             </div>
 
