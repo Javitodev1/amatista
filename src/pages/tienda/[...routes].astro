@@ -1,7 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import SectionContainer from '@/components/SectionContainer.astro';
-import App from '../../svelte/App.svelte';
+import Typographi from '@/components/foundations/Typographi.astro';
+// import App from '../../svelte/App.svelte';
 
 export function getStaticPaths() {
   return [
@@ -13,6 +14,6 @@ export function getStaticPaths() {
 
 <Layout title="Welcome to Astro.">
   <SectionContainer>
-    <App client:only="svelte">
+    <Typographi as='h2' variant='TITLE' color="BLACK">La web ya no esta en uso por lo que la tienda no esta disponible</Typographi>
   </SectionContainer>
 </Layout>
